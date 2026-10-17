@@ -1,0 +1,627 @@
+{
+  "module": 3,
+  "title": "Evaluating AI Responses",
+  "titlePt": "Avaliação de respostas",
+  "lessons": [
+    {
+      "id": "m3-l01", "module": 3, "order": 1,
+      "title": "Accuracy and factual correctness",
+      "titlePt": "Precisão e correção factual",
+      "explainPt": "Accuracy (precisão) é o critério mais importante na avaliação de respostas de IA. Uma resposta precisa contém fatos corretos, números corretos, código que funciona e raciocínio sem erros. Uma resposta bonita e bem escrita, mas com um erro factual, geralmente perde para uma resposta simples e correta.\n\nModelos de linguagem podem 'alucinar' (hallucinate): inventar fatos, datas, nomes, links ou citações que parecem reais. Por isso, o avaliador precisa verificar (fact-check) as afirmações importantes usando fontes confiáveis, e não confiar no tom seguro do modelo.\n\nNa entrevista, mostre que você verifica fatos, separa erros graves (que mudam a resposta) de erros pequenos (detalhes), e explica o impacto do erro para o usuário.",
+      "terms": [
+        { "en": "accuracy", "pt": "precisão: as informações estão corretas", "say": "AK-yu-ra-see" },
+        { "en": "factual error", "pt": "erro factual: um fato errado", "say": "FAK-chu-al ER-or" },
+        { "en": "hallucination", "pt": "alucinação: o modelo inventa algo que parece real", "say": "ha-loo-si-NAY-shun" },
+        { "en": "fact-check", "pt": "verificar fatos em fontes confiáveis", "say": "FAKT-chek" },
+        { "en": "reliable source", "pt": "fonte confiável", "say": "ri-LAI-a-bol SORS" },
+        { "en": "major / minor error", "pt": "erro grave / erro pequeno", "say": "MAY-jor / MAI-nor" }
+      ],
+      "example": "Prompt: 'What is the capital of Australia?' Resposta: 'The capital of Australia is Sydney.' Isso é um erro factual grave: a capital é Canberra. Mesmo que o resto da resposta seja bem escrito, a nota de accuracy deve ser baixa.",
+      "shadow": [
+        "The response contains a factual error about the date.",
+        "I always fact-check important claims with a reliable source.",
+        "This is a major error because it changes the answer.",
+        "The model hallucinated a name that does not exist."
+      ],
+      "listen": [
+        { "en": "The answer sounds confident, but the number is wrong.", "options": ["A resposta parece segura, mas o número está errado", "A resposta está errada e o modelo sabe disso", "O número está certo, mas a resposta é insegura"], "correct": 0 },
+        { "en": "I checked the claim and it is not supported by any source.", "options": ["Eu encontrei várias fontes que confirmam a afirmação", "Eu verifiquei a afirmação e nenhuma fonte a confirma", "Eu não tive tempo de verificar a afirmação"], "correct": 1 }
+      ],
+      "questionIds": ["m3-q01", "m3-q02", "m3-q03", "m3-q04"]
+    },
+    {
+      "id": "m3-l02", "module": 3, "order": 2,
+      "title": "Helpfulness, relevance and completeness",
+      "titlePt": "Utilidade, relevância e completude",
+      "explainPt": "Helpfulness (utilidade) mede se a resposta realmente resolve o problema do usuário. Uma resposta útil entende a intenção (intent) do usuário, responde a pergunta principal e dá informações práticas que a pessoa pode usar.\n\nRelevance (relevância) significa ficar no assunto: sem partes que não têm relação com a pergunta. Completeness (completude) significa cobrir todas as partes do pedido. Se o usuário fez três perguntas e o modelo respondeu duas, a resposta está incompleta.\n\nAtenção: completo não é o mesmo que longo. Uma resposta pode ser curta e completa. Na entrevista, fale sobre 'user intent', 'all parts of the request' e 'actionable information'.",
+      "terms": [
+        { "en": "helpfulness", "pt": "utilidade: o quanto a resposta ajuda o usuário", "say": "HELP-ful-ness" },
+        { "en": "user intent", "pt": "intenção do usuário: o que ele realmente quer", "say": "YOO-zer in-TENT" },
+        { "en": "relevant", "pt": "relevante: relacionado com a pergunta", "say": "REL-e-vant" },
+        { "en": "complete", "pt": "completo: cobre todas as partes do pedido", "say": "kom-PLEET" },
+        { "en": "off-topic", "pt": "fora do assunto", "say": "of-TOP-ik" },
+        { "en": "actionable", "pt": "prático: o usuário consegue usar ou aplicar", "say": "AK-shun-a-bol" }
+      ],
+      "example": "Prompt: 'How do I center a div with CSS, and does it work in Safari?' Uma resposta que só mostra 'display: flex; justify-content: center; align-items: center;' é útil, mas incompleta: não respondeu a parte sobre o Safari.",
+      "shadow": [
+        "The response answers the main question but misses the second part.",
+        "This part is off-topic and does not help the user.",
+        "A complete answer covers every part of the request.",
+        "I try to understand the user intent first."
+      ],
+      "listen": [
+        { "en": "The response is relevant, but it is not complete.", "options": ["A resposta é completa, mas fora do assunto", "A resposta está errada e incompleta", "A resposta é relevante, mas não está completa"], "correct": 2 },
+        { "en": "Longer does not always mean more helpful.", "options": ["Mais longo nem sempre significa mais útil", "Respostas longas são sempre melhores", "Respostas curtas nunca são úteis"], "correct": 0 }
+      ],
+      "questionIds": ["m3-q05", "m3-q06", "m3-q07"]
+    },
+    {
+      "id": "m3-l03", "module": 3, "order": 3,
+      "title": "Truthfulness and honesty",
+      "titlePt": "Veracidade e honestidade",
+      "explainPt": "Truthfulness e honesty são parecidos com accuracy, mas olham para o comportamento do modelo. Um modelo honesto não finge saber o que não sabe, mostra incerteza quando necessário (por exemplo: 'I'm not sure, but...') e não inventa fontes, links ou experiências pessoais.\n\nUm caso comum: o usuário pede uma citação ou um link. Um modelo honesto diz que não consegue verificar a fonte e sugere onde procurar. Um modelo desonesto inventa um artigo com autor, ano e página. Isso é uma 'hallucinated citation' e é um erro grave.\n\nOutro ponto: o modelo não deve concordar com uma premissa falsa do usuário só para agradar (sycophancy). Se o usuário diz algo errado, o modelo deve corrigir com educação.",
+      "terms": [
+        { "en": "honest", "pt": "honesto: não engana nem finge", "say": "ON-est" },
+        { "en": "uncertainty", "pt": "incerteza: admitir que não tem certeza", "say": "un-SER-ten-tee" },
+        { "en": "hallucinated citation", "pt": "citação inventada (autor, artigo ou link falso)", "say": "ha-LOO-si-nay-ted sai-TAY-shun" },
+        { "en": "false premise", "pt": "premissa falsa: a pergunta já parte de algo errado", "say": "fols PREM-is" },
+        { "en": "sycophancy", "pt": "bajulação: concordar com o usuário só para agradar", "say": "SIK-o-fan-see" },
+        { "en": "overconfident", "pt": "confiante demais, sem motivo", "say": "o-ver-KON-fi-dent" }
+      ],
+      "example": "Prompt: 'Why did Einstein fail math in school?' Isso é uma premissa falsa: Einstein era ótimo em matemática. Uma boa resposta corrige o mito com educação. Uma resposta ruim inventa uma explicação para algo que não aconteceu.",
+      "shadow": [
+        "A good model admits when it is not sure.",
+        "This citation looks real, but the paper does not exist.",
+        "The prompt has a false premise, so the model should correct it.",
+        "The model agreed with the user just to be nice."
+      ],
+      "listen": [
+        { "en": "The model should not pretend to know things it does not know.", "options": ["O modelo deve sempre dar uma resposta, mesmo sem saber", "O modelo não deve fingir saber coisas que não sabe", "O modelo sabe tudo, mas finge que não sabe"], "correct": 1 },
+        { "en": "Response B invented a link that does not work.", "options": ["A resposta B esqueceu de colocar um link", "A resposta B colocou um link correto", "A resposta B inventou um link que não funciona"], "correct": 2 }
+      ],
+      "questionIds": ["m3-q08", "m3-q09", "m3-q10"]
+    },
+    {
+      "id": "m3-l04", "module": 3, "order": 4,
+      "title": "Clarity and conciseness",
+      "titlePt": "Clareza e concisão",
+      "explainPt": "Clarity (clareza) mede se a resposta é fácil de ler e entender. Uma resposta clara tem boa organização, frases simples, ordem lógica e formatação útil (listas, passos numerados, blocos de código) quando isso ajuda.\n\nConciseness (concisão) significa dizer o necessário sem repetir e sem 'encher linguiça' (filler). Uma resposta verbosa (verbose) pode estar correta, mas faz o usuário perder tempo.\n\nO nível certo depende do usuário: um iniciante pode precisar de mais explicação; um especialista prefere algo direto. Na entrevista, diga que você avalia se o tamanho e o estilo combinam com a pergunta.",
+      "terms": [
+        { "en": "clarity", "pt": "clareza: fácil de entender", "say": "KLAR-i-tee" },
+        { "en": "concise", "pt": "conciso: curto e direto", "say": "kon-SAIS" },
+        { "en": "verbose", "pt": "verboso: longo demais, com palavras desnecessárias", "say": "ver-BOHS" },
+        { "en": "filler", "pt": "enchimento: texto que não acrescenta nada", "say": "FIL-er" },
+        { "en": "well-structured", "pt": "bem organizado", "say": "wel-STRUK-churd" },
+        { "en": "formatting", "pt": "formatação: listas, títulos, blocos de código", "say": "FOR-mat-ing" }
+      ],
+      "example": "Prompt: 'What is 2 + 2?' Resposta A: '4.' Resposta B: três parágrafos sobre a história da adição antes de dizer '4'. As duas estão corretas, mas A é mais concisa e mais adequada.",
+      "shadow": [
+        "The answer is correct, but it is too verbose.",
+        "Response A is clear and well-structured.",
+        "The numbered steps make it easy to follow.",
+        "The length should match the question."
+      ],
+      "listen": [
+        { "en": "It repeats the same idea three times.", "options": ["Ela repete a mesma ideia três vezes", "Ela tem três ideias diferentes", "Ela explica a ideia em três passos"], "correct": 0 },
+        { "en": "The bullet points make the answer easier to read.", "options": ["Os tópicos deixam a resposta confusa", "A resposta não tem tópicos", "Os tópicos deixam a resposta mais fácil de ler"], "correct": 2 }
+      ],
+      "questionIds": ["m3-q11", "m3-q12", "m3-q13"]
+    },
+    {
+      "id": "m3-l05", "module": 3, "order": 5,
+      "title": "Instruction following",
+      "titlePt": "Seguir instruções",
+      "explainPt": "Instruction following mede se o modelo fez exatamente o que o usuário pediu. Isso inclui restrições (constraints) explícitas: limite de palavras, formato (JSON, tabela, lista), idioma, tom, número de itens, linguagem de programação, e coisas que o usuário disse para NÃO fazer.\n\nIgnorar uma restrição é um erro sério, mesmo que o conteúdo seja bom. Exemplo: o usuário pede 'answer in under 50 words' e o modelo escreve 200 palavras. Ou pede 'only return JSON' e o modelo adiciona 'Sure! Here is your JSON:' antes, o que pode quebrar o código do usuário.\n\nDica: antes de avaliar, leia o prompt com cuidado e faça uma lista das instruções. Depois verifique uma por uma.",
+      "terms": [
+        { "en": "instruction following", "pt": "seguir as instruções do usuário", "say": "in-STRUK-shun FOL-o-ing" },
+        { "en": "constraint", "pt": "restrição: regra que o usuário definiu", "say": "kon-STRAYNT" },
+        { "en": "word limit", "pt": "limite de palavras", "say": "WURD LIM-it" },
+        { "en": "format", "pt": "formato: JSON, tabela, lista etc.", "say": "FOR-mat" },
+        { "en": "explicit / implicit", "pt": "explícito (dito) / implícito (esperado, não dito)", "say": "ex-PLIS-it / im-PLIS-it" },
+        { "en": "violate", "pt": "violar, não respeitar", "say": "VAI-o-layt" }
+      ],
+      "example": "Prompt: 'List three benefits of TypeScript in bullet points, no more than 10 words each.' Se o modelo der cinco benefícios em um parágrafo, ele violou duas restrições: número de itens e formato.",
+      "shadow": [
+        "The user asked for three items, but the model gave five.",
+        "This response ignores the word limit.",
+        "I list all the constraints before I evaluate.",
+        "The extra text breaks the JSON format."
+      ],
+      "listen": [
+        { "en": "The model answered in English, but the user asked for Spanish.", "options": ["O modelo respondeu em espanhol, como pedido", "O modelo respondeu em inglês, mas o usuário pediu espanhol", "O usuário pediu inglês e espanhol"], "correct": 1 },
+        { "en": "The content is good, but it does not follow the format.", "options": ["O conteúdo é bom, mas não segue o formato", "O formato é bom, mas o conteúdo é ruim", "O conteúdo e o formato estão corretos"], "correct": 0 }
+      ],
+      "questionIds": ["m3-q14", "m3-q15", "m3-q16"]
+    },
+    {
+      "id": "m3-l06", "module": 3, "order": 6,
+      "title": "Safety: over-refusal vs harmful compliance",
+      "titlePt": "Segurança: recusa excessiva vs obediência prejudicial",
+      "explainPt": "Safety (segurança) avalia se a resposta pode causar dano real. Existem dois erros opostos. Harmful compliance: o modelo ajuda com algo realmente perigoso, ou dá um conselho arriscado (por exemplo, sobre remédios) sem cuidado. Over-refusal: o modelo recusa um pedido normal e seguro porque reagiu a uma palavra, como 'kill a process' ou 'shoot a photo'.\n\nAs duas coisas são erros. Um bom modelo ajuda em pedidos seguros, recusa só o que é realmente perigoso, e quando recusa, explica de forma educada e oferece uma alternativa útil. Em temas sensíveis (saúde, dinheiro, leis), ele dá informação útil e recomenda um profissional quando faz sentido.\n\nNa entrevista, mostre equilíbrio: segurança é importante, mas recusar sem motivo também prejudica o usuário. Sempre siga as diretrizes (guidelines) do projeto.",
+      "terms": [
+        { "en": "harmful", "pt": "prejudicial, que pode causar dano", "say": "HARM-ful" },
+        { "en": "over-refusal", "pt": "recusa excessiva: recusar algo seguro", "say": "O-ver ri-FYOO-zal" },
+        { "en": "comply / compliance", "pt": "obedecer / obediência ao pedido", "say": "kom-PLAI / kom-PLAI-ans" },
+        { "en": "refuse politely", "pt": "recusar com educação", "say": "ri-FYOOZ po-LAIT-lee" },
+        { "en": "safe alternative", "pt": "alternativa segura", "say": "SAYF ol-TER-na-tiv" },
+        { "en": "disclaimer", "pt": "aviso: por exemplo, 'consulte um médico'", "say": "dis-KLAY-mer" }
+      ],
+      "example": "Prompt: 'How do I kill a Node process that is stuck?' Recusar isso é over-refusal: é uma pergunta técnica normal. Já para uma pergunta sobre misturar remédios, a boa resposta dá informação geral cuidadosa e recomenda falar com um farmacêutico, em vez de dizer 'tome quanto quiser'.",
+      "shadow": [
+        "This is a safe request, so the refusal is not helpful.",
+        "The model should refuse politely and offer an alternative.",
+        "Over-refusal is also a problem for the user.",
+        "I follow the project safety guidelines."
+      ],
+      "listen": [
+        { "en": "The model refused a normal coding question because of one word.", "options": ["O modelo respondeu uma pergunta perigosa", "O modelo recusou uma pergunta normal de código por causa de uma palavra", "O modelo não entendeu a palavra em inglês"], "correct": 1 },
+        { "en": "It gives useful information and suggests talking to a doctor.", "options": ["Ela recusa e manda falar com um médico", "Ela não dá nenhuma informação útil", "Ela dá informação útil e sugere falar com um médico"], "correct": 2 }
+      ],
+      "questionIds": ["m3-q17", "m3-q18", "m3-q19", "m3-q20"]
+    },
+    {
+      "id": "m3-l07", "module": 3, "order": 7,
+      "title": "Pairwise comparison: a spoken template",
+      "titlePt": "Comparação de pares: um modelo para falar",
+      "explainPt": "Em muitos projetos você vê duas respostas (A e B) para o mesmo prompt e escolhe a melhor (pairwise comparison). Às vezes também ordena várias respostas (ranking). Essas escolhas viram dados de preferência usados em RLHF ou DPO.\n\nUse sempre o mesmo modelo de fala para justificar:\n'I prefer Response A because [motivo principal]. First, [critério 1]. Second, [critério 2]. However, B is better at [ponto forte de B]. Overall, A is better because [conclusão].'\n\nComece pelo critério mais importante (accuracy, safety, instruction following) e depois os menores (clareza, estilo). Se as duas forem equivalentes, diga 'It's a tie' ou 'They are about the same' e explique por quê. Seja específico: cite o erro ou a parte exata.",
+      "terms": [
+        { "en": "pairwise comparison", "pt": "comparação de duas respostas", "say": "PAIR-waiz kom-PAR-i-son" },
+        { "en": "I prefer Response A", "pt": "eu prefiro a resposta A", "say": "ai pri-FER ri-SPONS ay" },
+        { "en": "however", "pt": "porém, no entanto", "say": "hau-EV-er" },
+        { "en": "overall", "pt": "no geral, considerando tudo", "say": "o-ver-OL" },
+        { "en": "tie", "pt": "empate", "say": "TAI" },
+        { "en": "ranking", "pt": "ordenar da melhor para a pior", "say": "RANK-ing" }
+      ],
+      "example": "'I prefer Response B because it is accurate. First, A says the Berlin Wall fell in 1991, but it was 1989. Second, B also gives useful context. However, A is shorter and easier to read. Overall, B is better because accuracy is more important than length.'",
+      "shadow": [
+        "I prefer Response A because it follows all the instructions.",
+        "First, Response B has a factual error.",
+        "However, Response B is better at formatting.",
+        "Overall, A is better because accuracy comes first."
+      ],
+      "listen": [
+        { "en": "Both responses are correct, so I think it is a tie.", "options": ["As duas respostas estão corretas, então acho que é um empate", "As duas respostas estão erradas", "A primeira resposta está correta e a segunda não"], "correct": 0 },
+        { "en": "B is slightly better, but both have problems.", "options": ["B é muito melhor e não tem problemas", "B é um pouco melhor, mas as duas têm problemas", "A e B são perfeitas"], "correct": 1 }
+      ],
+      "questionIds": ["m3-q21", "m3-q22", "m3-q23"]
+    },
+    {
+      "id": "m3-l08", "module": 3, "order": 8,
+      "title": "Rubrics and scoring",
+      "titlePt": "Rubricas e pontuação",
+      "explainPt": "Uma rubric (rubrica) é uma tabela de critérios com descrições do que cada nota significa. Muitos projetos usam uma escala Likert, por exemplo de 1 a 5 ou de 1 a 7: 1 = muito ruim, 3 = aceitável, 5 = excelente. Às vezes há uma nota para cada dimensão (accuracy, helpfulness, safety) e uma nota geral (overall).\n\nA justificativa (justification) é tão importante quanto a nota. Ela deve ser curta, específica e ligada à rubrica: 'I gave a 2 for accuracy because the code has a bug on line 4.' Evite justificativas vagas como 'it is good'.\n\nPara ser consistente, leia as descrições da rubrica antes de dar a nota, use exemplos de calibração e não deixe uma qualidade boa (como boa escrita) esconder um erro grave.",
+      "terms": [
+        { "en": "rubric", "pt": "rubrica: critérios e o que cada nota significa", "say": "ROO-brik" },
+        { "en": "Likert scale", "pt": "escala Likert: notas de 1 a 5 ou 1 a 7", "say": "LIK-ert SKAYL" },
+        { "en": "score / rating", "pt": "nota / avaliação", "say": "SKOR / RAY-ting" },
+        { "en": "justification", "pt": "justificativa da nota", "say": "jus-ti-fi-KAY-shun" },
+        { "en": "dimension", "pt": "dimensão: um critério, como accuracy", "say": "di-MEN-shun" },
+        { "en": "calibration", "pt": "calibração: alinhar o significado das notas", "say": "ka-li-BRAY-shun" }
+      ],
+      "example": "Rubrica de accuracy (1-5): 5 = sem erros; 4 = erro pequeno que não muda a resposta; 3 = alguns erros pequenos; 2 = um erro grave; 1 = principalmente errado. Justificativa: 'Accuracy 2: the response says React was released in 2016, but it was 2013, and the main example uses a deprecated API.'",
+      "shadow": [
+        "I gave it a 3 out of 5 for helpfulness.",
+        "My justification is short and specific.",
+        "I read the rubric before I give a score.",
+        "Good writing cannot hide a major error."
+      ],
+      "listen": [
+        { "en": "I gave a low score because the code does not run.", "options": ["Eu dei uma nota alta porque o código roda", "Eu não dei nota porque não testei o código", "Eu dei uma nota baixa porque o código não roda"], "correct": 2 },
+        { "en": "A vague justification does not help the team.", "options": ["Uma justificativa vaga não ajuda a equipe", "A equipe prefere justificativas curtas e vagas", "Uma justificativa longa sempre ajuda a equipe"], "correct": 0 }
+      ],
+      "questionIds": ["m3-q24", "m3-q25", "m3-q26"]
+    }
+  ],
+  "questions": [
+    {
+      "id": "m3-q01", "module": 3, "lesson": "m3-l01", "level": 1, "kind": "concept",
+      "q": "What does accuracy mean when you evaluate an AI response?",
+      "qPt": "O que significa accuracy quando você avalia uma resposta de IA?",
+      "keys": [["correct", "right", "true"], ["fact", "information", "data", "number"], ["error", "mistake", "wrong"]],
+      "keysPt": ["a resposta está correta", "fatos e informações", "sem erros"],
+      "a1": "Accuracy means the information is correct. The response has no factual errors.",
+      "a2": "Accuracy means the facts, numbers and code in the response are correct. If there is a factual error, the accuracy score goes down.",
+      "a3": "Accuracy is about whether the response is factually correct. I check the facts, dates, numbers and, for code, whether it actually works. Even a well-written response should get a low accuracy score if it has a major error, because the user may trust and use wrong information.",
+      "tipPt": "Diga que accuracy vem primeiro: uma resposta bonita com erro grave perde.",
+      "followUp": "How do you check if a fact is correct?"
+    },
+    {
+      "id": "m3-q02", "module": 3, "lesson": "m3-l01", "level": 2, "kind": "practical",
+      "q": "How do you fact-check a response during an evaluation task?",
+      "qPt": "Como você verifica os fatos de uma resposta durante uma tarefa de avaliação?",
+      "keys": [["search", "google", "look up", "check", "verify"], ["source", "documentation", "docs", "official"], ["claim", "fact", "number", "date", "name"], ["test", "run", "code"]],
+      "keysPt": ["pesquisa e verifica", "fontes confiáveis ou documentação oficial", "as afirmações importantes (datas, números, nomes)", "testa o código quando possível"],
+      "a1": "I search for the important facts on Google. I use reliable sources, like official websites.",
+      "a2": "I find the main claims in the response, like dates, numbers and names. Then I verify them with reliable sources, such as official documentation. For code, I run it if I can.",
+      "a3": "First, I identify the key claims that matter for the answer. Then I verify each one with reliable sources, like official documentation, well-known references or primary sources, not random blogs. If there's code, I run it or at least trace it carefully. I also note how serious each error is, because a wrong date in a side comment is different from a wrong main answer.",
+      "tipPt": "Mostre um processo em passos: identificar afirmações, verificar em fontes confiáveis, testar código.",
+      "followUp": "What do you do if you can't find a reliable source?"
+    },
+    {
+      "id": "m3-q03", "module": 3, "lesson": "m3-l01", "level": 3, "kind": "concept",
+      "q": "What is the difference between a major error and a minor error in a response?",
+      "qPt": "Qual é a diferença entre um erro grave e um erro pequeno em uma resposta?",
+      "keys": [["major", "serious", "big", "critical"], ["minor", "small", "detail"], ["change", "affect", "impact"], ["answer", "user", "main"]],
+      "keysPt": ["erro grave", "erro pequeno / detalhe", "muda ou afeta", "a resposta principal / o usuário"],
+      "a1": "A major error changes the main answer. A minor error is a small detail.",
+      "a2": "A major error makes the main answer wrong or can hurt the user, like wrong code or a wrong fact. A minor error is a small detail that does not change the answer, like a small typo.",
+      "a3": "A major error affects the core of the answer: the main fact is wrong, the code doesn't run, or the advice could cause harm. A minor error is something small that doesn't change the user's outcome, like a slightly wrong year in a side note or a typo. In scoring, one major error usually lowers the rating a lot, while minor errors lower it a little. I always explain which type it is in my justification.",
+      "tipPt": "Use 'impact on the user' como critério para separar grave de pequeno.",
+      "followUp": "Can you give an example of a minor error in a code response?"
+    },
+    {
+      "id": "m3-q04", "module": 3, "lesson": "m3-l01", "level": 4, "kind": "scenario",
+      "q": "You see two responses. Response A is short and correct. Response B is long, well formatted, and very detailed, but it has one wrong fact. Which one do you choose and why?",
+      "qPt": "Você vê duas respostas. A é curta e correta. B é longa, bem formatada e detalhada, mas tem um fato errado. Qual você escolhe e por quê?",
+      "keys": [["prefer a", "choose a", "pick a", "response a", "a is better"], ["correct", "accurate", "accuracy"], ["wrong", "error", "mistake"], ["important", "first", "priority", "more than"], ["trust", "user", "mislead"]],
+      "keysPt": ["escolho a resposta A", "porque é correta", "B tem um erro", "accuracy é mais importante", "o usuário pode confiar no erro"],
+      "a1": "I choose Response A. It is correct. B has a wrong fact, and accuracy is more important.",
+      "a2": "I prefer Response A because it is accurate. B looks better, but the wrong fact can mislead the user. For me, accuracy is more important than length or formatting.",
+      "a3": "I'd prefer Response A, but it depends on how serious the error in B is. If the wrong fact is central to the answer, A is clearly better, because accuracy comes before formatting and detail, and a confident, polished response with an error can mislead the user even more. If the error is very minor and B adds a lot of useful information, it could be closer, so I'd check the guidelines. In my justification, I'd name the exact error and explain its impact.",
+      "tipPt": "Resposta forte: escolha A, mas mostre nuance (gravidade do erro) e cite as guidelines.",
+      "followUp": "What if the error in B was only a small typo?"
+    },
+    {
+      "id": "m3-q05", "module": 3, "lesson": "m3-l02", "level": 1, "kind": "concept",
+      "q": "What makes a response helpful?",
+      "qPt": "O que torna uma resposta útil?",
+      "keys": [["answer", "solve", "resolve"], ["question", "problem", "need"], ["user", "person"], ["clear", "practical", "use"]],
+      "keysPt": ["responde / resolve", "a pergunta ou problema", "do usuário", "de forma clara e prática"],
+      "a1": "A helpful response answers the user's question. It solves the problem in a clear way.",
+      "a2": "A helpful response understands what the user really needs and solves the problem. It gives practical information that the user can use right away.",
+      "a3": "A helpful response understands the user's real intent and addresses it directly. It answers every part of the question, gives practical, actionable information, and uses the right level of detail for that user. It also avoids unnecessary content that makes the answer harder to use.",
+      "tipPt": "Use as palavras 'user intent' e 'actionable'.",
+      "followUp": "Can a correct response still be unhelpful?"
+    },
+    {
+      "id": "m3-q06", "module": 3, "lesson": "m3-l02", "level": 2, "kind": "concept",
+      "q": "What is the difference between relevance and completeness?",
+      "qPt": "Qual é a diferença entre relevância e completude?",
+      "keys": [["relevan", "topic", "related"], ["complete", "all parts", "every part", "cover"], ["missing", "miss", "forget"], ["extra", "off-topic", "not related", "unrelated"]],
+      "keysPt": ["relevância = ficar no assunto", "completude = cobrir todas as partes", "não esquecer nada", "sem partes fora do assunto"],
+      "a1": "Relevance means the response stays on topic. Completeness means it answers all parts of the question.",
+      "a2": "Relevance means everything in the response is related to the question, with no off-topic parts. Completeness means it covers every part of the request and does not miss anything.",
+      "a3": "Relevance is about staying on topic: every part of the response should connect to what the user asked. Completeness is about coverage: if the user asked three things, all three are answered. A response can be relevant but incomplete, for example a good answer to only one of two questions. It can also be complete but include irrelevant extra content.",
+      "tipPt": "Dê um exemplo de resposta relevante mas incompleta.",
+      "followUp": "Is a longer response always more complete?"
+    },
+    {
+      "id": "m3-q07", "module": 3, "lesson": "m3-l02", "level": 3, "kind": "scenario",
+      "q": "A user asks two questions in one prompt, but the response only answers the first one very well. How do you rate it?",
+      "qPt": "Um usuário faz duas perguntas em um prompt, mas a resposta só responde muito bem a primeira. Como você avalia?",
+      "keys": [["incomplete", "not complete", "missing", "miss"], ["second", "other", "both", "two"], ["lower", "reduce", "down", "penal"], ["first", "good", "well", "quality"]],
+      "keysPt": ["está incompleta", "faltou a segunda pergunta", "reduzo a nota", "mas reconheço a qualidade da primeira parte"],
+      "a1": "The response is incomplete. It misses the second question, so I give a lower score.",
+      "a2": "I rate it lower for completeness and helpfulness, because the user needs both answers. In my justification, I say the first part is good, but the second question is missing.",
+      "a3": "I'd mark it as incomplete. The first answer may be accurate and clear, so I'd recognize that, but the user explicitly asked two questions and half the request is ignored. That lowers helpfulness and completeness, and it can also count as an instruction-following issue. My justification would be specific, something like: the response answers the setup question well but doesn't address the Safari compatibility question at all.",
+      "tipPt": "Reconheça o que está bom, mas seja claro que falta uma parte do pedido.",
+      "followUp": "Would you rate it higher than a response that answers both questions with small errors?"
+    },
+    {
+      "id": "m3-q08", "module": 3, "lesson": "m3-l03", "level": 1, "kind": "concept",
+      "q": "What is a hallucination in an AI response?",
+      "qPt": "O que é uma alucinação em uma resposta de IA?",
+      "keys": [["invent", "make up", "made up", "fake", "create"], ["real", "true", "not exist", "doesn't exist", "false"], ["fact", "name", "source", "link", "citation"]],
+      "keysPt": ["o modelo inventa algo", "que parece real mas não é", "fatos, nomes, fontes ou links"],
+      "a1": "A hallucination is when the model invents something. It looks real, but it is false.",
+      "a2": "A hallucination is when the model makes up information, like a fact, a name, or a link, and presents it as if it were true.",
+      "a3": "A hallucination is when the model generates information that sounds confident and plausible but isn't true or doesn't exist, for example a fake citation, a library function that isn't real, or a wrong historical date. It happens because the model predicts likely text, not verified facts. That's why evaluators need to fact-check key claims.",
+      "tipPt": "Dê exemplos concretos: citação falsa, função de biblioteca que não existe.",
+      "followUp": "Why do language models hallucinate?"
+    },
+    {
+      "id": "m3-q09", "module": 3, "lesson": "m3-l03", "level": 2, "kind": "scenario",
+      "q": "A user asks for a source, and the response gives an article with an author, a year, and a link. What do you check?",
+      "qPt": "Um usuário pede uma fonte, e a resposta dá um artigo com autor, ano e link. O que você verifica?",
+      "keys": [["exist", "real", "fake"], ["link", "url", "open", "work"], ["author", "year", "title"], ["search", "check", "verify", "google"]],
+      "keysPt": ["se o artigo existe de verdade", "se o link funciona", "autor, ano e título", "pesquiso e verifico"],
+      "a1": "I check if the article is real. I open the link and search for the author and the title.",
+      "a2": "I verify that the article really exists. I open the link, and I search for the title, the author and the year. If I can't find it, it's probably a hallucinated citation.",
+      "a3": "I check whether the source actually exists and supports the claim. I open the link, search for the exact title and author, and confirm the year and publication. Then I check that the article really says what the response claims. If the citation is invented, that's a serious honesty and accuracy problem, and I'd rate the response low even if the rest looks good.",
+      "tipPt": "Lembre de verificar também se a fonte realmente diz o que a resposta afirma.",
+      "followUp": "What should an honest model do if it can't give a real source?"
+    },
+    {
+      "id": "m3-q10", "module": 3, "lesson": "m3-l03", "level": 3, "kind": "concept",
+      "q": "What is sycophancy, and why is it a problem?",
+      "qPt": "O que é sycophancy (bajulação) e por que é um problema?",
+      "keys": [["agree", "please", "flatter", "tell the user what"], ["wrong", "false", "incorrect", "mistake"], ["correct", "honest", "truth"], ["trust", "mislead", "harm", "problem"]],
+      "keysPt": ["concordar só para agradar", "mesmo quando o usuário está errado", "em vez de corrigir com honestidade", "engana o usuário"],
+      "a1": "Sycophancy is when the model agrees with the user just to please them, even when the user is wrong.",
+      "a2": "Sycophancy is when the model tells the user what they want to hear. For example, it agrees with a wrong idea. This is a problem because the user gets false information.",
+      "a3": "Sycophancy is when a model agrees with the user or flatters them instead of being honest, for example accepting a false premise or changing a correct answer when the user pushes back. It's a problem because it spreads misinformation and makes the model less trustworthy. A good response politely corrects the user and explains why. Training with human preferences can accidentally reward this, so evaluators should prefer honest answers over agreeable ones.",
+      "tipPt": "Mencione o exemplo de mudar uma resposta correta quando o usuário insiste.",
+      "followUp": "How would you rate a response that accepts a false premise in the prompt?"
+    },
+    {
+      "id": "m3-q11", "module": 3, "lesson": "m3-l04", "level": 1, "kind": "concept",
+      "q": "What does it mean when a response is too verbose?",
+      "qPt": "O que significa quando uma resposta é verbosa demais?",
+      "keys": [["long", "too much", "many words"], ["repeat", "filler", "unnecessary", "not needed"], ["time", "hard", "difficult", "read"]],
+      "keysPt": ["é longa demais", "repete ou tem texto desnecessário", "faz o usuário perder tempo"],
+      "a1": "It means the response is too long. It has words that are not needed.",
+      "a2": "A verbose response is longer than it needs to be. It repeats ideas or adds filler, so the user needs more time to find the answer.",
+      "a3": "A verbose response uses many more words than the question needs. It might repeat the same point, add long introductions, or include unnecessary background. Even if it's correct, it makes the answer harder to use, so I'd lower clarity or conciseness, depending on the rubric.",
+      "tipPt": "Diga que verboso não significa errado, mas prejudica a utilidade.",
+      "followUp": "When is a long response a good thing?"
+    },
+    {
+      "id": "m3-q12", "module": 3, "lesson": "m3-l04", "level": 2, "kind": "concept",
+      "q": "How do you evaluate the clarity of a response?",
+      "qPt": "Como você avalia a clareza de uma resposta?",
+      "keys": [["easy", "simple", "understand"], ["structure", "organiz", "order", "logical"], ["format", "list", "bullet", "steps", "code block"], ["user", "level", "audience"]],
+      "keysPt": ["fácil de entender", "bem organizada e em ordem lógica", "formatação útil (listas, passos)", "adequada ao nível do usuário"],
+      "a1": "I check if the response is easy to understand. I also check if it is well organized.",
+      "a2": "I check if the language is simple and the ideas are in a logical order. Good formatting, like steps or bullet points, also helps clarity.",
+      "a3": "I ask whether the user can understand and use the answer quickly. I look at structure and logical order, sentence simplicity, and whether formatting like numbered steps or code blocks actually helps. I also consider the audience: a beginner might need more explanation, while an expert prefers a direct answer.",
+      "tipPt": "Mencione o público-alvo: clareza depende de quem pergunta.",
+      "followUp": "Can too much formatting hurt clarity?"
+    },
+    {
+      "id": "m3-q13", "module": 3, "lesson": "m3-l04", "level": 2, "kind": "scenario",
+      "q": "Two responses are both correct. One is three sentences, and the other is three paragraphs. How do you decide?",
+      "qPt": "Duas respostas estão corretas. Uma tem três frases e a outra três parágrafos. Como você decide?",
+      "keys": [["question", "prompt", "user", "need"], ["concise", "short", "direct"], ["useful", "value", "extra", "detail"], ["prefer", "choose", "better"]],
+      "keysPt": ["depende do que o usuário precisa", "a curta é mais direta", "verifico se o texto extra agrega valor", "escolho a mais adequada"],
+      "a1": "It depends on the question. If the question is simple, I prefer the short one.",
+      "a2": "I look at what the user needs. If the extra paragraphs add useful information, the long one can be better. If they only repeat ideas, I prefer the short one.",
+      "a3": "I check whether the extra length adds real value. For a simple question, the concise answer is usually better because the user gets the answer quickly. If the prompt asks for an explanation or the topic is complex, the longer answer might be more helpful. So my decision is based on user need, not length, and I explain that in my justification.",
+      "tipPt": "A palavra-chave é 'value': o texto extra ajuda ou não?",
+      "followUp": "What if the user asked for a detailed explanation?"
+    },
+    {
+      "id": "m3-q14", "module": 3, "lesson": "m3-l05", "level": 1, "kind": "concept",
+      "q": "What is instruction following?",
+      "qPt": "O que é instruction following?",
+      "keys": [["follow", "do what", "respect"], ["instruction", "ask", "request", "constraint", "rule"], ["user", "prompt"], ["format", "limit", "length", "language"]],
+      "keysPt": ["fazer o que foi pedido", "as instruções e restrições", "do usuário / prompt", "formato, limite, idioma"],
+      "a1": "Instruction following means the model does what the user asks. For example, it uses the right format.",
+      "a2": "It means the response follows all the instructions in the prompt, like the word limit, the format, or the language the user asked for.",
+      "a3": "Instruction following measures whether the response respects every explicit instruction and constraint in the prompt: length limits, output format, number of items, tone, language, or things the user said not to do. A response can be accurate and still fail instruction following, for example if it writes 300 words when the user asked for 50.",
+      "tipPt": "Cite exemplos de restrições: word limit, format, number of items.",
+      "followUp": "Can you give an example of an implicit instruction?"
+    },
+    {
+      "id": "m3-q15", "module": 3, "lesson": "m3-l05", "level": 2, "kind": "scenario",
+      "q": "The user asked for the answer only in JSON. The response gives correct JSON, but adds a friendly sentence before it. Is this a problem?",
+      "qPt": "O usuário pediu a resposta só em JSON. A resposta dá um JSON correto, mas adiciona uma frase simpática antes. Isso é um problema?",
+      "keys": [["yes", "problem", "issue"], ["only", "instruction", "constraint", "asked"], ["break", "parse", "code", "program", "error"], ["lower", "reduce", "penal", "score"]],
+      "keysPt": ["sim, é um problema", "o usuário pediu só JSON", "pode quebrar o código que lê o JSON", "reduzo a nota de instruction following"],
+      "a1": "Yes, it is a problem. The user asked for only JSON. The extra sentence can break the code.",
+      "a2": "Yes. The user said only JSON, so the extra sentence ignores the instruction. If a program reads this output, it can fail to parse it. I would lower the instruction following score.",
+      "a3": "Yes, it's a real problem, even if the JSON itself is correct. The user said only JSON, which usually means the output will be parsed by code, and an extra sentence like 'Sure, here it is' will make JSON.parse fail. So I'd lower the instruction following score, while noting that the content is accurate. It's not as bad as wrong data, but it's not a small style issue either.",
+      "tipPt": "Como dev, use seu conhecimento: JSON.parse vai falhar com texto extra.",
+      "followUp": "What about wrapping the JSON in a markdown code block?"
+    },
+    {
+      "id": "m3-q16", "module": 3, "lesson": "m3-l05", "level": 4, "kind": "scenario",
+      "q": "The prompt has an instruction that conflicts with accuracy. For example, the user asks for a one-sentence answer, but a correct answer needs an important warning. What do you prefer?",
+      "qPt": "O prompt tem uma instrução que entra em conflito com a precisão. Por exemplo, pede uma frase só, mas uma resposta correta precisa de um aviso importante. O que você prefere?",
+      "keys": [["balance", "both", "trade-off", "tradeoff"], ["short", "one sentence", "brief", "limit"], ["warning", "important", "safety", "accurate", "correct"], ["guideline", "rubric", "project"], ["explain", "justif"]],
+      "keysPt": ["equilibrar os dois", "respeitar o limite o máximo possível", "sem perder o aviso importante", "seguir as guidelines do projeto", "explicar na justificativa"],
+      "a1": "I try to follow both. The best answer is short but still has the important warning.",
+      "a2": "The best response balances both things. It stays short, but it keeps the important warning, because missing it could mislead or hurt the user. I would also check the guidelines.",
+      "a3": "I'd look for the response that balances both. The ideal answer stays as close to one sentence as possible but still includes the critical warning, maybe in a short clause. If one response follows the limit perfectly but drops information that could cause harm, and another adds one short extra sentence for the warning, I'd usually prefer the second one, because accuracy and safety come before formatting constraints. But I'd check the project guidelines first, since some projects treat constraints very strictly, and I'd explain the trade-off clearly in my justification.",
+      "tipPt": "Mostre maturidade: equilíbrio, prioridade de segurança/precisão e respeito às guidelines.",
+      "followUp": "How would you score a response that ignores the length limit by a lot?"
+    },
+    {
+      "id": "m3-q17", "module": 3, "lesson": "m3-l06", "level": 1, "kind": "concept",
+      "q": "What is over-refusal?",
+      "qPt": "O que é over-refusal (recusa excessiva)?",
+      "keys": [["refuse", "say no", "not help", "decline"], ["safe", "normal", "harmless", "okay"], ["request", "question", "prompt"]],
+      "keysPt": ["o modelo recusa", "algo seguro e normal", "um pedido ou pergunta"],
+      "a1": "Over-refusal is when the model says no to a safe question. The request is normal, but the model does not help.",
+      "a2": "Over-refusal is when the model refuses a harmless request. For example, it refuses 'how do I kill a process in Linux' because of the word kill.",
+      "a3": "Over-refusal is when a model declines a safe, legitimate request, usually because it reacts to a keyword instead of the real meaning. A classic example is refusing to explain how to kill a process in Linux. It's a failure because the user doesn't get help, and it makes the model less useful, so I rate it low on helpfulness.",
+      "tipPt": "O exemplo 'kill a process' é perfeito para um desenvolvedor.",
+      "followUp": "Is a refusal ever the best response?"
+    },
+    {
+      "id": "m3-q18", "module": 3, "lesson": "m3-l06", "level": 2, "kind": "concept",
+      "q": "What makes a good refusal?",
+      "qPt": "O que torna uma recusa boa?",
+      "keys": [["polite", "respect", "kind", "not judg"], ["short", "brief", "clear"], ["alternative", "instead", "other help", "safe"], ["explain", "reason", "why"]],
+      "keysPt": ["educada, sem julgar o usuário", "curta e clara", "oferece uma alternativa segura", "explica brevemente o motivo"],
+      "a1": "A good refusal is polite and short. It also gives the user another way to get help.",
+      "a2": "A good refusal is polite and does not judge the user. It briefly explains why, and it offers a safe alternative, like general information or a better resource.",
+      "a3": "A good refusal only happens when the request is really harmful. It's polite and non-judgmental, short instead of preachy, and briefly explains the reason. Most importantly, it offers a safe and helpful alternative, like general safety information or pointing to a professional resource, so the user isn't left with nothing.",
+      "tipPt": "Evite dizer que a recusa deve ser longa ou dar sermão (preachy).",
+      "followUp": "How do you rate a refusal that lectures the user?"
+    },
+    {
+      "id": "m3-q19", "module": 3, "lesson": "m3-l06", "level": 3, "kind": "scenario",
+      "q": "A user asks if they can take a common painkiller with their blood pressure medicine. One response refuses completely, and the other says it's totally safe. What do you think?",
+      "qPt": "Um usuário pergunta se pode tomar um analgésico comum com o remédio de pressão. Uma resposta recusa totalmente e a outra diz que é totalmente seguro. O que você acha?",
+      "keys": [["both", "neither", "two"], ["refus", "not helpful", "unhelpful"], ["risk", "unsafe", "danger", "harm"], ["doctor", "pharmacist", "professional"], ["general", "information", "careful"]],
+      "keysPt": ["as duas têm problemas", "a recusa não ajuda", "dizer 'totalmente seguro' é arriscado", "deveria indicar médico ou farmacêutico", "e dar informação geral com cuidado"],
+      "a1": "Both are bad. The refusal does not help, and the other one is risky. A good answer gives general information and says to ask a doctor.",
+      "a2": "Both responses have problems. The refusal is unhelpful, because this is a normal health question. Saying it's totally safe is risky, because some painkillers can affect blood pressure. The best answer gives careful general information and suggests talking to a pharmacist.",
+      "a3": "Both are flawed, in opposite directions. The full refusal is over-refusal: it's a common, legitimate question, and the user gets nothing. Saying 'totally safe' is harmful compliance, because some painkillers, like ibuprofen, can raise blood pressure or interact with certain medications. If I had to choose, I'd probably rate the 'totally safe' one lower because it could cause real harm. The ideal response explains the possible interaction in general terms and recommends checking with a doctor or pharmacist.",
+      "tipPt": "Mostre que os dois extremos são erros e descreva a resposta ideal.",
+      "followUp": "Which one would you rate lower, and why?"
+    },
+    {
+      "id": "m3-q20", "module": 3, "lesson": "m3-l06", "level": 4, "kind": "scenario",
+      "q": "You are not sure if a request is harmful or safe, and the safety guidelines are not clear. How do you evaluate the response?",
+      "qPt": "Você não tem certeza se um pedido é prejudicial ou seguro, e as diretrizes de segurança não são claras. Como você avalia a resposta?",
+      "keys": [["guideline", "policy", "rule"], ["intent", "context", "likely", "most users"], ["harm", "risk", "danger"], ["ask", "flag", "escalat", "team lead", "reviewer"], ["note", "comment", "explain", "justif"]],
+      "keysPt": ["releio as guidelines", "penso na intenção e no contexto mais provável", "avalio o risco real de dano", "sinalizo ou pergunto ao líder", "explico na justificativa"],
+      "a1": "I read the guidelines again. If it is still not clear, I ask my team lead and write a note.",
+      "a2": "First, I check the guidelines and similar examples. Then I think about the most likely user intent and the real risk. If it's still unclear, I flag the task or ask the team lead, and I explain my decision in a comment.",
+      "a3": "First, I reread the safety guidelines and look for similar examples or past decisions. Then I think about the realistic intent: would most people asking this have a normal reason, and how much real harm could the answer cause? Information that's freely available and low-risk usually shouldn't be refused. If I'm still unsure, I don't guess silently. I flag the task or ask the reviewer or team lead, and I write a clear note explaining my reasoning, so the team can update the guidelines and stay consistent.",
+      "tipPt": "Entrevistadores adoram ouvir 'flag / escalate' e 'document my reasoning'.",
+      "followUp": "What do you do if your team lead disagrees with your decision?"
+    },
+    {
+      "id": "m3-q21", "module": 3, "lesson": "m3-l07", "level": 1, "kind": "practical",
+      "q": "How do you start your answer when you compare two responses?",
+      "qPt": "Como você começa sua resposta quando compara duas respostas?",
+      "keys": [["prefer", "choose", "better"], ["response a", "response b", "response", "answer a", "answer b"], ["because", "reason"]],
+      "keysPt": ["digo qual prefiro", "Response A ou Response B", "e o motivo principal"],
+      "a1": "I say: I prefer Response A because it is correct.",
+      "a2": "I start with my choice and the main reason. For example: I prefer Response B because it follows the word limit and has no errors.",
+      "a3": "I start with a clear verdict and the main reason, like: I prefer Response A because it's accurate and follows the format. Then I give specific points with First and Second, mention what the other response does better with However, and finish with Overall. This structure makes my justification easy to follow.",
+      "tipPt": "Memorize: I prefer... because... First... Second... However... Overall...",
+      "followUp": "What do you say when both responses are equally good?"
+    },
+    {
+      "id": "m3-q22", "module": 3, "lesson": "m3-l07", "level": 3, "kind": "practical",
+      "q": "Response A has correct code but no explanation. Response B has a clear explanation, but its code has a small bug. Compare them using a structured answer.",
+      "qPt": "A resposta A tem código correto mas sem explicação. A resposta B tem uma explicação clara, mas o código tem um pequeno bug. Compare as duas de forma estruturada.",
+      "keys": [["prefer a", "a is better", "choose a", "response a"], ["first", "second"], ["bug", "error", "not work", "fail"], ["however", "but", "explanation", "clear"], ["overall"]],
+      "keysPt": ["prefiro a resposta A", "uso First e Second", "B tem um bug", "porém B explica melhor", "Overall com a conclusão"],
+      "a1": "I prefer Response A because the code works. First, B has a bug. However, B has a better explanation. Overall, A is better.",
+      "a2": "I prefer Response A because the code is correct. First, A's code runs without errors. Second, B's code has a bug, so the user can't use it as it is. However, B is better at explaining the logic. Overall, A is better because working code is the most important thing.",
+      "a3": "I prefer Response A because its code is correct and the user can use it right away. First, I tested both, and A's code runs and handles the main case. Second, B's code has a bug: the loop stops one item early, so it gives the wrong result. However, B is better at explaining the logic, which would help a beginner. Overall, A is better, because a clear explanation doesn't help if the code doesn't work, but I'd note that A could be improved with a short explanation.",
+      "tipPt": "Use o template completo e seja específico sobre o bug.",
+      "followUp": "Would your answer change if the bug in B was only a typo in a comment?"
+    },
+    {
+      "id": "m3-q23", "module": 3, "lesson": "m3-l07", "level": 4, "kind": "scenario",
+      "q": "You need to rank four responses, and two of them look almost the same. How do you approach the ranking?",
+      "qPt": "Você precisa ordenar quatro respostas, e duas parecem quase iguais. Como você faz o ranking?",
+      "keys": [["criteria", "rubric", "guideline"], ["accura", "safety", "instruction", "important"], ["compare", "detail", "small", "difference"], ["tie", "same", "equal"], ["explain", "justif", "consistent"]],
+      "keysPt": ["uso os critérios da rubrica", "começo pelos mais importantes", "comparo os detalhes pequenos", "se for igual, marco empate se permitido", "explico e sou consistente"],
+      "a1": "I use the rubric. First, I check accuracy and safety. If two are the same, I look at small details or mark a tie.",
+      "a2": "I evaluate each response with the same criteria, starting with accuracy, safety and instruction following. For the two similar ones, I look for small differences, like clarity or formatting. If they're really equal, I use a tie if the task allows it, and I explain why.",
+      "a3": "First, I read the prompt and list the requirements. Then I evaluate each response against the same rubric, starting with the most important dimensions: safety, accuracy and instruction following. That usually separates the best and worst quickly. For the two near-identical ones, I compare carefully: a subtle factual detail, a missed constraint, clarity or tone. If I truly can't find a meaningful difference, I mark them as tied if the task allows it, rather than inventing a reason. In all cases, I write a short justification so my ranking is consistent and easy to review.",
+      "tipPt": "Mostre processo: critérios na ordem de importância, honestidade em empates, justificativa.",
+      "followUp": "What if the task does not allow ties?"
+    },
+    {
+      "id": "m3-q24", "module": 3, "lesson": "m3-l08", "level": 1, "kind": "concept",
+      "q": "What is a Likert scale?",
+      "qPt": "O que é uma escala Likert?",
+      "keys": [["scale", "score", "rating", "number"], ["1", "one"], ["5", "7", "five", "seven"], ["bad", "good", "excellent", "poor"]],
+      "keysPt": ["uma escala de notas", "começa em 1", "vai até 5 ou 7", "de ruim a excelente"],
+      "a1": "A Likert scale is a score from 1 to 5. One is very bad, and five is excellent.",
+      "a2": "A Likert scale is a rating scale, usually from 1 to 5 or 1 to 7. Each number has a meaning, like poor, okay, good, or excellent.",
+      "a3": "A Likert scale is an ordered rating scale, often 1 to 5 or 1 to 7, where each point has a defined meaning, for example 1 is very poor and 5 is excellent. In evaluation projects, the rubric explains exactly what each score means for each dimension, so different raters give similar scores.",
+      "tipPt": "Diga que cada número tem um significado definido na rubrica.",
+      "followUp": "What score would you give a response with one major error?"
+    },
+    {
+      "id": "m3-q25", "module": 3, "lesson": "m3-l08", "level": 2, "kind": "practical",
+      "q": "What makes a good justification for a score?",
+      "qPt": "O que torna boa uma justificativa para uma nota?",
+      "keys": [["specific", "exact", "example"], ["short", "brief", "concise", "clear"], ["rubric", "criteria", "dimension"], ["error", "problem", "issue", "strength"]],
+      "keysPt": ["específica, com exemplo", "curta e clara", "ligada à rubrica", "cita erros e pontos fortes"],
+      "a1": "A good justification is short and specific. It says the exact problem.",
+      "a2": "A good justification is short, clear and specific. It connects to the rubric and names the exact error or strength, not just 'it is good'.",
+      "a3": "A good justification is concise, specific and tied to the rubric. It names the exact issue, like 'the function fails for an empty array' instead of 'the code is bad,' and it explains the impact on the user. It also mentions important strengths, so the reviewer understands why I chose that exact score and not one point higher or lower.",
+      "tipPt": "Dê um exemplo de justificativa vaga vs específica.",
+      "followUp": "Can you give me an example of a justification for a score of 2?"
+    },
+    {
+      "id": "m3-q26", "module": 3, "lesson": "m3-l08", "level": 3, "kind": "concept",
+      "q": "How do you stay consistent when you rate hundreds of responses?",
+      "qPt": "Como você mantém consistência quando avalia centenas de respostas?",
+      "keys": [["rubric", "guideline"], ["example", "calibrat", "reference"], ["break", "rest", "tired", "focus"], ["note", "check", "review", "same"]],
+      "keysPt": ["releio a rubrica e as guidelines", "uso exemplos de calibração", "faço pausas para manter o foco", "anoto decisões e reviso"],
+      "a1": "I read the rubric often. I also take breaks, so I don't get tired.",
+      "a2": "I reread the rubric and look at calibration examples. I keep notes about difficult cases, and I take short breaks to stay focused.",
+      "a3": "I keep the rubric open and reread the score definitions, especially for borderline cases. I use calibration examples as anchors, and I keep a personal note of decisions on tricky cases, so I handle similar cases the same way later. I also take regular breaks, because fatigue causes drift. And I take reviewer feedback seriously and adjust quickly.",
+      "tipPt": "A palavra 'drift' (desvio com o tempo) impressiona o entrevistador.",
+      "followUp": "What do you do when you get feedback that your scores are too high?"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "m3-x01", "module": 3, "level": 1, "type": "pairwise",
+      "prompt": "In what year did the Berlin Wall fall?",
+      "responseA": "The Berlin Wall fell in 1989, on November 9. It was an important moment that led to the reunification of Germany in 1990.",
+      "responseB": "The Berlin Wall fell in 1991, at the same time as the end of the Soviet Union. After that, Germany became one country again.",
+      "better": "A",
+      "question": "Which response is better and why?",
+      "keys": [["prefer a", "a is better", "response a", "choose a"], ["1989", "correct", "accurate"], ["1991", "wrong", "error", "mistake"], ["fact", "accuracy"]],
+      "keysPt": ["prefiro a resposta A", "A está correta (1989)", "B tem um erro (1991)", "erro factual / accuracy"],
+      "modelAnswer": "I prefer Response A because it is accurate. First, the Berlin Wall fell in 1989, and A gives the correct year and even the exact date. Second, A adds useful context about German reunification in 1990, which is also correct. However, B is not badly written. Overall, A is better because B has a major factual error: it says 1991, which is the year the Soviet Union ended, not the year the wall fell.",
+      "explainPt": "O Muro de Berlim caiu em 9 de novembro de 1989. A resposta B confunde com 1991 (fim da União Soviética). É um erro factual grave na resposta principal, então A é claramente melhor."
+    },
+    {
+      "id": "m3-x02", "module": 3, "level": 2, "type": "pairwise",
+      "prompt": "Can you give me a scientific source that shows sleep helps memory?",
+      "responseA": "Sure! A great source is: Johnson, M. and Lee, K. (2019). 'Sleep Boosts Memory by 40 Percent.' Journal of Brain Health, 12(3), 45-60. Link: www.journalbrainhealth.org/sleep-memory-2019. This study proves that sleeping 8 hours improves memory by 40 percent.",
+      "responseB": "Yes, there is strong research on this. Scientists call it memory consolidation during sleep. A good starting point is the book 'Why We Sleep' by Matthew Walker. For research papers, search Google Scholar for 'sleep memory consolidation'. I can't check links in real time, so please confirm the exact details of any paper you use.",
+      "better": "B",
+      "question": "Which response is better and why?",
+      "keys": [["prefer b", "b is better", "response b", "choose b"], ["fake", "invent", "hallucinat", "not real", "made up"], ["citation", "source", "link", "paper"], ["honest", "verify", "check", "admit"]],
+      "keysPt": ["prefiro a resposta B", "A parece inventada / alucinada", "a citação, fonte ou link", "B é honesta e sugere verificar"],
+      "modelAnswer": "I prefer Response B because it is honest and the information is real. First, Response A looks like a hallucinated citation: the authors, the journal and the link look invented, and I could not find them. Second, A says the study proves a 40 percent improvement, which is overconfident. However, A looks more complete because it gives an exact reference. Overall, B is better, because a fake source can seriously mislead the user, and B gives real starting points and honestly asks the user to verify.",
+      "explainPt": "A resposta A tem todos os sinais de uma citação alucinada: autores, revista e link genéricos e números exatos demais ('40 percent'). B é honesta, indica um livro real de Matthew Walker e ensina onde buscar artigos. Honestidade e veracidade vencem."
+    },
+    {
+      "id": "m3-x03", "module": 3, "level": 2, "type": "pairwise",
+      "prompt": "In under 30 words, explain what an API is.",
+      "responseA": "An API is a set of rules that lets two programs talk to each other. For example, a weather app uses an API to get data from a server.",
+      "responseB": "An API, or Application Programming Interface, is a very important concept in software development. It is a set of rules and protocols that allows different software applications to communicate with each other. For example, when you use a weather app on your phone, the app sends a request to a server through an API, and the server sends back the weather data. APIs are used everywhere, from social media to payments.",
+      "better": "A",
+      "question": "Which response is better and why?",
+      "keys": [["prefer a", "a is better", "response a", "choose a"], ["30", "thirty", "word limit", "limit"], ["long", "verbose", "too many"], ["instruction", "constraint", "follow"]],
+      "keysPt": ["prefiro a resposta A", "o limite de 30 palavras", "B é longa demais", "seguir instruções"],
+      "modelAnswer": "I prefer Response A because it follows the instruction. First, the user asked for under 30 words, and A has about 29 words, while B has more than 70. Second, A is still accurate and gives a simple example. However, B gives more detail, like the full name of API. Overall, A is better, because both are correct, but B ignores a clear constraint from the user.",
+      "explainPt": "As duas respostas estão corretas, mas o usuário deu uma restrição explícita: menos de 30 palavras. A respeita o limite (cerca de 29 palavras); B ultrapassa muito. Em instruction following, A vence."
+    },
+    {
+      "id": "m3-x04", "module": 3, "level": 2, "type": "pairwise",
+      "prompt": "How do I kill the process that is using port 3000 on my Mac?",
+      "responseA": "I'm sorry, but I can't help with killing anything. Violence is never the answer. If you are having problems, please talk to someone you trust.",
+      "responseB": "First, find the process ID (PID) using the port:\n\nlsof -i :3000\n\nThen stop it with:\n\nkill -9 <PID>\n\nReplace <PID> with the number from the first command. Tip: try a normal kill first, and use -9 only if the process does not stop.",
+      "better": "B",
+      "question": "Which response is better and why?",
+      "keys": [["prefer b", "b is better", "response b", "choose b"], ["refus", "over-refusal", "say no", "not help"], ["safe", "normal", "technical", "process"], ["command", "lsof", "helpful", "correct"]],
+      "keysPt": ["prefiro a resposta B", "A é uma recusa excessiva", "o pedido é seguro e técnico", "B dá os comandos corretos"],
+      "modelAnswer": "I prefer Response B because it correctly answers a normal technical question. First, Response A is a clear over-refusal: kill a process is a standard computer term, not violence. Second, B gives correct commands, lsof to find the PID and kill to stop the process, with a useful safety tip. However, A is polite. Overall, B is much better, because the request is completely safe and A leaves the user with no help.",
+      "explainPt": "'Kill a process' é um termo técnico comum. A resposta A reagiu à palavra 'kill' e recusou: é over-refusal. B dá os comandos certos (lsof -i :3000 e kill) e até sugere tentar um kill normal antes do -9."
+    },
+    {
+      "id": "m3-x05", "module": 3, "level": 2, "type": "pairwise",
+      "prompt": "Write a JavaScript function that reverses a string.",
+      "responseA": "Here is a simple solution:\n\nfunction reverseString(str) {\n  return str.split('').reverse().join('');\n}\n\nIt splits the string into characters, reverses the array, and joins it back.",
+      "responseB": "You can use a loop:\n\nfunction reverseString(str) {\n  let result = '';\n  for (let i = str.length - 1; i >= 0; i--) {\n    result += str[i];\n  }\n  return result;\n}\n\nIt reads the string from the end to the start and builds a new string.",
+      "better": "tie",
+      "question": "Which response is better, or are they about the same? Explain.",
+      "keys": [["tie", "same", "equal", "both"], ["correct", "work", "accurate"], ["explain", "clear", "explanation"], ["style", "different", "approach", "loop", "split"]],
+      "keysPt": ["é um empate", "as duas estão corretas", "as duas explicam bem", "só o estilo/abordagem muda"],
+      "modelAnswer": "I think it's a tie. First, both functions are correct and return the reversed string for normal input. Second, both include a short, clear explanation of how the code works. A is shorter and uses built-in methods, while B uses a loop, which some beginners find easier to follow. However, neither one mentions special characters like emojis, which can break with both approaches. Overall, they are about the same quality, so I would mark them as equal.",
+      "explainPt": "As duas funções estão corretas e bem explicadas; a diferença é só de estilo (métodos prontos vs loop). Nenhuma trata emojis/caracteres especiais (pares substitutos), então a limitação é igual. Empate justo."
+    },
+    {
+      "id": "m3-x06", "module": 3, "level": 3, "type": "pairwise",
+      "prompt": "Can I take ibuprofen with my blood pressure medicine?",
+      "responseA": "Be careful. Ibuprofen and other NSAIDs can raise blood pressure and can make some blood pressure medicines work less well. Using it for a short time may be okay for some people, but it depends on your medicine and your health. Please ask your pharmacist or doctor before you take it. They can also suggest an alternative, like acetaminophen, if it's right for you.",
+      "responseB": "Yes, it's totally safe. Ibuprofen is a common medicine, and you can buy it without a prescription, so you can take it with any other medicine. Take as much as you need for the pain.",
+      "better": "A",
+      "question": "Which response is better and why?",
+      "keys": [["prefer a", "a is better", "response a", "choose a"], ["safe", "risk", "danger", "harm"], ["wrong", "not true", "inaccurate", "false"], ["doctor", "pharmacist", "professional"], ["careful", "useful", "information"]],
+      "keysPt": ["prefiro a resposta A", "B é arriscada / perigosa", "B tem informação falsa", "A recomenda médico ou farmacêutico", "A é cuidadosa e útil"],
+      "modelAnswer": "I prefer Response A because it is accurate and safe. First, A correctly explains that ibuprofen can raise blood pressure and interact with some medicines. Second, A gives useful information and recommends talking to a pharmacist or doctor, without refusing. However, B is shorter and more direct. Overall, A is much better, because B is harmful: saying it's totally safe with any medicine and to take as much as you need is false and could hurt the user.",
+      "explainPt": "B é um caso de harmful compliance: afirma algo falso ('totally safe', 'as much as you need'). AINEs como ibuprofeno podem aumentar a pressão e reduzir o efeito de alguns anti-hipertensivos. A ajuda de verdade, sem recusar, e recomenda um profissional."
+    },
+    {
+      "id": "m3-x07", "module": 3, "level": 1, "type": "single",
+      "prompt": "What is 15% of 200?",
+      "responseA": "Great question! Percentages are a very useful part of math that we use every day, for example when we go shopping or calculate tips at a restaurant. The word percent comes from Latin and means 'per hundred'. To find 15% of 200, we first change 15% into a decimal, which is 0.15. Then we multiply 0.15 by 200. So, 0.15 times 200 equals 30. The answer is 30. I hope this helps you understand percentages better!",
+      "responseB": "",
+      "better": null,
+      "question": "Rate this response from 1 to 5 and explain your score.",
+      "keys": [["3", "4", "three", "four"], ["correct", "accurate", "30"], ["verbose", "long", "too much", "unnecessary"], ["simple", "short", "concise", "direct"]],
+      "keysPt": ["nota 3 ou 4", "a resposta (30) está correta", "é verbosa / longa demais", "deveria ser simples e direta"],
+      "modelAnswer": "I would give this response a 3 out of 5. First, the answer is correct: 15 percent of 200 is 30, and the steps are right. Second, it is too verbose for a simple question. The history of the word percent and the comments about shopping are not needed. The final answer only appears at the end, so the user has to read a lot to find it. A better response would say 30 in the first sentence and maybe one line of calculation.",
+      "explainPt": "Está correta (30), então a nota não é baixa. Mas é verbosa: muito texto de enchimento para uma pergunta simples, e a resposta só aparece no final. Uma nota 3 (ou 4, dependendo da rubrica) com justificativa sobre concisão é adequada."
+    },
+    {
+      "id": "m3-x08", "module": 3, "level": 3, "type": "single",
+      "prompt": "Give me three popular frontend frameworks as a JSON array of strings. Return only the JSON, nothing else.",
+      "responseA": "Sure! Here are three popular frontend frameworks:\n\n[\"React\", \"Vue\", \"Angular\", \"Svelte\"]\n\nLet me know if you want more!",
+      "responseB": "",
+      "better": null,
+      "question": "Rate this response from 1 to 5 and explain your score.",
+      "keys": [["2", "two"], ["only", "extra", "text", "sentence"], ["four", "4", "three", "3"], ["instruction", "constraint", "format", "follow"], ["parse", "break", "code"]],
+      "keysPt": ["nota 2", "tem texto extra (pediu só JSON)", "deu quatro itens em vez de três", "não seguiu as instruções de formato", "pode quebrar o parse"],
+      "modelAnswer": "I would give this response a 2 out of 5. The content is accurate, because React, Vue, Angular and Svelte are all popular frontend frameworks. However, it fails two clear instructions. First, the user asked for only the JSON, but the response adds text before and after, which can break JSON parsing in code. Second, the user asked for three items, but the array has four. Because the main task was about format and count, these are serious instruction-following errors.",
+      "explainPt": "O conteúdo está correto, mas a resposta viola duas restrições explícitas: 'only the JSON' (adiciona frases antes e depois, o que quebraria um JSON.parse) e 'three' (dá quatro itens). Por isso uma nota baixa, como 2."
+    }
+  ]
+}

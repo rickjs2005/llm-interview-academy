@@ -1,0 +1,1886 @@
+{
+  "module": 1,
+  "title": "Foundations",
+  "titlePt": "Fundamentos",
+  "lessons": [
+    {
+      "id": "m1-l01",
+      "module": 1,
+      "order": 1,
+      "title": "What is AI",
+      "titlePt": "O que é Inteligência Artificial",
+      "explainPt": "Inteligência Artificial (IA, ou AI em inglês) é a área da computação que cria sistemas capazes de fazer tarefas que normalmente exigem inteligência humana: entender texto, reconhecer imagens, traduzir, responder perguntas, tomar decisões.\n\nA maioria da IA moderna não é programada regra por regra. Em vez disso, o sistema aprende padrões a partir de muitos dados. Por isso falamos que a IA atual é baseada em dados e em estatística.\n\nNa entrevista, é comum separar dois tipos: IA estreita (narrow AI), que faz bem uma tarefa específica, como um filtro de spam ou um chatbot, e IA geral (AGI), uma ideia de sistema que faria qualquer tarefa intelectual humana. Tudo que usamos hoje, inclusive os LLMs, ainda é considerado IA estreita ou, no máximo, de uso amplo, mas não AGI.",
+      "terms": [
+        {
+          "en": "artificial intelligence",
+          "pt": "inteligência artificial: sistemas que fazem tarefas que exigem inteligência",
+          "say": "ar-tee-FISH-al in-TEL-ee-jens"
+        },
+        {
+          "en": "data",
+          "pt": "dados: exemplos usados para o sistema aprender",
+          "say": "DEY-ta"
+        },
+        {
+          "en": "pattern",
+          "pt": "padrão: algo que se repete nos dados",
+          "say": "PAT-ern"
+        },
+        {
+          "en": "narrow AI",
+          "pt": "IA estreita: faz bem uma tarefa específica",
+          "say": "NAR-oh ey-AI"
+        },
+        {
+          "en": "general AI (AGI)",
+          "pt": "IA geral: faria qualquer tarefa intelectual humana (ainda não existe)",
+          "say": "JEN-er-al ey-AI"
+        },
+        {
+          "en": "task",
+          "pt": "tarefa",
+          "say": "task"
+        }
+      ],
+      "example": "O filtro de spam do Gmail é IA estreita: ele aprendeu com milhões de e-mails a reconhecer padrões de spam. In English: \"A spam filter is narrow AI because it only does one task.\"",
+      "shadow": [
+        "AI is about building systems that can do intelligent tasks.",
+        "Modern AI learns patterns from large amounts of data.",
+        "A spam filter is a simple example of narrow AI.",
+        "Today's AI systems are powerful, but they are not general intelligence."
+      ],
+      "listen": [
+        {
+          "en": "Most modern AI systems learn from data instead of following hand-written rules.",
+          "options": [
+            "A maioria dos sistemas de IA modernos aprende com dados em vez de seguir regras escritas à mão.",
+            "A maioria dos sistemas de IA segue regras escritas por programadores.",
+            "Os sistemas de IA modernos não precisam de dados para funcionar."
+          ],
+          "correct": 0
+        },
+        {
+          "en": "Narrow AI is very good at one specific task, like translation.",
+          "options": [
+            "A IA geral consegue fazer qualquer tarefa, como tradução.",
+            "A IA estreita é muito boa em uma tarefa específica, como tradução.",
+            "A tradução é a tarefa mais difícil para a IA."
+          ],
+          "correct": 1
+        }
+      ],
+      "questionIds": [
+        "m1-q01",
+        "m1-q02",
+        "m1-q03"
+      ]
+    },
+    {
+      "id": "m1-l02",
+      "module": 1,
+      "order": 2,
+      "title": "Machine Learning vs Deep Learning",
+      "titlePt": "Machine Learning vs Deep Learning",
+      "explainPt": "Machine Learning (aprendizado de máquina) é uma parte da IA onde o computador aprende a partir de exemplos, em vez de seguir regras escritas à mão. Você mostra muitos exemplos (dados) e o algoritmo ajusta seus parâmetros para acertar mais.\n\nDeep Learning (aprendizado profundo) é uma parte do Machine Learning que usa redes neurais com muitas camadas (por isso 'deep', profundo). Essas redes conseguem aprender sozinhas características complexas a partir de dados brutos, como pixels ou texto.\n\nPense em círculos: IA contém Machine Learning, que contém Deep Learning. Os LLMs são modelos de Deep Learning. Deep Learning normalmente precisa de muito mais dados e poder computacional (GPUs) do que o ML clássico.",
+      "terms": [
+        {
+          "en": "machine learning",
+          "pt": "aprendizado de máquina: aprender com exemplos",
+          "say": "ma-SHEEN LER-ning"
+        },
+        {
+          "en": "deep learning",
+          "pt": "aprendizado profundo: ML com redes neurais de muitas camadas",
+          "say": "deep LER-ning"
+        },
+        {
+          "en": "neural network",
+          "pt": "rede neural: modelo feito de camadas de 'neurônios' matemáticos",
+          "say": "NOO-ral NET-work"
+        },
+        {
+          "en": "layer",
+          "pt": "camada",
+          "say": "LEY-er"
+        },
+        {
+          "en": "algorithm",
+          "pt": "algoritmo: sequência de passos",
+          "say": "AL-go-ri-them"
+        },
+        {
+          "en": "subset",
+          "pt": "subconjunto: uma parte de algo maior",
+          "say": "SUB-set"
+        },
+        {
+          "en": "GPU",
+          "pt": "placa de vídeo usada para treinar modelos",
+          "say": "jee-pee-YOU"
+        }
+      ],
+      "example": "ML clássico: prever o preço de uma casa com base em tamanho e bairro. Deep Learning: reconhecer um gato em uma foto ou gerar texto, como o ChatGPT. In English: \"Deep learning is a subset of machine learning.\"",
+      "shadow": [
+        "Machine learning is when computers learn from examples.",
+        "Deep learning uses neural networks with many layers.",
+        "Deep learning is a subset of machine learning.",
+        "Large language models are deep learning models."
+      ],
+      "listen": [
+        {
+          "en": "Deep learning usually needs a lot of data and powerful GPUs.",
+          "options": [
+            "Deep learning funciona bem com poucos dados.",
+            "Deep learning não precisa de GPU.",
+            "Deep learning geralmente precisa de muitos dados e GPUs potentes."
+          ],
+          "correct": 2
+        },
+        {
+          "en": "In machine learning, the model learns from examples instead of fixed rules.",
+          "options": [
+            "Em machine learning, o modelo aprende com exemplos em vez de regras fixas.",
+            "Em machine learning, o programador escreve todas as regras.",
+            "Machine learning não usa exemplos."
+          ],
+          "correct": 0
+        }
+      ],
+      "questionIds": [
+        "m1-q04",
+        "m1-q05",
+        "m1-q06"
+      ]
+    },
+    {
+      "id": "m1-l03",
+      "module": 1,
+      "order": 3,
+      "title": "What is an LLM",
+      "titlePt": "O que é um LLM",
+      "explainPt": "LLM significa Large Language Model, ou Modelo de Linguagem Grande. É um modelo de deep learning treinado com uma quantidade enorme de texto (livros, sites, código) para entender e gerar linguagem.\n\n'Large' (grande) se refere ao tamanho: bilhões de parâmetros e trilhões de tokens de dados de treino. Exemplos conhecidos são GPT, Claude, Gemini e Llama.\n\nUm LLM consegue responder perguntas, resumir, traduzir, escrever código e muito mais, tudo a partir de um prompt em texto. Mas ele não 'sabe' as coisas como uma pessoa: ele aprendeu padrões estatísticos da linguagem e pode errar ou inventar informações.",
+      "terms": [
+        {
+          "en": "large language model (LLM)",
+          "pt": "modelo de linguagem grande",
+          "say": "larj LANG-gwij MOD-el"
+        },
+        {
+          "en": "parameter",
+          "pt": "parâmetro: número interno que o modelo aprende",
+          "say": "pa-RAM-e-ter"
+        },
+        {
+          "en": "prompt",
+          "pt": "o texto de entrada que você dá ao modelo",
+          "say": "prompt"
+        },
+        {
+          "en": "generate",
+          "pt": "gerar",
+          "say": "JEN-er-eyt"
+        },
+        {
+          "en": "output",
+          "pt": "saída, resposta do modelo",
+          "say": "OUT-put"
+        },
+        {
+          "en": "billion",
+          "pt": "bilhão",
+          "say": "BIL-yon"
+        }
+      ],
+      "example": "Quando você pede ao ChatGPT 'explique useEffect do React', o LLM recebe esse prompt e gera uma resposta palavra por palavra. In English: \"An LLM generates text based on the prompt.\"",
+      "shadow": [
+        "LLM stands for large language model.",
+        "An LLM is trained on a huge amount of text.",
+        "It can answer questions, summarize text, and write code.",
+        "LLMs can be very useful, but they can also make mistakes."
+      ],
+      "listen": [
+        {
+          "en": "The model has billions of parameters that it learned during training.",
+          "options": [
+            "O modelo tem bilhões de usuários.",
+            "O modelo tem bilhões de parâmetros que aprendeu durante o treinamento.",
+            "O modelo foi treinado em bilhões de segundos."
+          ],
+          "correct": 1
+        },
+        {
+          "en": "An LLM doesn't really know facts like a person; it learned patterns in language.",
+          "options": [
+            "Um LLM sabe fatos melhor que uma pessoa.",
+            "Um LLM não aprendeu nada sobre linguagem.",
+            "Um LLM não sabe fatos como uma pessoa; ele aprendeu padrões da linguagem."
+          ],
+          "correct": 2
+        }
+      ],
+      "questionIds": [
+        "m1-q07",
+        "m1-q08",
+        "m1-q09"
+      ]
+    },
+    {
+      "id": "m1-l04",
+      "module": 1,
+      "order": 4,
+      "title": "How language models work (next-token prediction)",
+      "titlePt": "Como modelos de linguagem funcionam (previsão do próximo token)",
+      "explainPt": "A ideia central de um LLM é simples: dado um texto, ele prevê qual é o próximo token (pedaço de texto) mais provável. Ele calcula uma probabilidade para cada token possível do vocabulário.\n\nPara gerar uma resposta inteira, o modelo repete esse passo: escolhe um token, adiciona ao texto e prevê o próximo de novo. Isso se chama geração autorregressiva (autoregressive).\n\nNo treinamento, o modelo vê bilhões de frases e tenta adivinhar o próximo token. Quando erra, seus parâmetros são ajustados. Com escala suficiente, essa tarefa simples faz surgir habilidades como resumir, traduzir e programar.",
+      "terms": [
+        {
+          "en": "next-token prediction",
+          "pt": "previsão do próximo token",
+          "say": "nekst TOH-ken pre-DIK-shun"
+        },
+        {
+          "en": "probability",
+          "pt": "probabilidade: chance de algo acontecer",
+          "say": "prob-a-BIL-i-tee"
+        },
+        {
+          "en": "vocabulary",
+          "pt": "vocabulário: todos os tokens que o modelo conhece",
+          "say": "vo-KAB-yu-ler-ee"
+        },
+        {
+          "en": "autoregressive",
+          "pt": "autorregressivo: gera um token por vez, usando os anteriores",
+          "say": "aw-toh-ri-GRES-iv"
+        },
+        {
+          "en": "sequence",
+          "pt": "sequência",
+          "say": "SEE-kwens"
+        },
+        {
+          "en": "likely",
+          "pt": "provável",
+          "say": "LAIK-lee"
+        }
+      ],
+      "example": "Texto: \"The capital of France is\". O modelo calcula probabilidades: \"Paris\" 92%, \"a\" 3%, \"the\" 2%... e escolhe \"Paris\". Depois prevê o próximo token depois de \"Paris\", e assim por diante.",
+      "shadow": [
+        "The model predicts the next token in the sequence.",
+        "It gives a probability to every possible token.",
+        "Then it adds the token and predicts again.",
+        "This simple task gives the model many useful skills."
+      ],
+      "listen": [
+        {
+          "en": "The model generates text one token at a time.",
+          "options": [
+            "O modelo gera o texto inteiro de uma vez.",
+            "O modelo gera o texto um token por vez.",
+            "O modelo gera apenas um token por resposta."
+          ],
+          "correct": 1
+        },
+        {
+          "en": "During training, the model tries to guess the next token and learns from its mistakes.",
+          "options": [
+            "No treinamento, o modelo tenta adivinhar o próximo token e aprende com seus erros.",
+            "No treinamento, o modelo copia as respostas de pessoas.",
+            "No treinamento, o modelo não comete erros."
+          ],
+          "correct": 0
+        }
+      ],
+      "questionIds": [
+        "m1-q10",
+        "m1-q11",
+        "m1-q12"
+      ]
+    },
+    {
+      "id": "m1-l05",
+      "module": 1,
+      "order": 5,
+      "title": "Tokens and tokenization",
+      "titlePt": "Tokens e tokenização",
+      "explainPt": "Um LLM não lê letras nem palavras inteiras: ele lê tokens. Um token é um pedaço de texto, que pode ser uma palavra inteira, parte de uma palavra, um sinal de pontuação ou um espaço. Em inglês, um token tem em média uns 4 caracteres, ou cerca de 3/4 de uma palavra.\n\nTokenização é o processo de dividir o texto em tokens e transformar cada um em um número (ID). Algoritmos comuns são BPE (Byte Pair Encoding) e SentencePiece, que usam subpalavras (subwords).\n\nIsso importa na prática: limites de contexto e preços das APIs são medidos em tokens. Português e outras línguas costumam usar mais tokens que o inglês para o mesmo texto. E a tokenização explica alguns erros, como dificuldade em contar letras de uma palavra.",
+      "terms": [
+        {
+          "en": "token",
+          "pt": "token: pedaço de texto que o modelo processa",
+          "say": "TOH-ken"
+        },
+        {
+          "en": "tokenization",
+          "pt": "tokenização: dividir texto em tokens",
+          "say": "toh-ken-ai-ZEY-shun"
+        },
+        {
+          "en": "subword",
+          "pt": "subpalavra: parte de uma palavra",
+          "say": "SUB-werd"
+        },
+        {
+          "en": "tokenizer",
+          "pt": "tokenizador: ferramenta que faz a tokenização",
+          "say": "TOH-ken-ai-zer"
+        },
+        {
+          "en": "character",
+          "pt": "caractere (letra, número, símbolo)",
+          "say": "KAR-ak-ter"
+        },
+        {
+          "en": "token ID",
+          "pt": "número que representa um token",
+          "say": "TOH-ken ai-DEE"
+        }
+      ],
+      "example": "A palavra \"unbelievable\" pode virar 3 tokens: \"un\" + \"believ\" + \"able\". Já \"cat\" é só 1 token. Se uma API cobra por 1 milhão de tokens, um texto em português pode custar mais que o mesmo texto em inglês.",
+      "shadow": [
+        "A token is a small piece of text.",
+        "One token is about four characters in English.",
+        "API prices and context limits are measured in tokens.",
+        "Tokenization splits text into tokens and turns them into numbers."
+      ],
+      "listen": [
+        {
+          "en": "Long or rare words are often split into several tokens.",
+          "options": [
+            "Palavras longas ou raras são ignoradas pelo modelo.",
+            "Palavras curtas sempre viram vários tokens.",
+            "Palavras longas ou raras muitas vezes são divididas em vários tokens."
+          ],
+          "correct": 2
+        },
+        {
+          "en": "The same text in Portuguese usually uses more tokens than in English.",
+          "options": [
+            "O mesmo texto em português geralmente usa mais tokens que em inglês.",
+            "Português usa menos tokens que inglês.",
+            "Tokens não dependem do idioma."
+          ],
+          "correct": 0
+        }
+      ],
+      "questionIds": [
+        "m1-q13",
+        "m1-q14",
+        "m1-q15"
+      ]
+    },
+    {
+      "id": "m1-l06",
+      "module": 1,
+      "order": 6,
+      "title": "Context window",
+      "titlePt": "Janela de contexto",
+      "explainPt": "A janela de contexto (context window) é a quantidade máxima de tokens que o modelo consegue considerar de uma vez. Ela inclui tudo: o prompt do sistema, o histórico da conversa, documentos colados e a própria resposta gerada.\n\nHoje os modelos têm janelas de 128 mil a mais de 1 milhão de tokens, dependendo do modelo. Quando a conversa passa do limite, as partes mais antigas precisam ser cortadas ou resumidas, e o modelo 'esquece' o que ficou de fora.\n\nO modelo não tem memória entre conversas por padrão: ele só 'sabe' o que está dentro da janela naquele momento. Além disso, janelas grandes custam mais e o modelo pode prestar menos atenção a informações no meio de textos muito longos (problema conhecido como 'lost in the middle').",
+      "terms": [
+        {
+          "en": "context window",
+          "pt": "janela de contexto: limite de tokens que o modelo vê de uma vez",
+          "say": "KON-tekst WIN-doh"
+        },
+        {
+          "en": "limit",
+          "pt": "limite",
+          "say": "LIM-it"
+        },
+        {
+          "en": "conversation history",
+          "pt": "histórico da conversa",
+          "say": "kon-ver-SEY-shun HIS-to-ree"
+        },
+        {
+          "en": "truncate",
+          "pt": "truncar, cortar o texto",
+          "say": "TRUN-keyt"
+        },
+        {
+          "en": "memory",
+          "pt": "memória",
+          "say": "MEM-o-ree"
+        },
+        {
+          "en": "lost in the middle",
+          "pt": "quando o modelo ignora informação no meio de textos longos",
+          "say": "lost in the MID-el"
+        }
+      ],
+      "example": "Você cola um contrato de 300 páginas em um chat com janela de 128k tokens. Se o contrato tiver 200k tokens, parte dele vai ficar de fora e o modelo não vai conseguir responder sobre essa parte. In English: \"The document is bigger than the context window.\"",
+      "shadow": [
+        "The context window is the maximum number of tokens the model can see.",
+        "It includes the prompt, the history, and the answer.",
+        "When the limit is reached, old messages are removed.",
+        "The model has no memory outside its context window."
+      ],
+      "listen": [
+        {
+          "en": "The model forgot the first instructions because the conversation was too long.",
+          "options": [
+            "O modelo ignorou as instruções porque eram difíceis.",
+            "O modelo esqueceu as primeiras instruções porque a conversa ficou longa demais.",
+            "O modelo não recebeu as instruções."
+          ],
+          "correct": 1
+        },
+        {
+          "en": "A bigger context window lets the model read longer documents, but it costs more.",
+          "options": [
+            "Uma janela de contexto maior deixa o modelo ler documentos mais longos, mas custa mais.",
+            "Uma janela de contexto maior é sempre mais barata.",
+            "Uma janela de contexto maior deixa o modelo mais inteligente."
+          ],
+          "correct": 0
+        }
+      ],
+      "questionIds": [
+        "m1-q16",
+        "m1-q17",
+        "m1-q18"
+      ]
+    },
+    {
+      "id": "m1-l07",
+      "module": 1,
+      "order": 7,
+      "title": "Training vs fine-tuning vs inference",
+      "titlePt": "Treinamento vs fine-tuning vs inferência",
+      "explainPt": "Treinamento (training ou pretraining) é a fase em que o modelo aprende do zero com uma quantidade gigante de dados. É muito caro: milhares de GPUs por semanas ou meses. O resultado é um modelo base.\n\nFine-tuning (ajuste fino) é treinar um pouco mais um modelo já treinado, com um conjunto de dados menor e específico. Serve para ensinar um estilo, um formato ou uma tarefa (por exemplo, seguir instruções ou responder como assistente). É bem mais barato que o treinamento inicial.\n\nInferência (inference) é quando o modelo já treinado é usado: você manda um prompt e ele gera a resposta. Na inferência os pesos não mudam. É o que acontece cada vez que você usa o ChatGPT ou chama uma API.",
+      "terms": [
+        {
+          "en": "training",
+          "pt": "treinamento: o modelo aprende ajustando os pesos",
+          "say": "TREY-ning"
+        },
+        {
+          "en": "pretraining",
+          "pt": "pré-treinamento: primeira fase, com dados enormes",
+          "say": "pree-TREY-ning"
+        },
+        {
+          "en": "fine-tuning",
+          "pt": "ajuste fino: treino extra com dados específicos",
+          "say": "fain-TOO-ning"
+        },
+        {
+          "en": "inference",
+          "pt": "inferência: usar o modelo para gerar respostas",
+          "say": "IN-fer-ens"
+        },
+        {
+          "en": "weights",
+          "pt": "pesos: os parâmetros do modelo",
+          "say": "weyts"
+        },
+        {
+          "en": "base model",
+          "pt": "modelo base: resultado do pré-treinamento",
+          "say": "beys MOD-el"
+        },
+        {
+          "en": "dataset",
+          "pt": "conjunto de dados",
+          "say": "DEY-ta-set"
+        }
+      ],
+      "example": "Analogia: training é a faculdade inteira (longa e cara), fine-tuning é um curso de especialização (curto e focado), inference é o profissional trabalhando e respondendo clientes. In English: \"Inference is when we use the trained model.\"",
+      "shadow": [
+        "Training is when the model learns from a huge dataset.",
+        "Fine-tuning adapts a trained model to a specific task.",
+        "Inference is when we use the model to get answers.",
+        "The weights change in training, but not in inference."
+      ],
+      "listen": [
+        {
+          "en": "Fine-tuning is much cheaper than training a model from scratch.",
+          "options": [
+            "Fine-tuning é tão caro quanto treinar do zero.",
+            "Fine-tuning é muito mais barato que treinar um modelo do zero.",
+            "Fine-tuning não precisa de dados."
+          ],
+          "correct": 1
+        },
+        {
+          "en": "Every time you send a message to the chatbot, the model runs inference.",
+          "options": [
+            "Toda vez que você manda uma mensagem, o modelo é treinado de novo.",
+            "O chatbot só usa inferência uma vez por dia.",
+            "Toda vez que você manda uma mensagem ao chatbot, o modelo faz inferência."
+          ],
+          "correct": 2
+        }
+      ],
+      "questionIds": [
+        "m1-q19",
+        "m1-q20",
+        "m1-q21"
+      ]
+    },
+    {
+      "id": "m1-l08",
+      "module": 1,
+      "order": 8,
+      "title": "Transformer and attention",
+      "titlePt": "Transformer e atenção",
+      "explainPt": "O Transformer é a arquitetura de rede neural usada por praticamente todos os LLMs modernos. Ela foi apresentada em 2017 no artigo 'Attention Is All You Need'. GPT significa 'Generative Pre-trained Transformer'.\n\nA peça principal é o mecanismo de atenção (attention), mais especificamente self-attention. Para cada token, o modelo calcula o quanto ele deve 'prestar atenção' em cada um dos outros tokens do contexto. Assim ele entende relações, como a quem um pronome se refere.\n\nDiferente das redes antigas (RNNs), que liam o texto palavra por palavra em sequência, o Transformer processa todos os tokens em paralelo durante o treinamento. Isso deixou o treinamento muito mais rápido em GPUs e permitiu criar modelos enormes. Um ponto negativo: o custo da atenção cresce muito com o tamanho do contexto (quadraticamente).",
+      "terms": [
+        {
+          "en": "transformer",
+          "pt": "arquitetura de rede neural usada pelos LLMs",
+          "say": "trans-FOR-mer"
+        },
+        {
+          "en": "attention",
+          "pt": "atenção: mecanismo que relaciona tokens entre si",
+          "say": "a-TEN-shun"
+        },
+        {
+          "en": "self-attention",
+          "pt": "cada token olha para os outros tokens da mesma sequência",
+          "say": "self a-TEN-shun"
+        },
+        {
+          "en": "architecture",
+          "pt": "arquitetura: a estrutura do modelo",
+          "say": "AR-ki-tek-cher"
+        },
+        {
+          "en": "parallel",
+          "pt": "paralelo: ao mesmo tempo",
+          "say": "PAR-a-lel"
+        },
+        {
+          "en": "relationship",
+          "pt": "relação",
+          "say": "ri-LEY-shun-ship"
+        }
+      ],
+      "example": "Na frase \"The animal didn't cross the street because it was too tired\", a atenção ajuda o modelo a entender que \"it\" se refere a \"animal\", e não a \"street\".",
+      "shadow": [
+        "Most modern LLMs are based on the transformer architecture.",
+        "Attention helps the model find relationships between tokens.",
+        "Transformers process tokens in parallel, so training is faster.",
+        "GPT stands for generative pre-trained transformer."
+      ],
+      "listen": [
+        {
+          "en": "Attention lets each token look at the other tokens in the context.",
+          "options": [
+            "A atenção permite que cada token olhe para os outros tokens do contexto.",
+            "A atenção apaga os tokens menos importantes.",
+            "A atenção só funciona com a primeira palavra."
+          ],
+          "correct": 0
+        },
+        {
+          "en": "Older models read text word by word, which made training slow.",
+          "options": [
+            "Modelos antigos liam o texto inteiro de uma vez.",
+            "Modelos novos leem palavra por palavra.",
+            "Modelos antigos liam o texto palavra por palavra, o que deixava o treinamento lento."
+          ],
+          "correct": 2
+        }
+      ],
+      "questionIds": [
+        "m1-q22",
+        "m1-q23"
+      ]
+    },
+    {
+      "id": "m1-l09",
+      "module": 1,
+      "order": 9,
+      "title": "Temperature, top-p and generation parameters",
+      "titlePt": "Temperature, top-p e parâmetros de geração",
+      "explainPt": "Quando o modelo calcula as probabilidades do próximo token, ainda é preciso escolher um. Os parâmetros de geração controlam essa escolha (sampling).\n\nTemperature controla a aleatoriedade. Temperatura baixa (perto de 0) faz o modelo escolher quase sempre o token mais provável: respostas mais previsíveis e consistentes, boas para código e fatos. Temperatura alta (ex.: 1.0 ou mais) dá mais chance a tokens menos prováveis: respostas mais criativas e variadas, mas com mais risco de erro.\n\nTop-p (nucleus sampling) limita a escolha aos tokens mais prováveis cuja soma de probabilidade chega a p (ex.: 0.9). Top-k limita aos k tokens mais prováveis. Max tokens define o tamanho máximo da resposta, e stop sequences dizem onde parar. Normalmente se ajusta temperature ou top-p, não os dois ao mesmo tempo.",
+      "terms": [
+        {
+          "en": "temperature",
+          "pt": "temperatura: controla a aleatoriedade da resposta",
+          "say": "TEM-per-a-cher"
+        },
+        {
+          "en": "top-p (nucleus sampling)",
+          "pt": "escolhe entre os tokens que somam probabilidade p",
+          "say": "top-PEE"
+        },
+        {
+          "en": "top-k",
+          "pt": "escolhe entre os k tokens mais prováveis",
+          "say": "top-KAY"
+        },
+        {
+          "en": "sampling",
+          "pt": "amostragem: como o próximo token é escolhido",
+          "say": "SAM-pling"
+        },
+        {
+          "en": "deterministic",
+          "pt": "determinístico: mesma entrada, mesma saída",
+          "say": "de-ter-mi-NIS-tik"
+        },
+        {
+          "en": "max tokens",
+          "pt": "número máximo de tokens na resposta",
+          "say": "maks TOH-kens"
+        },
+        {
+          "en": "random",
+          "pt": "aleatório",
+          "say": "RAN-dom"
+        }
+      ],
+      "example": "Gerar um teste unitário: temperature 0 a 0.2 (você quer consistência). Gerar 10 ideias de nome para um app: temperature 0.8 a 1.0 (você quer variedade). In English: \"For code, I would use a low temperature.\"",
+      "shadow": [
+        "Temperature controls how random the answer is.",
+        "A low temperature gives more predictable answers.",
+        "A high temperature gives more creative answers, with more risk.",
+        "Top-p chooses only from the most likely tokens."
+      ],
+      "listen": [
+        {
+          "en": "For factual questions and code, a low temperature is usually better.",
+          "options": [
+            "Para código, uma temperatura alta é melhor.",
+            "Para perguntas factuais e código, uma temperatura baixa geralmente é melhor.",
+            "A temperatura não afeta respostas de código."
+          ],
+          "correct": 1
+        },
+        {
+          "en": "If you set the temperature too high, the text can become strange or wrong.",
+          "options": [
+            "Se a temperatura for alta demais, o texto pode ficar estranho ou errado.",
+            "Temperatura alta deixa o texto mais curto.",
+            "Temperatura alta sempre melhora a qualidade."
+          ],
+          "correct": 0
+        }
+      ],
+      "questionIds": [
+        "m1-q24",
+        "m1-q25",
+        "m1-q26"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "m1-q01",
+      "module": 1,
+      "lesson": "m1-l01",
+      "level": 1,
+      "kind": "concept",
+      "q": "What is artificial intelligence?",
+      "qPt": "O que é inteligência artificial?",
+      "keys": [
+        [
+          "system",
+          "computer",
+          "machine",
+          "program",
+          "software"
+        ],
+        [
+          "task",
+          "job",
+          "work",
+          "do things"
+        ],
+        [
+          "human",
+          "people",
+          "intelligen",
+          "smart"
+        ],
+        [
+          "learn",
+          "data",
+          "pattern"
+        ]
+      ],
+      "keysPt": [
+        "sistemas/computadores",
+        "que fazem tarefas",
+        "que normalmente exigem inteligência humana",
+        "aprendendo com dados/padrões"
+      ],
+      "a1": "AI is when computers do tasks that need human intelligence. They learn from data.",
+      "a2": "Artificial intelligence is a field of computer science that builds systems that can do tasks that usually need human intelligence, like understanding language or recognizing images. Most modern AI learns these skills from data.",
+      "a3": "Artificial intelligence is the field of building computer systems that can perform tasks we normally associate with human intelligence, like understanding language, recognizing images, or making decisions. Most modern AI isn't programmed rule by rule. Instead, it learns statistical patterns from large amounts of data. Large language models are one example of this approach.",
+      "tipPt": "Mencione 'tarefas que exigem inteligência humana' e 'aprende com dados'. Dar um exemplo concreto (tradução, chatbot) mostra segurança.",
+      "followUp": "Can you give me an example of AI that you use every day?"
+    },
+    {
+      "id": "m1-q02",
+      "module": 1,
+      "lesson": "m1-l01",
+      "level": 2,
+      "kind": "concept",
+      "q": "What is the difference between narrow AI and general AI?",
+      "qPt": "Qual é a diferença entre IA estreita e IA geral?",
+      "keys": [
+        [
+          "narrow",
+          "specific",
+          "one task",
+          "single"
+        ],
+        [
+          "general",
+          "agi",
+          "any task",
+          "everything",
+          "all task"
+        ],
+        [
+          "human",
+          "people"
+        ],
+        [
+          "today",
+          "now",
+          "current",
+          "exist",
+          "not yet"
+        ]
+      ],
+      "keysPt": [
+        "IA estreita faz uma tarefa específica",
+        "IA geral (AGI) faria qualquer tarefa",
+        "no nível humano",
+        "hoje só existe IA estreita / AGI ainda não existe"
+      ],
+      "a1": "Narrow AI does one specific task. General AI could do any task like a human, but it doesn't exist yet.",
+      "a2": "Narrow AI is built for a specific task, like a spam filter or a translation tool. General AI, or AGI, is the idea of a system that can do any intellectual task a human can do. All the AI we use today is still considered narrow, or at least not true AGI.",
+      "a3": "Narrow AI is designed to do a specific task or a limited set of tasks, like detecting spam, recommending videos, or translating text. General AI, often called AGI, refers to a hypothetical system that could learn and perform any intellectual task a human can. Modern LLMs are much more general than older systems, because they can write, code, and summarize, but they still have clear limitations, so most people don't consider them true AGI.",
+      "tipPt": "Não diga que os LLMs já são AGI. Uma resposta equilibrada (são amplos, mas têm limitações) soa mais profissional.",
+      "followUp": "Do you think large language models are closer to narrow AI or general AI? Why?"
+    },
+    {
+      "id": "m1-q03",
+      "module": 1,
+      "lesson": "m1-l01",
+      "level": 3,
+      "kind": "intro",
+      "q": "Why are you interested in working with AI, especially in AI training or evaluation?",
+      "qPt": "Por que você tem interesse em trabalhar com IA, especialmente em treinamento ou avaliação de IA?",
+      "keys": [
+        [
+          "interest",
+          "passion",
+          "like",
+          "love",
+          "excit",
+          "curious"
+        ],
+        [
+          "developer",
+          "code",
+          "programm",
+          "react",
+          "javascript",
+          "web"
+        ],
+        [
+          "improve",
+          "better",
+          "quality",
+          "help"
+        ],
+        [
+          "evaluat",
+          "review",
+          "feedback",
+          "train"
+        ]
+      ],
+      "keysPt": [
+        "mostrar interesse/paixão",
+        "conectar com sua experiência de desenvolvedor",
+        "ajudar a melhorar a qualidade dos modelos",
+        "avaliação/feedback/treinamento"
+      ],
+      "a1": "I'm a web developer and I love AI. I want to help make AI models better.",
+      "a2": "I'm a web developer and I use AI tools every day in my work. I'm interested in AI training because I want to help improve the quality of these models. My coding experience helps me check if the answers are correct.",
+      "a3": "I work as a web developer with React, Next.js, and TypeScript, and I use AI coding tools almost every day. I've seen how useful they are, but also how they sometimes make mistakes. That's why AI evaluation interests me: careful human feedback is one of the main ways these models get better. I think my coding background lets me judge technical answers accurately and explain clearly why one response is better than another.",
+      "tipPt": "Conecte sua experiência real (React, Next.js, TypeScript) com a vaga. Mostre que você entende que o feedback humano melhora os modelos.",
+      "followUp": "What is one mistake you have seen an AI tool make in your own work?"
+    },
+    {
+      "id": "m1-q04",
+      "module": 1,
+      "lesson": "m1-l02",
+      "level": 1,
+      "kind": "concept",
+      "q": "What is machine learning?",
+      "qPt": "O que é machine learning?",
+      "keys": [
+        [
+          "learn",
+          "train"
+        ],
+        [
+          "data",
+          "example"
+        ],
+        [
+          "pattern",
+          "predict",
+          "decision"
+        ],
+        [
+          "rule",
+          "without program",
+          "not program",
+          "explicit"
+        ]
+      ],
+      "keysPt": [
+        "o computador aprende",
+        "a partir de dados/exemplos",
+        "para encontrar padrões ou fazer previsões",
+        "sem regras escritas à mão"
+      ],
+      "a1": "Machine learning is when a computer learns from data. It finds patterns and makes predictions.",
+      "a2": "Machine learning is a part of AI where a computer learns from examples instead of following rules written by a programmer. It finds patterns in data and uses them to make predictions.",
+      "a3": "Machine learning is a branch of AI where a model learns patterns from data instead of being explicitly programmed with rules. During training, the algorithm adjusts its parameters to reduce errors on examples. After that, it can make predictions on new data it hasn't seen before, like classifying emails or predicting prices.",
+      "tipPt": "O ponto-chave é o contraste: aprender com dados vs. regras escritas à mão.",
+      "followUp": "Can you give an example of a machine learning problem?"
+    },
+    {
+      "id": "m1-q05",
+      "module": 1,
+      "lesson": "m1-l02",
+      "level": 2,
+      "kind": "concept",
+      "q": "What is the difference between machine learning and deep learning?",
+      "qPt": "Qual é a diferença entre machine learning e deep learning?",
+      "keys": [
+        [
+          "subset",
+          "part of",
+          "type of",
+          "inside"
+        ],
+        [
+          "neural",
+          "network"
+        ],
+        [
+          "layer",
+          "deep"
+        ],
+        [
+          "data",
+          "gpu",
+          "compute",
+          "power"
+        ]
+      ],
+      "keysPt": [
+        "deep learning é um subconjunto de ML",
+        "usa redes neurais",
+        "com muitas camadas",
+        "precisa de mais dados e poder computacional"
+      ],
+      "a1": "Deep learning is a type of machine learning. It uses neural networks with many layers.",
+      "a2": "Deep learning is a subset of machine learning. It uses neural networks with many layers, and it can learn complex features directly from raw data like images or text. It usually needs more data and more computing power.",
+      "a3": "Deep learning is a subset of machine learning that uses neural networks with many layers. Classic machine learning often depends on features that humans design, while deep learning can learn useful features directly from raw data like pixels or text. The trade-off is that deep learning usually needs much more data and GPU power. Large language models are a good example of deep learning.",
+      "tipPt": "Use a palavra 'subset'. Mencionar que LLMs são deep learning conecta com a vaga.",
+      "followUp": "Why does deep learning need so much computing power?"
+    },
+    {
+      "id": "m1-q06",
+      "module": 1,
+      "lesson": "m1-l02",
+      "level": 3,
+      "kind": "concept",
+      "q": "What is a neural network, in simple terms?",
+      "qPt": "O que é uma rede neural, em termos simples?",
+      "keys": [
+        [
+          "layer"
+        ],
+        [
+          "neuron",
+          "node",
+          "unit"
+        ],
+        [
+          "weight",
+          "parameter",
+          "number"
+        ],
+        [
+          "learn",
+          "train",
+          "adjust"
+        ]
+      ],
+      "keysPt": [
+        "camadas",
+        "de neurônios/nós",
+        "conectados por pesos (parâmetros)",
+        "que são ajustados no treinamento"
+      ],
+      "a1": "A neural network is a model with layers of neurons. It learns by changing its weights.",
+      "a2": "A neural network is a model made of layers of small units called neurons. Each connection has a weight, and during training the network adjusts these weights so its outputs get closer to the right answers.",
+      "a3": "A neural network is a model loosely inspired by the brain. It has layers of simple units, or neurons, and each connection between them has a weight, which is just a number. Input data goes through the layers, and the network produces an output. During training, an algorithm called backpropagation adjusts the weights to reduce the error. Modern LLMs are huge neural networks with billions of these parameters.",
+      "tipPt": "Não precisa de matemática. Camadas + pesos + ajuste no treinamento já é uma ótima resposta.",
+      "followUp": "What do we mean when we say a model has billions of parameters?"
+    },
+    {
+      "id": "m1-q07",
+      "module": 1,
+      "lesson": "m1-l03",
+      "level": 1,
+      "kind": "concept",
+      "q": "What is a large language model?",
+      "qPt": "O que é um modelo de linguagem grande (LLM)?",
+      "keys": [
+        [
+          "model",
+          "ai",
+          "neural"
+        ],
+        [
+          "text",
+          "language",
+          "word"
+        ],
+        [
+          "train",
+          "learn",
+          "data"
+        ],
+        [
+          "generat",
+          "answer",
+          "write",
+          "create",
+          "predict"
+        ]
+      ],
+      "keysPt": [
+        "um modelo de IA",
+        "de linguagem/texto",
+        "treinado com muitos dados",
+        "que gera texto/responde"
+      ],
+      "a1": "An LLM is an AI model trained on a lot of text. It can understand and write text.",
+      "a2": "A large language model is a deep learning model trained on a huge amount of text. It learns patterns in language, so it can answer questions, summarize, translate, and write code.",
+      "a3": "A large language model is a deep learning model, usually based on the transformer architecture, trained on a massive amount of text like books, websites, and code. It has billions of parameters and learns statistical patterns in language. Because of that, it can generate fluent text and do many tasks from a simple prompt, like answering questions, summarizing, or writing code. Examples are GPT, Claude, Gemini, and Llama.",
+      "tipPt": "Diga 'trained on a huge amount of text' e cite exemplos. Isso mostra que você conhece o mercado.",
+      "followUp": "Why do we call it large?"
+    },
+    {
+      "id": "m1-q08",
+      "module": 1,
+      "lesson": "m1-l03",
+      "level": 2,
+      "kind": "concept",
+      "q": "What are some common uses of LLMs?",
+      "qPt": "Quais são alguns usos comuns dos LLMs?",
+      "keys": [
+        [
+          "code",
+          "coding",
+          "program"
+        ],
+        [
+          "summar",
+          "translat",
+          "write",
+          "writing"
+        ],
+        [
+          "question",
+          "chat",
+          "assistant",
+          "support"
+        ],
+        [
+          "search",
+          "extract",
+          "classif",
+          "analy"
+        ]
+      ],
+      "keysPt": [
+        "programação/código",
+        "resumir/traduzir/escrever",
+        "responder perguntas, chatbots, suporte",
+        "extrair informação, classificar, analisar"
+      ],
+      "a1": "People use LLMs to write code, answer questions, and summarize text.",
+      "a2": "LLMs are used for many things: writing and explaining code, answering questions in chatbots, summarizing long documents, and translating text. Companies also use them for customer support.",
+      "a3": "Some of the most common uses are coding assistants that write, explain, and review code, chat assistants that answer questions, and tools that summarize or translate long documents. Companies also use LLMs for customer support, extracting information from documents, and classifying text. More recently, LLMs are used as agents that can call tools and complete multi-step tasks.",
+      "tipPt": "Cite pelo menos três usos. Como dev, comece por código: é sua área forte.",
+      "followUp": "How do you use LLMs in your own work as a developer?"
+    },
+    {
+      "id": "m1-q09",
+      "module": 1,
+      "lesson": "m1-l03",
+      "level": 4,
+      "kind": "scenario",
+      "q": "Imagine a friend with no technical background asks you how ChatGPT works. How would you explain it?",
+      "qPt": "Imagine que um amigo sem conhecimento técnico pergunta como o ChatGPT funciona. Como você explicaria?",
+      "keys": [
+        [
+          "text",
+          "read",
+          "book",
+          "internet"
+        ],
+        [
+          "pattern",
+          "learn"
+        ],
+        [
+          "next word",
+          "predict",
+          "guess"
+        ],
+        [
+          "mistake",
+          "wrong",
+          "error",
+          "not always",
+          "check"
+        ],
+        [
+          "human",
+          "feedback",
+          "people"
+        ]
+      ],
+      "keysPt": [
+        "leu muito texto (livros, internet)",
+        "aprendeu padrões",
+        "prevê a próxima palavra",
+        "pode errar, precisa conferir",
+        "foi melhorado com feedback humano"
+      ],
+      "a1": "I would say it read a lot of text and learned patterns. It guesses the next word again and again. Sometimes it makes mistakes.",
+      "a2": "I'd say ChatGPT learned from a huge amount of text from books and the internet. When you ask something, it predicts the next word, then the next one, again and again, until it builds an answer. It's very good, but it can make mistakes, so you should check important information.",
+      "a3": "I'd keep it simple. I'd say ChatGPT read a huge amount of text, like books, websites, and code, and learned the patterns of how people write. When you ask a question, it writes the answer one small piece at a time, always predicting what should come next. After that first training, people gave it feedback on good and bad answers, so it learned to be more helpful and polite. But it doesn't truly understand like a person, so it can sound confident and still be wrong. That's why you should double-check important facts.",
+      "tipPt": "Questão de comunicação: o entrevistador avalia clareza. Use uma ordem lógica: aprendeu com texto, prevê o próximo pedaço, feedback humano, limitações.",
+      "followUp": "Why can a model sound confident even when it is wrong?"
+    },
+    {
+      "id": "m1-q10",
+      "module": 1,
+      "lesson": "m1-l04",
+      "level": 1,
+      "kind": "concept",
+      "q": "How does a language model generate text?",
+      "qPt": "Como um modelo de linguagem gera texto?",
+      "keys": [
+        [
+          "predict",
+          "guess"
+        ],
+        [
+          "next"
+        ],
+        [
+          "token",
+          "word"
+        ],
+        [
+          "one by one",
+          "one at a time",
+          "again",
+          "repeat",
+          "each"
+        ]
+      ],
+      "keysPt": [
+        "prevê/adivinha",
+        "o próximo",
+        "token/palavra",
+        "um por vez, repetindo"
+      ],
+      "a1": "It predicts the next word, one by one, until the answer is complete.",
+      "a2": "A language model predicts the next token based on the text before it. Then it adds that token and predicts the next one again. It repeats this until the answer is done.",
+      "a3": "A language model generates text by predicting the next token. It looks at the prompt and everything it has written so far, calculates a probability for every token in its vocabulary, and picks one. Then it adds that token to the text and repeats the process. This is called autoregressive generation, and it continues until the model produces a stop token or reaches a length limit.",
+      "tipPt": "A expressão de ouro é 'predicts the next token'. Se puder, diga 'one token at a time'.",
+      "followUp": "How does the model decide when to stop?"
+    },
+    {
+      "id": "m1-q11",
+      "module": 1,
+      "lesson": "m1-l04",
+      "level": 2,
+      "kind": "concept",
+      "q": "What does 'next-token prediction' mean during training?",
+      "qPt": "O que significa 'previsão do próximo token' durante o treinamento?",
+      "keys": [
+        [
+          "text",
+          "sentence",
+          "data"
+        ],
+        [
+          "guess",
+          "predict"
+        ],
+        [
+          "next",
+          "following"
+        ],
+        [
+          "mistake",
+          "error",
+          "wrong",
+          "loss"
+        ],
+        [
+          "adjust",
+          "update",
+          "change",
+          "weight",
+          "parameter"
+        ]
+      ],
+      "keysPt": [
+        "o modelo lê textos",
+        "tenta prever",
+        "o próximo token",
+        "compara com a resposta certa (erro/loss)",
+        "e ajusta seus pesos"
+      ],
+      "a1": "The model reads text and tries to guess the next word. When it is wrong, it changes its weights.",
+      "a2": "During training, the model sees real text and tries to predict each next token. We compare its guess with the real token, and if it's wrong, we adjust the model's weights a little. After billions of examples, it becomes very good at it.",
+      "a3": "In training, we take real text and, at every position, ask the model to predict the next token. We compare its predicted probabilities with the actual token using a loss function, usually cross-entropy. Then backpropagation updates the weights to make the correct token more likely next time. The nice thing is that it's self-supervised: the text itself provides the labels, so we can train on huge amounts of data without human labeling.",
+      "tipPt": "Mencionar 'self-supervised' (o próprio texto fornece a resposta) impressiona e é correto.",
+      "followUp": "Why don't we need humans to label the data for this?"
+    },
+    {
+      "id": "m1-q12",
+      "module": 1,
+      "lesson": "m1-l04",
+      "level": 3,
+      "kind": "concept",
+      "q": "If an LLM only predicts the next token, how can it write code or solve problems?",
+      "qPt": "Se um LLM só prevê o próximo token, como ele consegue escrever código ou resolver problemas?",
+      "keys": [
+        [
+          "scale",
+          "large",
+          "huge",
+          "billion",
+          "lot of"
+        ],
+        [
+          "pattern",
+          "learn"
+        ],
+        [
+          "code",
+          "example",
+          "data"
+        ],
+        [
+          "emerg",
+          "skill",
+          "abilit"
+        ],
+        [
+          "not perfect",
+          "mistake",
+          "limit",
+          "understand"
+        ]
+      ],
+      "keysPt": [
+        "escala (muitos dados e parâmetros)",
+        "aprende padrões",
+        "viu muitos exemplos de código",
+        "habilidades emergem",
+        "mas tem limitações"
+      ],
+      "a1": "It learned from a huge amount of text and code. To guess the next token well, it needs to learn many patterns.",
+      "a2": "To predict the next token really well, the model has to learn a lot about grammar, facts, and logic. It saw millions of examples of code, so it learned common patterns. With enough scale, these skills appear, but it can still make mistakes.",
+      "a3": "Predicting the next token sounds simple, but doing it well on a huge and diverse dataset forces the model to learn a lot: syntax, facts, common reasoning steps, and how code is structured. With enough data and parameters, abilities like writing functions or following instructions emerge from that objective. Fine-tuning and RLHF then make these abilities more useful. Still, it's pattern-based, so it can produce code that looks correct but has bugs, which is why human evaluation matters.",
+      "tipPt": "Mostre equilíbrio: a tarefa é simples, mas a escala gera habilidades; ainda assim, erros acontecem. Isso conecta com o trabalho de avaliação.",
+      "followUp": "Can you give an example where an AI wrote code that looked right but had a bug?"
+    },
+    {
+      "id": "m1-q13",
+      "module": 1,
+      "lesson": "m1-l05",
+      "level": 1,
+      "kind": "concept",
+      "q": "What is a token in a language model?",
+      "qPt": "O que é um token em um modelo de linguagem?",
+      "keys": [
+        [
+          "piece",
+          "part",
+          "chunk",
+          "unit",
+          "small"
+        ],
+        [
+          "text",
+          "word",
+          "subword",
+          "character"
+        ],
+        [
+          "model",
+          "process",
+          "input",
+          "read"
+        ]
+      ],
+      "keysPt": [
+        "token é um pedaço/unidade",
+        "de texto (palavra ou parte de palavra)",
+        "que o modelo processa"
+      ],
+      "a1": "A token is a small piece of text, like a word or part of a word. The model reads tokens.",
+      "a2": "A token is the basic unit of text that a model processes. It can be a whole word, part of a word, or punctuation. In English, one token is about four characters.",
+      "a3": "A token is the basic unit of text a language model works with. A tokenizer splits text into tokens, which can be whole words, subwords, punctuation, or spaces, and maps each one to a numeric ID. In English, a token is roughly four characters, or about three quarters of a word. Context limits and API pricing are both measured in tokens.",
+      "tipPt": "Diga que token não é sempre uma palavra inteira. Esse é o erro mais comum.",
+      "followUp": "Why do APIs charge by token instead of by word?"
+    },
+    {
+      "id": "m1-q14",
+      "module": 1,
+      "lesson": "m1-l05",
+      "level": 2,
+      "kind": "concept",
+      "q": "What is tokenization and why does it matter?",
+      "qPt": "O que é tokenização e por que ela importa?",
+      "keys": [
+        [
+          "split",
+          "break",
+          "divide",
+          "cut"
+        ],
+        [
+          "number",
+          "id"
+        ],
+        [
+          "cost",
+          "price",
+          "pay",
+          "limit",
+          "context"
+        ],
+        [
+          "language",
+          "portuguese",
+          "letter",
+          "count"
+        ]
+      ],
+      "keysPt": [
+        "dividir o texto em tokens",
+        "e converter em números (IDs)",
+        "afeta custo e limite de contexto",
+        "afeta idiomas diferentes e tarefas como contar letras"
+      ],
+      "a1": "Tokenization splits text into tokens and turns them into numbers. It matters because cost and limits use tokens.",
+      "a2": "Tokenization is the process of splitting text into tokens and converting each token into a number the model can use. It matters because API costs and context limits are counted in tokens, and some languages need more tokens than English.",
+      "a3": "Tokenization is the step that splits raw text into tokens and maps each one to an ID, usually with a subword method like BPE. It matters for a few reasons. First, cost and context window size are measured in tokens, so a prompt in Portuguese might be more expensive than the same prompt in English. Second, it explains some strange model behaviors, like having trouble counting the letters in a word, because the model sees tokens, not individual letters.",
+      "tipPt": "O exemplo de contar letras (ex.: quantos 'r' em 'strawberry') é ótimo para mostrar entendimento real.",
+      "followUp": "Why might a model struggle to count the letters in a word?"
+    },
+    {
+      "id": "m1-q15",
+      "module": 1,
+      "lesson": "m1-l05",
+      "level": 4,
+      "kind": "scenario",
+      "q": "A user complains that their long prompt in Portuguese is expensive and sometimes gets cut off. How would you explain the problem and what would you suggest?",
+      "qPt": "Um usuário reclama que seu prompt longo em português é caro e às vezes é cortado. Como você explicaria o problema e o que sugeriria?",
+      "keys": [
+        [
+          "token"
+        ],
+        [
+          "portuguese",
+          "language",
+          "more token",
+          "english"
+        ],
+        [
+          "context",
+          "limit",
+          "window",
+          "cut"
+        ],
+        [
+          "short",
+          "remov",
+          "summar",
+          "less",
+          "reduc"
+        ],
+        [
+          "cost",
+          "price",
+          "expensive",
+          "money"
+        ]
+      ],
+      "keysPt": [
+        "tudo é medido em tokens",
+        "português gera mais tokens que inglês",
+        "o limite da janela de contexto causa o corte",
+        "sugerir encurtar, remover partes, resumir",
+        "isso também reduz o custo"
+      ],
+      "a1": "The model counts tokens. Portuguese uses more tokens, so it costs more and can pass the limit. I would make the prompt shorter.",
+      "a2": "I'd explain that cost and limits are measured in tokens, and Portuguese text usually needs more tokens than English. If the prompt plus the answer is bigger than the context window, it gets cut. I'd suggest removing repeated text, summarizing long parts, and checking the token count before sending.",
+      "a3": "First I'd explain that everything is measured in tokens, not words, and Portuguese usually produces more tokens than English for the same content, so the price goes up. The cut-off happens when the prompt plus the expected output goes over the context window or the max output setting. My suggestions would be to remove repeated or unnecessary text, summarize long documents first, send only the relevant parts, and use a tokenizer tool to count tokens before sending. If the output is the part being cut, they can also increase the max tokens setting or ask for a shorter answer.",
+      "tipPt": "Estruture: 1) explique a causa (tokens + contexto), 2) dê soluções práticas. Entrevistadores gostam de respostas organizadas com 'First... Then...'.",
+      "followUp": "What is the difference between the prompt being too long and the answer being cut off?"
+    },
+    {
+      "id": "m1-q16",
+      "module": 1,
+      "lesson": "m1-l06",
+      "level": 1,
+      "kind": "concept",
+      "q": "What is a context window?",
+      "qPt": "O que é uma janela de contexto?",
+      "keys": [
+        [
+          "maximum",
+          "max",
+          "limit",
+          "how much",
+          "amount"
+        ],
+        [
+          "token",
+          "text"
+        ],
+        [
+          "see",
+          "read",
+          "remember",
+          "process",
+          "consider",
+          "at once",
+          "one time"
+        ]
+      ],
+      "keysPt": [
+        "o limite máximo",
+        "de tokens/texto",
+        "que o modelo consegue ver de uma vez"
+      ],
+      "a1": "The context window is the maximum number of tokens the model can see at one time.",
+      "a2": "The context window is the limit of tokens the model can process at once. It includes the prompt, the conversation history, and the answer the model writes.",
+      "a3": "The context window is the maximum number of tokens a model can take into account at one time. It includes everything: the system prompt, the conversation history, any documents, and the tokens the model generates. Modern models range from about 128 thousand to over a million tokens. Anything outside that window is simply not visible to the model.",
+      "tipPt": "Lembre de dizer que a resposta gerada também conta no limite. Muita gente esquece.",
+      "followUp": "Does the model's own answer count toward the context window?"
+    },
+    {
+      "id": "m1-q17",
+      "module": 1,
+      "lesson": "m1-l06",
+      "level": 2,
+      "kind": "concept",
+      "q": "What happens when a conversation becomes longer than the context window?",
+      "qPt": "O que acontece quando uma conversa fica maior que a janela de contexto?",
+      "keys": [
+        [
+          "old",
+          "first",
+          "early",
+          "beginning"
+        ],
+        [
+          "remov",
+          "cut",
+          "drop",
+          "delet",
+          "truncat",
+          "summar"
+        ],
+        [
+          "forget",
+          "lose",
+          "not see",
+          "lost"
+        ],
+        [
+          "error",
+          "fail",
+          "instruction"
+        ]
+      ],
+      "keysPt": [
+        "as mensagens antigas",
+        "são cortadas ou resumidas",
+        "o modelo esquece essa informação",
+        "ou a API retorna erro; instruções podem se perder"
+      ],
+      "a1": "The oldest messages are removed. The model forgets them.",
+      "a2": "Usually the oldest messages are cut or summarized so the conversation fits. The model then forgets that information, so it might ignore earlier instructions. Some APIs just return an error if the input is too long.",
+      "a3": "It depends on the application. Many chat apps drop or summarize the oldest messages so the conversation fits, which means the model loses that information and may forget earlier instructions or details. If you call an API directly with too many tokens, you usually get an error instead. Even before the limit, very long contexts can reduce quality, because models sometimes pay less attention to information in the middle.",
+      "tipPt": "Mostre que conhece os dois comportamentos: o app corta/resume ou a API dá erro.",
+      "followUp": "How could an application keep important information when the conversation gets very long?"
+    },
+    {
+      "id": "m1-q18",
+      "module": 1,
+      "lesson": "m1-l06",
+      "level": 3,
+      "kind": "concept",
+      "q": "Does an LLM remember previous conversations? Explain.",
+      "qPt": "Um LLM lembra de conversas anteriores? Explique.",
+      "keys": [
+        [
+          "no",
+          "not",
+          "doesn't",
+          "don't"
+        ],
+        [
+          "context",
+          "window",
+          "inside",
+          "current"
+        ],
+        [
+          "weight",
+          "train",
+          "change",
+          "learn"
+        ],
+        [
+          "memory",
+          "save",
+          "store",
+          "database",
+          "feature",
+          "send again"
+        ]
+      ],
+      "keysPt": [
+        "não, por padrão",
+        "só vê o que está na janela de contexto atual",
+        "o chat não muda os pesos do modelo",
+        "recursos de memória salvam e reenviam informações"
+      ],
+      "a1": "No. The model only sees what is in the context window. Some apps save notes and send them again.",
+      "a2": "By default, no. The model only knows what's in the current context window, and chatting with it doesn't change its weights. Some apps have a memory feature, but it works by saving information and adding it back into the prompt.",
+      "a3": "Not by itself. The model is stateless: each request only includes what's inside the context window, and talking to it doesn't update its weights. When a chat seems to remember things, it's because the app sends the conversation history again with every message. Products with memory features store facts in a database and insert the relevant ones into the prompt later. So the memory lives in the application, not in the model.",
+      "tipPt": "A palavra 'stateless' é ótima aqui. Explique que a memória é do aplicativo, não do modelo.",
+      "followUp": "As a developer, how would you build a simple memory feature for a chatbot?"
+    },
+    {
+      "id": "m1-q19",
+      "module": 1,
+      "lesson": "m1-l07",
+      "level": 1,
+      "kind": "concept",
+      "q": "What is inference?",
+      "qPt": "O que é inferência?",
+      "keys": [
+        [
+          "use",
+          "using",
+          "run"
+        ],
+        [
+          "train",
+          "already",
+          "finished"
+        ],
+        [
+          "answer",
+          "output",
+          "generat",
+          "response",
+          "predict"
+        ],
+        [
+          "prompt",
+          "input",
+          "question"
+        ]
+      ],
+      "keysPt": [
+        "usar o modelo",
+        "já treinado",
+        "para gerar respostas",
+        "a partir de um prompt/entrada"
+      ],
+      "a1": "Inference is when we use a trained model. We send a prompt and get an answer.",
+      "a2": "Inference is the phase when we use a model that is already trained. You send a prompt, and the model generates a response. The weights don't change during inference.",
+      "a3": "Inference is when a trained model is used to make predictions, which for an LLM means generating a response to a prompt. The model's weights are fixed during inference; it's not learning anything. Every API call or chat message is an inference request, and the cost and speed of inference matter a lot in production.",
+      "tipPt": "Diga claramente que na inferência os pesos não mudam. Isso diferencia de treinamento.",
+      "followUp": "Why is inference speed important for real products?"
+    },
+    {
+      "id": "m1-q20",
+      "module": 1,
+      "lesson": "m1-l07",
+      "level": 2,
+      "kind": "concept",
+      "q": "What is the difference between training and fine-tuning?",
+      "qPt": "Qual é a diferença entre treinamento e fine-tuning?",
+      "keys": [
+        [
+          "scratch",
+          "beginning",
+          "zero",
+          "first",
+          "huge",
+          "large"
+        ],
+        [
+          "already",
+          "existing",
+          "pretrained",
+          "trained model"
+        ],
+        [
+          "small",
+          "specific",
+          "task",
+          "special"
+        ],
+        [
+          "cheap",
+          "cost",
+          "expensive",
+          "time",
+          "gpu"
+        ]
+      ],
+      "keysPt": [
+        "treinamento começa do zero com dados enormes",
+        "fine-tuning parte de um modelo já treinado",
+        "usa dados menores e específicos",
+        "fine-tuning é muito mais barato e rápido"
+      ],
+      "a1": "Training starts from zero with a lot of data. Fine-tuning takes a trained model and trains it a little more for a specific task.",
+      "a2": "Training, or pretraining, teaches a model from scratch with a huge dataset, and it's very expensive. Fine-tuning starts from an already trained model and trains it on a smaller, specific dataset to adapt it to a task or style. It's much cheaper and faster.",
+      "a3": "Pretraining builds the model from scratch on a massive general dataset, usually trillions of tokens, and it takes huge GPU clusters for weeks or months. Fine-tuning takes that pretrained model and continues training on a much smaller, focused dataset, for example instruction-response pairs or examples from a specific domain. It reuses the general knowledge from pretraining and changes the behavior or style, so it's far cheaper. Methods like LoRA make it even cheaper by updating only a small number of extra parameters.",
+      "tipPt": "Analogia útil: faculdade vs especialização. Se lembrar, cite LoRA como forma barata de fine-tuning.",
+      "followUp": "When would a company choose fine-tuning instead of just writing a better prompt?"
+    },
+    {
+      "id": "m1-q21",
+      "module": 1,
+      "lesson": "m1-l07",
+      "level": 4,
+      "kind": "scenario",
+      "q": "A company wants their chatbot to answer questions about their internal documents. Should they train a new model, fine-tune one, or do something else? Explain your reasoning.",
+      "qPt": "Uma empresa quer que seu chatbot responda perguntas sobre documentos internos. Ela deve treinar um modelo novo, fazer fine-tuning ou outra coisa? Explique seu raciocínio.",
+      "keys": [
+        [
+          "not train",
+          "too expensive",
+          "expensive",
+          "cost",
+          "scratch"
+        ],
+        [
+          "rag",
+          "retriev",
+          "search",
+          "database",
+          "document"
+        ],
+        [
+          "context",
+          "prompt"
+        ],
+        [
+          "fine-tun",
+          "fine tun",
+          "style",
+          "format"
+        ],
+        [
+          "update",
+          "change",
+          "new document",
+          "source"
+        ]
+      ],
+      "keysPt": [
+        "treinar do zero é caro demais",
+        "usar RAG: buscar os documentos relevantes",
+        "e colocá-los no contexto/prompt",
+        "fine-tuning é melhor para estilo/formato do que para fatos",
+        "RAG facilita atualizar e citar fontes"
+      ],
+      "a1": "Training a new model is too expensive. I would use RAG: search the documents and put the right parts in the prompt.",
+      "a2": "Training a new model from scratch is too expensive and not needed. I'd recommend RAG, retrieval-augmented generation: you search the internal documents for relevant parts and add them to the prompt. Fine-tuning is better for style or format, not for facts that change often.",
+      "a3": "I wouldn't train a new model; that's extremely expensive and unnecessary. My first recommendation would be RAG, retrieval-augmented generation. You index the documents, and for each question you retrieve the most relevant chunks and put them in the model's context, so the answer is grounded in real sources. It's easy to update when documents change, and the bot can cite where the answer came from. Fine-tuning could be added later if they need a specific tone or output format, but it's not a good way to teach facts that change often.",
+      "tipPt": "A resposta esperada é RAG. Mostre o raciocínio com prós e contras de cada opção; isso é o que diferencia nível 4.",
+      "followUp": "What could go wrong with a RAG system, and how would you evaluate it?"
+    },
+    {
+      "id": "m1-q22",
+      "module": 1,
+      "lesson": "m1-l08",
+      "level": 1,
+      "kind": "concept",
+      "q": "What is a transformer in AI?",
+      "qPt": "O que é um transformer em IA?",
+      "keys": [
+        [
+          "architecture",
+          "type of",
+          "design",
+          "structure",
+          "neural"
+        ],
+        [
+          "llm",
+          "gpt",
+          "language model",
+          "modern"
+        ],
+        [
+          "attention"
+        ],
+        [
+          "parallel",
+          "fast",
+          "same time"
+        ]
+      ],
+      "keysPt": [
+        "uma arquitetura de rede neural",
+        "usada pelos LLMs modernos (GPT)",
+        "baseada em atenção",
+        "processa tokens em paralelo"
+      ],
+      "a1": "A transformer is a type of neural network. Most LLMs use it. It uses attention.",
+      "a2": "A transformer is a neural network architecture used by almost all modern LLMs, like GPT. Its main idea is attention, which helps the model understand how tokens relate to each other.",
+      "a3": "The transformer is the neural network architecture behind almost all modern LLMs; the T in GPT stands for transformer. It was introduced in 2017 in the paper 'Attention Is All You Need'. Its key component is self-attention, which lets every token weigh the other tokens in the context. Because it processes tokens in parallel instead of one by one, it trains efficiently on GPUs, which made today's large models possible.",
+      "tipPt": "Cite que o T de GPT é transformer e o artigo de 2017. Fatos simples que mostram base sólida.",
+      "followUp": "What does attention do inside a transformer?"
+    },
+    {
+      "id": "m1-q23",
+      "module": 1,
+      "lesson": "m1-l08",
+      "level": 3,
+      "kind": "concept",
+      "q": "Can you explain the attention mechanism in simple words, and why it was such an important idea?",
+      "qPt": "Você pode explicar o mecanismo de atenção em palavras simples e por que foi uma ideia tão importante?",
+      "keys": [
+        [
+          "each token",
+          "every token",
+          "every word",
+          "each word",
+          "other token",
+          "other word"
+        ],
+        [
+          "relat",
+          "important",
+          "focus",
+          "relevant",
+          "weight"
+        ],
+        [
+          "context",
+          "meaning",
+          "refer",
+          "pronoun"
+        ],
+        [
+          "parallel",
+          "fast",
+          "rnn",
+          "old",
+          "long"
+        ]
+      ],
+      "keysPt": [
+        "cada token olha para os outros tokens",
+        "e decide quais são mais relevantes (pesos)",
+        "isso captura contexto e significado",
+        "permitiu paralelismo e dependências longas, melhor que RNNs"
+      ],
+      "a1": "Attention lets each word look at the other words and decide which ones are important. It helps the model understand context.",
+      "a2": "With attention, each token looks at all the other tokens and gives more weight to the ones that are relevant. For example, it helps the model know what 'it' refers to in a sentence. It was important because it works in parallel and handles long text better than older models.",
+      "a3": "In simple terms, attention lets each token ask: which other tokens in this context matter most for my meaning? The model computes a score between tokens, turns those scores into weights, and mixes information from the most relevant ones. That's how it figures out, for example, that 'it' refers to 'the animal' and not 'the street'. It was a big deal because, unlike older recurrent networks, attention connects distant tokens directly and can be computed in parallel, which made training huge models on GPUs practical. The trade-off is that its cost grows quadratically with context length.",
+      "tipPt": "Use um exemplo concreto (pronome 'it'). Se mencionar o custo quadrático, mostra profundidade.",
+      "followUp": "Why does attention become expensive with very long contexts?"
+    },
+    {
+      "id": "m1-q24",
+      "module": 1,
+      "lesson": "m1-l09",
+      "level": 2,
+      "kind": "concept",
+      "q": "What does the temperature parameter do in an LLM?",
+      "qPt": "O que o parâmetro temperature faz em um LLM?",
+      "keys": [
+        [
+          "random",
+          "variety",
+          "creativ",
+          "different"
+        ],
+        [
+          "low",
+          "zero",
+          "small"
+        ],
+        [
+          "high",
+          "big"
+        ],
+        [
+          "predict",
+          "consisten",
+          "same",
+          "safe",
+          "focus"
+        ],
+        [
+          "probab",
+          "likely",
+          "token"
+        ]
+      ],
+      "keysPt": [
+        "controla a aleatoriedade/criatividade",
+        "baixa: mais previsível",
+        "alta: mais variada",
+        "consistência vs criatividade",
+        "muda a distribuição de probabilidade dos tokens"
+      ],
+      "a1": "Temperature controls how random the answer is. Low temperature is more predictable. High temperature is more creative.",
+      "a2": "Temperature controls the randomness of the output. A low temperature makes the model choose the most likely tokens, so answers are more consistent. A high temperature gives a chance to less likely tokens, so answers are more creative but can have more mistakes.",
+      "a3": "Temperature scales the probability distribution before the next token is sampled. With a low temperature, close to zero, the distribution becomes sharp, so the model almost always picks the most likely token, which gives consistent, focused output. With a higher temperature, the distribution gets flatter, so less likely tokens are chosen more often, which increases creativity and variety but also the risk of errors. For code or factual tasks I'd use a low value, and for brainstorming a higher one.",
+      "tipPt": "Sempre termine com um exemplo de uso: código = baixa, brainstorming = alta.",
+      "followUp": "Does temperature zero always give exactly the same answer?"
+    },
+    {
+      "id": "m1-q25",
+      "module": 1,
+      "lesson": "m1-l09",
+      "level": 3,
+      "kind": "concept",
+      "q": "What is the difference between temperature and top-p?",
+      "qPt": "Qual é a diferença entre temperature e top-p?",
+      "keys": [
+        [
+          "temperature"
+        ],
+        [
+          "random",
+          "flat",
+          "sharp",
+          "scale",
+          "change probab"
+        ],
+        [
+          "top",
+          "most likely",
+          "cut",
+          "limit",
+          "only"
+        ],
+        [
+          "sum",
+          "cumulative",
+          "percent",
+          "0.9",
+          "90",
+          "nucleus"
+        ],
+        [
+          "one",
+          "not both",
+          "together"
+        ]
+      ],
+      "keysPt": [
+        "temperature",
+        "muda a forma da distribuição (mais ou menos aleatória)",
+        "top-p corta, deixando só os tokens mais prováveis",
+        "cuja soma de probabilidade chega a p (ex.: 0.9)",
+        "geralmente se ajusta um ou outro, não os dois"
+      ],
+      "a1": "Temperature makes the answer more or less random. Top-p only uses the most likely tokens.",
+      "a2": "Temperature changes how random the choice is for all tokens. Top-p removes the unlikely tokens: it keeps only the most likely ones until their probabilities add up to p, like 0.9. It's common to change one of them, not both.",
+      "a3": "Both control sampling, but in different ways. Temperature reshapes the whole probability distribution, making it sharper or flatter. Top-p, or nucleus sampling, cuts the distribution: it keeps the smallest set of top tokens whose probabilities add up to p, for example 0.9, and samples only from that set. So top-p removes the long tail of unlikely tokens, while temperature changes how strongly the model prefers the top ones. Providers usually recommend adjusting one or the other, not both at the same time.",
+      "tipPt": "Palavra-chave para top-p: 'cumulative probability' ou 'add up to p'. A recomendação de ajustar só um mostra experiência prática.",
+      "followUp": "What is top-k, and how is it different from top-p?"
+    },
+    {
+      "id": "m1-q26",
+      "module": 1,
+      "lesson": "m1-l09",
+      "level": 4,
+      "kind": "scenario",
+      "q": "You're building two features: one generates SQL queries from user questions, and the other writes marketing slogans. How would you set the generation parameters for each, and why?",
+      "qPt": "Você está criando duas funcionalidades: uma gera consultas SQL a partir de perguntas do usuário e a outra escreve slogans de marketing. Como você configuraria os parâmetros de geração de cada uma, e por quê?",
+      "keys": [
+        [
+          "sql",
+          "query",
+          "code"
+        ],
+        [
+          "low",
+          "zero",
+          "0.2",
+          "0.1"
+        ],
+        [
+          "slogan",
+          "marketing",
+          "creativ"
+        ],
+        [
+          "high",
+          "higher",
+          "0.8",
+          "0.9",
+          "1.0"
+        ],
+        [
+          "consisten",
+          "correct",
+          "accura",
+          "predict",
+          "variety",
+          "different",
+          "options",
+          "max token",
+          "length"
+        ]
+      ],
+      "keysPt": [
+        "para SQL/código",
+        "temperatura baixa (0 a 0.2)",
+        "para slogans/marketing",
+        "temperatura mais alta (0.8 a 1.0)",
+        "justificar: SQL precisa de precisão e consistência; slogans precisam de variedade; limitar max tokens"
+      ],
+      "a1": "For SQL I would use a low temperature, because the query must be correct. For slogans I would use a high temperature, to get more creative ideas.",
+      "a2": "For the SQL feature, I'd use a low temperature, like 0 or 0.2, because the query must be correct and consistent. For marketing slogans, I'd use a higher temperature, around 0.8 or 0.9, because we want different and creative options. I'd also set max tokens short for slogans.",
+      "a3": "For SQL generation I'd use a low temperature, around 0 to 0.2, because there's usually one correct query and I want consistent, predictable output. I'd also validate the SQL before running it, since low temperature doesn't guarantee correctness. For slogans, I'd use a higher temperature, maybe 0.8 to 1.0, possibly with top-p around 0.9, because variety is the goal, and I might generate several options so the user can choose. In both cases I'd set a reasonable max tokens limit: short for slogans, and enough for complex queries. Then I'd test with real examples and adjust.",
+      "tipPt": "Mostre maturidade: temperatura baixa não garante que o SQL está correto, então valide. Mencione testar e ajustar.",
+      "followUp": "Why is it dangerous to run AI-generated SQL directly on a production database?"
+    }
+  ],
+  "exercises": []
+}

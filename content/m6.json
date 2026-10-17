@@ -1,0 +1,1796 @@
+{
+  "module": 6,
+  "title": "Interview English",
+  "titlePt": "Inglês para entrevistas",
+  "lessons": [
+    {
+      "id": "m6-l01",
+      "module": 6,
+      "order": 1,
+      "title": "Professional self-introduction",
+      "titlePt": "Autoapresentação profissional",
+      "explainPt": "'Tell me about yourself' quase sempre é a primeira pergunta. Prepare uma resposta de 30 a 60 segundos com 4 partes: 1) quem você é (nome, profissão, de onde é), 2) experiência (anos, tecnologias principais), 3) um destaque (projeto ou resultado), 4) por que você quer esta vaga.\n\nFrases-modelo: 'I'm a software developer from Brazil.' / 'I have [number] years of experience with React, Next.js, and TypeScript.' / 'Recently, I've been working on...' / 'I'm interested in this role because...'\n\nNão conte a sua vida inteira. Fale do presente, depois do passado relevante, e termine com o futuro (a vaga). Treine até falar sem ler.",
+      "terms": [
+        {
+          "en": "background",
+          "pt": "formação/histórico profissional",
+          "say": "BÉK-graund"
+        },
+        {
+          "en": "I specialize in",
+          "pt": "eu sou especializado em",
+          "say": "ai SPÉ-sha-laiz in"
+        },
+        {
+          "en": "I've been working on",
+          "pt": "tenho trabalhado em (até agora)",
+          "say": "aiv bin UÉR-king on"
+        },
+        {
+          "en": "remote work",
+          "pt": "trabalho remoto",
+          "say": "ri-MOUT UÉRK"
+        },
+        {
+          "en": "I'm interested in",
+          "pt": "tenho interesse em",
+          "say": "aim ÍN-tres-ted in"
+        },
+        {
+          "en": "front-end",
+          "pt": "front-end (interface)",
+          "say": "FRÃNT-end"
+        }
+      ],
+      "example": "Modelo completo: 'Hi, I'm [name]. I'm a software developer from Brazil, and I have [number] years of experience with React, Next.js, and TypeScript. Recently, I've been building [type of project]. I'm interested in AI training work because I enjoy reviewing code and explaining what's right or wrong.'",
+      "shadow": [
+        "I'm a software developer from Brazil.",
+        "I have [number] years of experience with React and TypeScript.",
+        "Recently, I've been working on web apps with Next.js.",
+        "I'm interested in this role because I enjoy evaluating code."
+      ],
+      "listen": [
+        {
+          "en": "So, tell me a little bit about yourself.",
+          "options": [
+            "Então, me fale um pouco sobre você.",
+            "Então, fale sobre a empresa.",
+            "Então, quanto você quer ganhar?"
+          ],
+          "correct": 0
+        },
+        {
+          "en": "What brings you to this kind of work?",
+          "options": [
+            "Como você chegou aqui hoje?",
+            "O que te traz a esse tipo de trabalho?",
+            "Quando você pode começar?"
+          ],
+          "correct": 1
+        }
+      ],
+      "questionIds": [
+        "m6-q01",
+        "m6-q02",
+        "m6-q03"
+      ]
+    },
+    {
+      "id": "m6-l02",
+      "module": 6,
+      "order": 2,
+      "title": "Describing your projects",
+      "titlePt": "Descrevendo seus projetos",
+      "explainPt": "Para falar de um projeto, use um STAR simplificado (STAR-lite): Contexto (o que era o projeto), Tarefa/Desafio (o problema), Ação (o que VOCÊ fez) e Resultado (o que melhorou, com número se possível).\n\nUse 'I' para o que você fez ('I built', 'I implemented', 'I refactored') e 'we' para o time. Entrevistadores querem saber a sua contribuição. Verbos úteis no passado: built, created, implemented, improved, migrated, fixed, reduced, deployed.\n\nExemplo de estrutura: 'I worked on [project], a [type of app] built with Next.js. The challenge was [problem]. I [action]. As a result, [result].' Escolha 1 ou 2 projetos e prepare bem.",
+      "terms": [
+        {
+          "en": "challenge",
+          "pt": "desafio",
+          "say": "TCHÁ-lendj"
+        },
+        {
+          "en": "I was responsible for",
+          "pt": "eu era responsável por",
+          "say": "ai uóz ris-PÓN-si-bol for"
+        },
+        {
+          "en": "to implement",
+          "pt": "implementar",
+          "say": "ÍM-ple-ment"
+        },
+        {
+          "en": "to deploy",
+          "pt": "publicar/colocar em produção",
+          "say": "di-PLÓI"
+        },
+        {
+          "en": "as a result",
+          "pt": "como resultado",
+          "say": "éz a ri-ZÃLT"
+        },
+        {
+          "en": "performance",
+          "pt": "desempenho",
+          "say": "per-FÓR-mans"
+        }
+      ],
+      "example": "'I built an e-commerce dashboard with Next.js and TypeScript. The challenge was that the product page was very slow. I moved data fetching to the server and added caching. As a result, the page loaded about [number] percent faster.'",
+      "shadow": [
+        "I worked on a dashboard built with Next.js and TypeScript.",
+        "The main challenge was that the page was very slow.",
+        "I was responsible for the front-end and the API integration.",
+        "As a result, the page loaded much faster."
+      ],
+      "listen": [
+        {
+          "en": "What was your specific role on that project?",
+          "options": [
+            "Quanto tempo durou o projeto?",
+            "Qual tecnologia vocês usaram?",
+            "Qual era o seu papel específico nesse projeto?"
+          ],
+          "correct": 2
+        },
+        {
+          "en": "What was the result of that change?",
+          "options": [
+            "Qual foi o resultado dessa mudança?",
+            "Por que você mudou de emprego?",
+            "Quem pediu essa mudança?"
+          ],
+          "correct": 0
+        }
+      ],
+      "questionIds": [
+        "m6-q04",
+        "m6-q05",
+        "m6-q06"
+      ]
+    },
+    {
+      "id": "m6-l03",
+      "module": 6,
+      "order": 3,
+      "title": "Programming experience",
+      "titlePt": "Experiência em programação",
+      "explainPt": "Perguntas sobre experiência pedem fatos claros: quantos anos, quais linguagens e frameworks, e em que nível. Use o present perfect para experiência que continua: 'I've been working with React for [number] years.' / 'I've used TypeScript in most of my projects.'\n\nSeja honesto sobre níveis. Frases úteis: 'I'm very comfortable with...' (domino), 'I have solid experience with...' (experiência sólida), 'I have basic knowledge of...' / 'I'm familiar with...' (conhecimento básico), 'I'm currently improving my...' (estou melhorando).\n\nPara vagas de avaliação de código, é ótimo mostrar que você lê bem código em mais de uma linguagem, mesmo que domine só uma.",
+      "terms": [
+        {
+          "en": "I'm comfortable with",
+          "pt": "tenho facilidade/domínio com",
+          "say": "aim KÃMF-ter-ta-bol uith"
+        },
+        {
+          "en": "I'm familiar with",
+          "pt": "conheço, tenho noção de",
+          "say": "aim fa-MÍ-li-ar uith"
+        },
+        {
+          "en": "solid experience",
+          "pt": "experiência sólida",
+          "say": "SÓ-lid iks-PÍ-ri-ens"
+        },
+        {
+          "en": "stack",
+          "pt": "conjunto de tecnologias usadas",
+          "say": "STÉK"
+        },
+        {
+          "en": "currently",
+          "pt": "atualmente (não 'atualmente' = actually!)",
+          "say": "KÃ-rent-li"
+        },
+        {
+          "en": "proficient",
+          "pt": "proficiente, competente",
+          "say": "pro-FÍ-shent"
+        }
+      ],
+      "example": "'I've been working with JavaScript for [number] years, and with React and Next.js for [number] years. I use TypeScript every day. I'm familiar with Python, I can read and write basic scripts, and I'm currently improving it.' Atenção: 'actually' significa 'na verdade', não 'atualmente'.",
+      "shadow": [
+        "I've been working with React for [number] years.",
+        "I'm very comfortable with TypeScript and Next.js.",
+        "I'm familiar with Python, and I'm currently improving it.",
+        "I can read code in several languages without problems."
+      ],
+      "listen": [
+        {
+          "en": "Which languages are you most comfortable with?",
+          "options": [
+            "Quais idiomas você fala?",
+            "Com quais linguagens você tem mais facilidade?",
+            "Quais linguagens você quer aprender?"
+          ],
+          "correct": 1
+        },
+        {
+          "en": "I'm familiar with Python, but my main language is TypeScript.",
+          "options": [
+            "Eu domino Python mais que TypeScript.",
+            "Eu nunca usei Python.",
+            "Conheço Python, mas minha linguagem principal é TypeScript."
+          ],
+          "correct": 2
+        }
+      ],
+      "questionIds": [
+        "m6-q07",
+        "m6-q08",
+        "m6-q09"
+      ]
+    },
+    {
+      "id": "m6-l04",
+      "module": 6,
+      "order": 4,
+      "title": "Explaining technical concepts simply",
+      "titlePt": "Explicando conceitos técnicos de forma simples",
+      "explainPt": "Entrevistadores testam se você consegue explicar algo técnico com palavras simples. Estrutura: 1) definição curta em uma frase, 2) analogia ou exemplo do dia a dia, 3) exemplo técnico concreto.\n\nFrases úteis: 'In simple terms, ...' (em termos simples), 'It's like...' (é como...), 'For example, ...', 'Basically, ...' (basicamente), 'The main idea is...' (a ideia principal é).\n\nEvite frases longas e muitos termos técnicos seguidos. É melhor duas frases curtas e claras do que uma frase longa e confusa. Termine verificando: 'Does that make sense?'",
+      "terms": [
+        {
+          "en": "in simple terms",
+          "pt": "em termos simples",
+          "say": "in SÍM-pol TÉRMZ"
+        },
+        {
+          "en": "it's like",
+          "pt": "é como",
+          "say": "its LAIK"
+        },
+        {
+          "en": "basically",
+          "pt": "basicamente",
+          "say": "BEI-sik-li"
+        },
+        {
+          "en": "the main idea is",
+          "pt": "a ideia principal é",
+          "say": "de MEIN ai-DÍ-a iz"
+        },
+        {
+          "en": "analogy",
+          "pt": "analogia, comparação",
+          "say": "a-NÁ-lo-dji"
+        },
+        {
+          "en": "does that make sense?",
+          "pt": "faz sentido?",
+          "say": "dãz dét meik SÉNS"
+        }
+      ],
+      "example": "API: 'In simple terms, an API is a way for two programs to talk to each other. It's like a waiter in a restaurant: you make a request, and it brings back what you asked for. For example, my React app calls an API to get a list of products.'",
+      "shadow": [
+        "In simple terms, an API lets two programs talk to each other.",
+        "It's like a waiter who takes your order to the kitchen.",
+        "The main idea is to reuse code instead of repeating it.",
+        "Does that make sense, or should I give another example?"
+      ],
+      "listen": [
+        {
+          "en": "Could you explain that as if I were not a developer?",
+          "options": [
+            "Você poderia explicar isso como se eu não fosse desenvolvedor?",
+            "Você poderia escrever o código disso?",
+            "Você já trabalhou como desenvolvedor?"
+          ],
+          "correct": 0
+        },
+        {
+          "en": "Basically, state is data that can change over time.",
+          "options": [
+            "Basicamente, state é um dado que nunca muda.",
+            "Basicamente, state é um arquivo de configuração.",
+            "Basicamente, state é um dado que pode mudar com o tempo."
+          ],
+          "correct": 2
+        }
+      ],
+      "questionIds": [
+        "m6-q10",
+        "m6-q11",
+        "m6-q12"
+      ]
+    },
+    {
+      "id": "m6-l05",
+      "module": 6,
+      "order": 5,
+      "title": "Justifying decisions",
+      "titlePt": "Justificando decisões",
+      "explainPt": "Quando perguntam 'Why did you choose X?', a resposta deve ter: decisão + motivo + exemplo + (opcional) a alternativa que você considerou. Isso mostra raciocínio, não só gosto pessoal.\n\nConectores essenciais: because (porque), so (então/por isso), that's why (é por isso que), for example (por exemplo), the main reason is (o motivo principal é), I also considered... but... (também considerei..., mas...).\n\nModelo: 'I chose TypeScript because it catches errors before runtime. For example, it warns me when a prop is missing. I also considered plain JavaScript, but for a bigger team, types make the code safer.'",
+      "terms": [
+        {
+          "en": "the main reason is",
+          "pt": "o motivo principal é",
+          "say": "de MEIN RÍ-zon iz"
+        },
+        {
+          "en": "that's why",
+          "pt": "é por isso que",
+          "say": "déts UAI"
+        },
+        {
+          "en": "I also considered",
+          "pt": "também considerei",
+          "say": "ai ÓL-sou kon-SÍ-derd"
+        },
+        {
+          "en": "alternative",
+          "pt": "alternativa",
+          "say": "ól-TÉR-na-tiv"
+        },
+        {
+          "en": "pros and cons",
+          "pt": "prós e contras",
+          "say": "PROUZ end KONZ"
+        },
+        {
+          "en": "it depends on",
+          "pt": "depende de",
+          "say": "it di-PÉNDZ on"
+        }
+      ],
+      "example": "'I chose Next.js for that project because we needed good SEO, so server-side rendering was important. I also considered a plain React app with Vite, but the pages would load content only in the browser. That's why Next.js was a better fit.'",
+      "shadow": [
+        "I chose TypeScript because it catches errors early.",
+        "The main reason is that it makes the code easier to maintain.",
+        "I also considered another option, but it was too complex.",
+        "That's why I think it was the right decision."
+      ],
+      "listen": [
+        {
+          "en": "Why did you go with that approach?",
+          "options": [
+            "Por que você saiu daquela empresa?",
+            "Por que você escolheu essa abordagem?",
+            "Quando você terminou essa abordagem?"
+          ],
+          "correct": 1
+        },
+        {
+          "en": "It depends on the size of the project.",
+          "options": [
+            "Depende do tamanho do projeto.",
+            "Depende do salário do projeto.",
+            "O projeto é muito grande."
+          ],
+          "correct": 0
+        }
+      ],
+      "questionIds": [
+        "m6-q13",
+        "m6-q14",
+        "m6-q15"
+      ]
+    },
+    {
+      "id": "m6-l06",
+      "module": 6,
+      "order": 6,
+      "title": "Behavioral questions (STAR)",
+      "titlePt": "Perguntas comportamentais (STAR)",
+      "explainPt": "Perguntas comportamentais começam com 'Tell me about a time when...' ou 'Describe a situation...'. Use o método STAR: Situation (contexto), Task (sua responsabilidade), Action (o que você fez, com 'I'), Result (o resultado e o que aprendeu).\n\nUse o passado simples: 'I was working on...', 'I noticed...', 'I talked to...', 'I fixed...', 'In the end...'. Gaste mais tempo na Action. Termine com um aprendizado: 'I learned that...'.\n\nPrepare 3 ou 4 histórias reais antes da entrevista (um erro, um conflito, aprender algo rápido, um prazo apertado). Uma mesma história pode responder várias perguntas.",
+      "terms": [
+        {
+          "en": "Tell me about a time when...",
+          "pt": "Conte sobre uma vez em que...",
+          "say": "tel mi a-BÁUT a TAIM uen"
+        },
+        {
+          "en": "situation",
+          "pt": "situação, contexto",
+          "say": "si-tchu-EI-shan"
+        },
+        {
+          "en": "deadline",
+          "pt": "prazo final",
+          "say": "DÉD-lain"
+        },
+        {
+          "en": "in the end",
+          "pt": "no final",
+          "say": "in di ÉND"
+        },
+        {
+          "en": "I learned that",
+          "pt": "eu aprendi que",
+          "say": "ai LÉRND dét"
+        },
+        {
+          "en": "to take responsibility",
+          "pt": "assumir a responsabilidade",
+          "say": "teik ris-pon-si-BÍ-li-ti"
+        }
+      ],
+      "example": "S: 'At my last job, we had a release on Friday.' T: 'I was responsible for the checkout page.' A: 'I found a bug in the payment form, so I wrote a fix and added tests.' R: 'We released on time, and I learned to test edge cases earlier.'",
+      "shadow": [
+        "At my last job, I was working on a checkout page.",
+        "I noticed the problem, so I told my team right away.",
+        "In the end, we delivered the project on time.",
+        "I learned that it's important to communicate early."
+      ],
+      "listen": [
+        {
+          "en": "Tell me about a time you had to meet a tight deadline.",
+          "options": [
+            "Conte sobre uma vez em que você perdeu um prazo.",
+            "Conte sobre uma vez em que você teve que cumprir um prazo apertado.",
+            "Qual é o seu prazo para começar?"
+          ],
+          "correct": 1
+        },
+        {
+          "en": "What did you learn from that experience?",
+          "options": [
+            "O que você aprendeu com essa experiência?",
+            "Quanto tempo durou essa experiência?",
+            "Você gostaria de repetir essa experiência?"
+          ],
+          "correct": 0
+        }
+      ],
+      "questionIds": [
+        "m6-q16",
+        "m6-q17",
+        "m6-q18"
+      ]
+    },
+    {
+      "id": "m6-l07",
+      "module": 6,
+      "order": 7,
+      "title": "Asking for clarification",
+      "titlePt": "Pedindo esclarecimento",
+      "explainPt": "Não entender uma pergunta é normal, e pedir esclarecimento é profissional. O erro é responder outra coisa por não ter entendido. Pedir clarificação mostra cuidado, algo muito valorizado em avaliação de IA.\n\nPara repetir: 'Sorry, could you repeat the question?' / 'Could you say that again, a bit more slowly?' Para confirmar: 'Do you mean...?' / 'Just to make sure I understand, you're asking about...?' Para um termo: 'What do you mean by [word]?'\n\nEvite apenas 'What?' ou 'Huh?', que soam rudes. Comece com 'Sorry,' ou 'Just to clarify,'.",
+      "terms": [
+        {
+          "en": "Could you repeat that?",
+          "pt": "Você poderia repetir?",
+          "say": "kud iu ri-PÍT dét"
+        },
+        {
+          "en": "Do you mean...?",
+          "pt": "Você quer dizer...?",
+          "say": "du iu MÍN"
+        },
+        {
+          "en": "just to clarify",
+          "pt": "só para esclarecer",
+          "say": "djãst tu KLÉ-ri-fai"
+        },
+        {
+          "en": "just to make sure",
+          "pt": "só para ter certeza",
+          "say": "djãst tu meik SHUR"
+        },
+        {
+          "en": "a bit more slowly",
+          "pt": "um pouco mais devagar",
+          "say": "a bit mor SLOU-li"
+        },
+        {
+          "en": "What do you mean by...?",
+          "pt": "O que você quer dizer com...?",
+          "say": "uót du iu MÍN bai"
+        }
+      ],
+      "example": "Entrevistador: 'How would you handle the edge cases in the rubric?' Você: 'Just to clarify, do you mean edge cases in the code, or cases where the rubric isn't clear?'",
+      "shadow": [
+        "Sorry, could you repeat the question, please?",
+        "Could you say that again a bit more slowly?",
+        "Just to clarify, do you mean the code or the explanation?",
+        "Just to make sure I understand, you're asking about testing?"
+      ],
+      "listen": [
+        {
+          "en": "Sure, let me rephrase that.",
+          "options": [
+            "Claro, vamos para a próxima.",
+            "Claro, deixa eu reformular.",
+            "Claro, você está certo."
+          ],
+          "correct": 1
+        },
+        {
+          "en": "Yes, that's exactly what I mean.",
+          "options": [
+            "Não, não foi isso que eu quis dizer.",
+            "Talvez, eu não tenho certeza.",
+            "Sim, é exatamente isso que eu quero dizer."
+          ],
+          "correct": 2
+        }
+      ],
+      "questionIds": [
+        "m6-q19",
+        "m6-q20",
+        "m6-q21"
+      ]
+    },
+    {
+      "id": "m6-l08",
+      "module": 6,
+      "order": 8,
+      "title": "Buying time to think",
+      "titlePt": "Ganhando tempo para pensar",
+      "explainPt": "Silêncio total por muitos segundos deixa a entrevista estranha. Em vez disso, use frases que mostram que você está pensando. Elas te dão de 3 a 5 segundos para organizar a resposta.\n\nFrases úteis: 'That's a good question.' / 'Let me think about that for a second.' / 'Hmm, let me see...' / 'That's an interesting question. I'd say...' / 'Let me think of a good example.'\n\nNão use a mesma frase em todas as perguntas, e não exagere: use uma frase e depois comece a responder. Se precisar de mais tempo, pense em voz alta: 'First, I would...'.",
+      "terms": [
+        {
+          "en": "That's a good question.",
+          "pt": "Essa é uma boa pergunta.",
+          "say": "déts a gud KUÉS-tchan"
+        },
+        {
+          "en": "Let me think about that.",
+          "pt": "Deixa eu pensar nisso.",
+          "say": "let mi THINK a-BÁUT dét"
+        },
+        {
+          "en": "for a second",
+          "pt": "por um segundo",
+          "say": "for a SÉ-kond"
+        },
+        {
+          "en": "let me see",
+          "pt": "deixa eu ver",
+          "say": "let mi SÍ"
+        },
+        {
+          "en": "to think out loud",
+          "pt": "pensar em voz alta",
+          "say": "think aut LÁUD"
+        },
+        {
+          "en": "off the top of my head",
+          "pt": "assim de cabeça",
+          "say": "óf de TOP ov mai HÉD"
+        }
+      ],
+      "example": "Entrevistador: 'What's the hardest bug you've ever fixed?' Você: 'Hmm, that's a good question. Let me think of a good example... OK, I remember one from a Next.js project.'",
+      "shadow": [
+        "That's a good question. Let me think about that for a second.",
+        "Hmm, let me see. I'd say the most important thing is testing.",
+        "Let me think of a good example.",
+        "Off the top of my head, I'd say performance."
+      ],
+      "listen": [
+        {
+          "en": "Take your time, there's no rush.",
+          "options": [
+            "Seja rápido, temos pouco tempo.",
+            "Leve o tempo que precisar, sem pressa.",
+            "Vamos fazer uma pausa."
+          ],
+          "correct": 1
+        },
+        {
+          "en": "Let me think about that for a second.",
+          "options": [
+            "Deixa eu pensar nisso por um segundo.",
+            "Eu não sei a resposta.",
+            "Pode repetir a pergunta?"
+          ],
+          "correct": 0
+        }
+      ],
+      "questionIds": [
+        "m6-q22",
+        "m6-q23"
+      ]
+    },
+    {
+      "id": "m6-l09",
+      "module": 6,
+      "order": 9,
+      "title": "Answering when you don't know",
+      "titlePt": "Respondendo quando você não sabe",
+      "explainPt": "Ninguém sabe tudo. Em trabalho de avaliação de IA, honestidade é essencial, porque inventar uma resposta é exatamente o que não queremos que um modelo faça. Então nunca invente.\n\nEstrutura: 1) admita com calma, 2) diga o que você sabe ou acha, 3) explique como descobriria. Frases: 'I'm not sure, but my understanding is that...' / 'I haven't worked with that directly, but...' / 'I don't know the exact answer, but I would check the documentation.'\n\nIsso transforma um 'não sei' em uma demonstração de raciocínio e de vontade de aprender. Termine de forma positiva: 'It's something I'd like to learn more about.'",
+      "terms": [
+        {
+          "en": "my understanding is that",
+          "pt": "pelo que eu entendo",
+          "say": "mai an-der-STÉN-ding iz dét"
+        },
+        {
+          "en": "I haven't worked with... directly",
+          "pt": "não trabalhei com... diretamente",
+          "say": "ai HÉ-vent uérkt uith"
+        },
+        {
+          "en": "I'm not 100% sure",
+          "pt": "não tenho 100% de certeza",
+          "say": "aim not uan HÃN-dred per-SÉNT shur"
+        },
+        {
+          "en": "I would look it up",
+          "pt": "eu pesquisaria",
+          "say": "ai ud luk it ÃP"
+        },
+        {
+          "en": "documentation",
+          "pt": "documentação",
+          "say": "dó-kiu-men-TEI-shan"
+        },
+        {
+          "en": "a quick learner",
+          "pt": "alguém que aprende rápido",
+          "say": "a KUIK LÉR-ner"
+        }
+      ],
+      "example": "Entrevistador: 'Have you used Rust?' Você: 'I haven't worked with Rust directly, but I know it focuses on memory safety. I'm comfortable reading new languages, and I would check the official documentation.'",
+      "shadow": [
+        "I'm not sure, but my understanding is that it works like this.",
+        "I haven't worked with that directly, but I've read about it.",
+        "I don't know the exact answer, but I would check the documentation.",
+        "It's something I'd really like to learn more about."
+      ],
+      "listen": [
+        {
+          "en": "It's okay if you don't know. How would you find out?",
+          "options": [
+            "Você deveria saber isso.",
+            "Tudo bem se você não souber. Como você descobriria?",
+            "Vamos pular essa pergunta."
+          ],
+          "correct": 1
+        },
+        {
+          "en": "I haven't used it in production, but I've tried it in personal projects.",
+          "options": [
+            "Não usei em produção, mas testei em projetos pessoais.",
+            "Uso isso em produção todos os dias.",
+            "Nunca ouvi falar disso."
+          ],
+          "correct": 0
+        }
+      ],
+      "questionIds": [
+        "m6-q24",
+        "m6-q25",
+        "m6-q26"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "m6-q01",
+      "module": 6,
+      "lesson": "m6-l01",
+      "level": 1,
+      "kind": "intro",
+      "q": "Tell me about yourself.",
+      "qPt": "Fale sobre você.",
+      "keys": [
+        [
+          "developer",
+          "engineer",
+          "programmer"
+        ],
+        [
+          "react",
+          "next",
+          "typescript",
+          "javascript"
+        ],
+        [
+          "year",
+          "experience"
+        ],
+        [
+          "interest",
+          "because",
+          "want",
+          "looking"
+        ]
+      ],
+      "keysPt": [
+        "profissão (developer/engineer)",
+        "tecnologias (React, Next.js, TypeScript)",
+        "anos de experiência",
+        "por que quer a vaga (because/interested)"
+      ],
+      "a1": "Hi, I'm [name]. I'm a software developer from Brazil. I work with React and TypeScript.",
+      "a2": "Hi, I'm [name]. I'm a software developer from Brazil with [number] years of experience. I work mainly with React, Next.js, and TypeScript, and I'm interested in AI training work.",
+      "a3": "Hi, I'm [name]. I'm a software developer from Brazil, and I have [number] years of experience building web applications with React, Next.js, and TypeScript. Recently, I've been working on [type of project], where I [main responsibility]. I'm interested in AI training and LLM evaluation because I enjoy reviewing code carefully and explaining clearly what works and what doesn't.",
+      "tipPt": "Use a estrutura: presente (quem sou) → experiência → destaque → por que esta vaga. 30 a 60 segundos. Não leia: memorize os blocos.",
+      "followUp": "Why do you want to work in AI training?"
+    },
+    {
+      "id": "m6-q02",
+      "module": 6,
+      "lesson": "m6-l01",
+      "level": 1,
+      "kind": "intro",
+      "q": "Where are you from, and what do you do?",
+      "qPt": "De onde você é e o que você faz?",
+      "keys": [
+        [
+          "brazil",
+          "brazilian",
+          "são paulo",
+          "sao paulo",
+          "rio"
+        ],
+        [
+          "developer",
+          "engineer",
+          "programmer"
+        ],
+        [
+          "web",
+          "front",
+          "react",
+          "next",
+          "typescript"
+        ]
+      ],
+      "keysPt": [
+        "país/cidade (Brazil)",
+        "profissão",
+        "área/tecnologias"
+      ],
+      "a1": "I'm from Brazil. I'm a web developer.",
+      "a2": "I'm from [city], in Brazil. I'm a software developer, and I build web applications with React and Next.js.",
+      "a3": "I'm from [city], in Brazil, and I work as a software developer. I specialize in front-end and full-stack web development, mainly with React, Next.js, and TypeScript. I work remotely, so I'm used to communicating with teams online.",
+      "tipPt": "Resposta curta e direta. Mencionar que já trabalha remoto é um ponto positivo.",
+      "followUp": "How long have you been working as a developer?"
+    },
+    {
+      "id": "m6-q03",
+      "module": 6,
+      "lesson": "m6-l01",
+      "level": 3,
+      "kind": "intro",
+      "q": "Why are you interested in AI training and LLM evaluation work?",
+      "qPt": "Por que você tem interesse em trabalho de treinamento de IA e avaliação de LLMs?",
+      "keys": [
+        [
+          "ai",
+          "model",
+          "llm"
+        ],
+        [
+          "code",
+          "review",
+          "evaluat"
+        ],
+        [
+          "because",
+          "so"
+        ],
+        [
+          "detail",
+          "careful",
+          "quality",
+          "explain",
+          "learn"
+        ]
+      ],
+      "keysPt": [
+        "IA/modelos",
+        "revisar/avaliar código",
+        "justificativa (because/so)",
+        "atenção a detalhes/qualidade/aprender"
+      ],
+      "a1": "I like AI and I like to review code. I think I can help make models better.",
+      "a2": "I'm interested because I use AI tools every day as a developer, and I like reviewing code. I think my experience with JavaScript and TypeScript can help improve the models.",
+      "a3": "I use AI coding tools every day, so I see both how useful they are and where they make mistakes. I enjoy reviewing code and paying attention to details, and I like explaining clearly why something is right or wrong. With [number] years of experience in JavaScript and TypeScript, I believe I can give useful feedback to improve model quality. I'm also excited to keep learning about how these models are trained.",
+      "tipPt": "Conecte sua experiência (React/TS, revisar código) com o trabalho. Evite 'só pelo dinheiro' ou 'porque é remoto'.",
+      "followUp": "What do you think makes a good AI code response?"
+    },
+    {
+      "id": "m6-q04",
+      "module": 6,
+      "lesson": "m6-l02",
+      "level": 1,
+      "kind": "behavioral",
+      "q": "Can you describe a project you worked on?",
+      "qPt": "Você pode descrever um projeto em que trabalhou?",
+      "keys": [
+        [
+          "built",
+          "created",
+          "worked",
+          "developed",
+          "made"
+        ],
+        [
+          "react",
+          "next",
+          "typescript",
+          "javascript"
+        ],
+        [
+          "app",
+          "website",
+          "dashboard",
+          "system",
+          "project"
+        ],
+        [
+          "user",
+          "result",
+          "help",
+          "faster",
+          "improve"
+        ]
+      ],
+      "keysPt": [
+        "verbo no passado (built/created)",
+        "tecnologias",
+        "tipo de projeto",
+        "resultado/impacto"
+      ],
+      "a1": "I built a [type of app] with React and Next.js. It helps users [main goal].",
+      "a2": "I worked on a [type of app] built with Next.js and TypeScript. I was responsible for the front-end, and the app helps users [main goal].",
+      "a3": "I worked on [project name], a [type of app] built with Next.js, React, and TypeScript. The main challenge was [problem]. I was responsible for [your part], and I [main action]. As a result, [result, for example: the page loaded much faster / users could complete the task in fewer steps].",
+      "tipPt": "Fale 'I built', 'I was responsible for'. Termine com um resultado concreto, se possível com número.",
+      "followUp": "What was the most difficult part of that project?"
+    },
+    {
+      "id": "m6-q05",
+      "module": 6,
+      "lesson": "m6-l02",
+      "level": 2,
+      "kind": "behavioral",
+      "q": "What was your role in that project?",
+      "qPt": "Qual era o seu papel nesse projeto?",
+      "keys": [
+        [
+          "responsible",
+          "role",
+          "i was",
+          "my part"
+        ],
+        [
+          "front",
+          "back",
+          "full",
+          "api",
+          "component",
+          "ui"
+        ],
+        [
+          "team",
+          "with",
+          "alone",
+          "myself"
+        ]
+      ],
+      "keysPt": [
+        "responsabilidade (I was responsible for)",
+        "área (front-end, API, componentes)",
+        "contexto do time"
+      ],
+      "a1": "I was the front-end developer. I built the pages with React.",
+      "a2": "I was responsible for the front-end. I built the main components in React and connected them to the API. I worked with [number] other developers.",
+      "a3": "I was one of [number] developers on the team, and I was responsible for the front-end architecture. I built the main React components, set up data fetching in Next.js, and integrated the payment API. I also reviewed pull requests from other developers, which is similar to the code evaluation work in this role.",
+      "tipPt": "Diferencie 'I' (você) de 'we' (time). Conectar revisão de PRs com avaliação de código é um ótimo gancho.",
+      "followUp": "Did you have any disagreements with the team during the project?"
+    },
+    {
+      "id": "m6-q06",
+      "module": 6,
+      "lesson": "m6-l02",
+      "level": 4,
+      "kind": "behavioral",
+      "q": "Tell me about a React or Next.js project you're proud of. What was the challenge, and what was the result?",
+      "qPt": "Fale sobre um projeto em React ou Next.js do qual você se orgulha. Qual foi o desafio e qual foi o resultado?",
+      "keys": [
+        [
+          "react",
+          "next"
+        ],
+        [
+          "challenge",
+          "problem",
+          "difficult",
+          "issue"
+        ],
+        [
+          "i built",
+          "i implemented",
+          "i created",
+          "i changed",
+          "i moved",
+          "i added",
+          "i fixed"
+        ],
+        [
+          "result",
+          "faster",
+          "improve",
+          "reduce",
+          "percent",
+          "users"
+        ]
+      ],
+      "keysPt": [
+        "React/Next.js",
+        "desafio/problema",
+        "ação com 'I' (I implemented...)",
+        "resultado (faster, percent, users)"
+      ],
+      "a1": "I'm proud of a [type of app] with Next.js. The challenge was [problem]. I fixed it, and the app got better.",
+      "a2": "I'm proud of a [type of app] I built with Next.js. The challenge was that [problem]. I [action], and as a result, [result].",
+      "a3": "One project I'm proud of is [project name], a [type of app] built with Next.js and TypeScript. The challenge was that [problem, for example: the product pages were slow because all the data loaded in the browser]. I [action, for example: moved data fetching to server components and added caching]. As a result, [result, for example: load time dropped by about [number] percent], and I learned a lot about rendering strategies in Next.js.",
+      "tipPt": "STAR-lite completo: contexto → desafio → ação (I) → resultado com número → aprendizado. Prepare antes, com números reais.",
+      "followUp": "If you started that project again today, what would you do differently?"
+    },
+    {
+      "id": "m6-q07",
+      "module": 6,
+      "lesson": "m6-l03",
+      "level": 1,
+      "kind": "intro",
+      "q": "How many years of programming experience do you have?",
+      "qPt": "Quantos anos de experiência em programação você tem?",
+      "keys": [
+        [
+          "year"
+        ],
+        [
+          "experience",
+          "working",
+          "programming",
+          "coding"
+        ],
+        [
+          "react",
+          "javascript",
+          "typescript",
+          "next",
+          "web"
+        ]
+      ],
+      "keysPt": [
+        "anos",
+        "experiência/trabalhando",
+        "com quais tecnologias"
+      ],
+      "a1": "I have [number] years of experience.",
+      "a2": "I have [number] years of programming experience, mostly with JavaScript, React, and TypeScript.",
+      "a3": "I have [number] years of professional experience as a developer. I've been working with JavaScript for [number] years, and with React and Next.js for about [number] years. Most of my recent work uses TypeScript.",
+      "tipPt": "Use 'I have [number] years of experience' (não 'I have experience of'). Diga o número com confiança.",
+      "followUp": "What kind of companies have you worked for?"
+    },
+    {
+      "id": "m6-q08",
+      "module": 6,
+      "lesson": "m6-l03",
+      "level": 2,
+      "kind": "practical",
+      "q": "Which technologies do you use most?",
+      "qPt": "Quais tecnologias você mais usa?",
+      "keys": [
+        [
+          "react"
+        ],
+        [
+          "next",
+          "typescript",
+          "javascript"
+        ],
+        [
+          "node",
+          "api",
+          "css",
+          "tailwind",
+          "git",
+          "sql",
+          "python"
+        ],
+        [
+          "every day",
+          "daily",
+          "most",
+          "mainly",
+          "usually"
+        ]
+      ],
+      "keysPt": [
+        "React",
+        "Next.js/TypeScript/JavaScript",
+        "outras ferramentas (Node, APIs, Tailwind, Git)",
+        "frequência (every day/mainly)"
+      ],
+      "a1": "I use React, Next.js, and TypeScript every day.",
+      "a2": "I mainly use React, Next.js, and TypeScript. I also use Node.js for APIs, Tailwind for styling, and Git every day.",
+      "a3": "My main stack is React, Next.js, and TypeScript, which I use every day. On the back end, I work with Node.js and REST APIs, and I've used databases like [database]. For styling I usually use Tailwind CSS. I'm also familiar with Python, mainly for small scripts.",
+      "tipPt": "Organize: principal → back-end → ferramentas → outras linguagens. Use 'mainly' e 'every day'.",
+      "followUp": "Which one would you say you know best?"
+    },
+    {
+      "id": "m6-q09",
+      "module": 6,
+      "lesson": "m6-l03",
+      "level": 3,
+      "kind": "practical",
+      "q": "How comfortable are you with Python compared to JavaScript?",
+      "qPt": "Quão confortável você está com Python comparado com JavaScript?",
+      "keys": [
+        [
+          "javascript",
+          "typescript"
+        ],
+        [
+          "python"
+        ],
+        [
+          "comfortable",
+          "strong",
+          "main",
+          "best"
+        ],
+        [
+          "basic",
+          "familiar",
+          "learning",
+          "improving",
+          "read"
+        ]
+      ],
+      "keysPt": [
+        "JavaScript/TypeScript",
+        "Python",
+        "nível forte (comfortable/main)",
+        "nível básico (familiar/learning/read)"
+      ],
+      "a1": "JavaScript is my main language. My Python is basic, but I can read it.",
+      "a2": "I'm much more comfortable with JavaScript and TypeScript. I'm familiar with Python. I can read it and write basic scripts, and I'm improving it.",
+      "a3": "JavaScript and TypeScript are my main languages, so I'm very comfortable with them. With Python, I have basic to intermediate knowledge: I can read code well, understand functions, lists, dictionaries, and comprehensions, and write simple scripts. For evaluation work, reading and reasoning about code matters most, and many concepts like loops, edge cases, and complexity are the same in both languages. I'm also actively practicing Python.",
+      "tipPt": "Seja honesto, mas positivo: mostre que conceitos se transferem e que você está estudando.",
+      "followUp": "What's one difference between Python and JavaScript that you find interesting?"
+    },
+    {
+      "id": "m6-q10",
+      "module": 6,
+      "lesson": "m6-l04",
+      "level": 1,
+      "kind": "concept",
+      "q": "Can you explain what an API is in simple words?",
+      "qPt": "Você pode explicar o que é uma API com palavras simples?",
+      "keys": [
+        [
+          "program",
+          "application",
+          "system",
+          "software"
+        ],
+        [
+          "talk",
+          "communicate",
+          "connect",
+          "request"
+        ],
+        [
+          "like",
+          "example",
+          "instance"
+        ],
+        [
+          "data",
+          "response",
+          "send",
+          "get"
+        ]
+      ],
+      "keysPt": [
+        "programas/sistemas",
+        "se comunicam / pedido",
+        "analogia ou exemplo (like/example)",
+        "enviar/receber dados"
+      ],
+      "a1": "An API lets two programs talk to each other. For example, an app can get data from a server.",
+      "a2": "In simple terms, an API is a way for two programs to communicate. It's like a waiter: you send a request, and it brings back a response. For example, a weather app gets data from a weather API.",
+      "a3": "In simple terms, an API is a set of rules that lets one program ask another program for data or actions. It's like a waiter in a restaurant: you don't go into the kitchen, you make a request, and the waiter brings back what you asked for. For example, my Next.js app sends a request to a payment API, and the API responds with the payment status.",
+      "tipPt": "Definição curta + analogia + exemplo real. O garçom (waiter) é uma analogia clássica e funciona bem.",
+      "followUp": "What's the difference between a REST API and GraphQL?"
+    },
+    {
+      "id": "m6-q11",
+      "module": 6,
+      "lesson": "m6-l04",
+      "level": 2,
+      "kind": "concept",
+      "q": "How would you explain React state to a beginner?",
+      "qPt": "Como você explicaria o state do React para um iniciante?",
+      "keys": [
+        [
+          "data",
+          "information",
+          "value"
+        ],
+        [
+          "change"
+        ],
+        [
+          "render",
+          "update",
+          "screen",
+          "ui"
+        ],
+        [
+          "like",
+          "example",
+          "counter",
+          "instance"
+        ]
+      ],
+      "keysPt": [
+        "dados/valor",
+        "que muda",
+        "a tela atualiza (re-render)",
+        "exemplo (contador)"
+      ],
+      "a1": "State is data in a component that can change. When it changes, the screen updates.",
+      "a2": "State is data that a component remembers and that can change over time. When the state changes, React updates the screen. For example, a counter uses state to store the current number.",
+      "a3": "Basically, state is the memory of a component: data that can change while the user uses the app. When you update the state, React re-renders the component, so the screen shows the new value. For example, in a counter, the number is stored with useState, and every click calls the setter, so the number on the screen updates automatically. The main idea is that you change the data, and React takes care of updating the UI.",
+      "tipPt": "Use 'basically' e 'for example'. O exemplo do contador é simples e todo mundo entende.",
+      "followUp": "What's the difference between state and props?"
+    },
+    {
+      "id": "m6-q12",
+      "module": 6,
+      "lesson": "m6-l04",
+      "level": 3,
+      "kind": "concept",
+      "q": "Explain the difference between server-side rendering and client-side rendering in Next.js.",
+      "qPt": "Explique a diferença entre renderização no servidor e no cliente no Next.js.",
+      "keys": [
+        [
+          "server"
+        ],
+        [
+          "browser",
+          "client"
+        ],
+        [
+          "html",
+          "page",
+          "render"
+        ],
+        [
+          "seo",
+          "faster",
+          "fast",
+          "first load",
+          "interactiv"
+        ],
+        [
+          "example",
+          "instance",
+          "like"
+        ]
+      ],
+      "keysPt": [
+        "servidor",
+        "navegador/cliente",
+        "gera o HTML/página",
+        "SEO, carregamento inicial, interatividade",
+        "exemplo"
+      ],
+      "a1": "With server-side rendering, the server makes the HTML. With client-side rendering, the browser makes it.",
+      "a2": "With server-side rendering, the server builds the HTML and sends a ready page, which is good for SEO and the first load. With client-side rendering, the browser downloads JavaScript and builds the page there, which is good for interactive parts.",
+      "a3": "In simple terms, it's about where the HTML is created. With server-side rendering, the server prepares the page with the data and sends ready HTML, so the first load is fast and search engines can read it easily. With client-side rendering, the browser receives JavaScript and builds the page there, which is better for very interactive parts. In the Next.js App Router, components are server components by default, and you add 'use client' when you need state or event handlers, like a form or a dropdown.",
+      "tipPt": "Comece com a ideia central: 'where the HTML is created'. Mencionar 'use client' mostra experiência atual com Next.js.",
+      "followUp": "When would you choose static generation instead?"
+    },
+    {
+      "id": "m6-q13",
+      "module": 6,
+      "lesson": "m6-l05",
+      "level": 2,
+      "kind": "practical",
+      "q": "Why did you choose TypeScript instead of JavaScript?",
+      "qPt": "Por que você escolheu TypeScript em vez de JavaScript?",
+      "keys": [
+        [
+          "type",
+          "types"
+        ],
+        [
+          "error",
+          "bug",
+          "mistake"
+        ],
+        [
+          "because",
+          "so",
+          "that's why"
+        ],
+        [
+          "example",
+          "instance"
+        ],
+        [
+          "team",
+          "maintain",
+          "autocomplete",
+          "refactor"
+        ]
+      ],
+      "keysPt": [
+        "tipos",
+        "pega erros/bugs",
+        "justificativa (because/so)",
+        "exemplo (for example)",
+        "time/manutenção/autocomplete"
+      ],
+      "a1": "I chose TypeScript because it finds errors before I run the code.",
+      "a2": "I chose TypeScript because types catch many errors early. For example, it warns me if I forget a prop in a React component. It also makes the code easier for the team to understand.",
+      "a3": "The main reason is that TypeScript catches many bugs at compile time, before the code reaches users. For example, if a component expects a user object and I pass undefined, the editor warns me right away. It also improves autocomplete and makes refactoring much safer, which matters in a team. JavaScript is fine for small scripts, but for bigger projects, TypeScript is worth the extra setup.",
+      "tipPt": "Decisão + because + for example + alternativa. Exemplo concreto de React deixa a resposta forte.",
+      "followUp": "Are there any disadvantages to using TypeScript?"
+    },
+    {
+      "id": "m6-q14",
+      "module": 6,
+      "lesson": "m6-l05",
+      "level": 2,
+      "kind": "practical",
+      "q": "Why do you prefer Next.js for some projects?",
+      "qPt": "Por que você prefere Next.js para alguns projetos?",
+      "keys": [
+        [
+          "seo",
+          "server",
+          "render"
+        ],
+        [
+          "routing",
+          "route",
+          "api",
+          "full"
+        ],
+        [
+          "because",
+          "so"
+        ],
+        [
+          "depend",
+          "not always",
+          "small",
+          "some"
+        ]
+      ],
+      "keysPt": [
+        "SEO/renderização no servidor",
+        "roteamento/rotas de API/full-stack",
+        "justificativa (because/so)",
+        "reconhece que depende do projeto"
+      ],
+      "a1": "I like Next.js because it has routing and server rendering. It's good for SEO.",
+      "a2": "I prefer Next.js because it gives me routing, server rendering, and API routes in one framework. So it's great for sites that need SEO. But for a small internal tool, plain React can be enough.",
+      "a3": "It depends on the project, but I prefer Next.js when SEO and performance matter. It gives me file-based routing, server rendering, and API routes in one framework, so I can build a full-stack app without much setup. For example, for a marketing site or an e-commerce store, server rendering helps pages load fast and rank well. For a small internal dashboard, I might just use React with Vite, because Next.js would be more than I need.",
+      "tipPt": "Mostre equilíbrio: 'It depends' + quando sim + quando não. Isso é maturidade técnica.",
+      "followUp": "What problems have you had with Next.js?"
+    },
+    {
+      "id": "m6-q15",
+      "module": 6,
+      "lesson": "m6-l05",
+      "level": 3,
+      "kind": "behavioral",
+      "q": "Tell me about a technical decision you made and why you made it.",
+      "qPt": "Fale sobre uma decisão técnica que você tomou e por quê.",
+      "keys": [
+        [
+          "decided",
+          "chose",
+          "decision",
+          "picked"
+        ],
+        [
+          "because",
+          "so",
+          "reason"
+        ],
+        [
+          "considered",
+          "option",
+          "alternative",
+          "instead"
+        ],
+        [
+          "result",
+          "worked",
+          "faster",
+          "easier",
+          "learned"
+        ]
+      ],
+      "keysPt": [
+        "decisão (I decided/chose)",
+        "motivo (because/the main reason)",
+        "alternativa considerada",
+        "resultado"
+      ],
+      "a1": "I decided to use [technology] because it was simpler. It worked well.",
+      "a2": "In a project, I decided to use [technology] instead of [alternative], because [reason]. As a result, [result].",
+      "a3": "In [project], we needed to [goal]. I decided to use [technology, for example: React Query for data fetching] instead of [alternative, for example: managing everything with useEffect], because [reason, for example: it handles caching and loading states for us]. I also considered [other option], but [why not]. As a result, [result, for example: the code became shorter and we had fewer bugs], and the team adopted it in other projects.",
+      "tipPt": "Inclua a alternativa ('I also considered... but...'). Isso mostra que a decisão foi pensada.",
+      "followUp": "Would you make the same decision today?"
+    },
+    {
+      "id": "m6-q16",
+      "module": 6,
+      "lesson": "m6-l06",
+      "level": 2,
+      "kind": "behavioral",
+      "q": "Tell me about a time you made a mistake at work.",
+      "qPt": "Fale sobre uma vez em que você cometeu um erro no trabalho.",
+      "keys": [
+        [
+          "mistake",
+          "error",
+          "bug",
+          "wrong"
+        ],
+        [
+          "i fixed",
+          "i told",
+          "i solved",
+          "responsib",
+          "fix"
+        ],
+        [
+          "learned",
+          "lesson",
+          "now i",
+          "since then"
+        ],
+        [
+          "team",
+          "manager",
+          "quickly",
+          "immediately"
+        ]
+      ],
+      "keysPt": [
+        "o erro",
+        "ação: assumiu e corrigiu",
+        "aprendizado (I learned)",
+        "comunicou ao time/rápido"
+      ],
+      "a1": "I once [mistake]. I told my team and fixed it. I learned to [lesson].",
+      "a2": "Once, I [mistake, for example: deployed a change without testing on mobile]. I told my team right away and fixed it quickly. I learned to always [lesson].",
+      "a3": "At [company], I [mistake, for example: deployed a change that broke the login page on mobile, because I only tested on desktop]. As soon as I noticed, I told my team, rolled back the change, and fixed the bug within [time]. Then I added a mobile test to our checklist. I learned that testing different devices and edge cases is part of the job, not an extra step, and since then I've been much more careful.",
+      "tipPt": "Escolha um erro real mas não catastrófico. Foque em: assumir responsabilidade + correção + aprendizado. Nunca diga 'I never make mistakes'.",
+      "followUp": "How do you make sure that doesn't happen again?"
+    },
+    {
+      "id": "m6-q17",
+      "module": 6,
+      "lesson": "m6-l06",
+      "level": 3,
+      "kind": "behavioral",
+      "q": "Tell me about a time you disagreed with a teammate. What did you do?",
+      "qPt": "Fale sobre uma vez em que você discordou de um colega. O que você fez?",
+      "keys": [
+        [
+          "disagree",
+          "different opinion",
+          "conflict",
+          "didn't agree"
+        ],
+        [
+          "talked",
+          "discussed",
+          "listened",
+          "explained",
+          "meeting"
+        ],
+        [
+          "data",
+          "test",
+          "example",
+          "evidence",
+          "compare"
+        ],
+        [
+          "agreed",
+          "decided",
+          "result",
+          "in the end",
+          "learned"
+        ]
+      ],
+      "keysPt": [
+        "discordância",
+        "conversou/ouviu/explicou",
+        "usou dados/testes/exemplos",
+        "resultado/acordo final"
+      ],
+      "a1": "My teammate wanted [option A], and I wanted [option B]. We talked and decided together.",
+      "a2": "A teammate wanted to [option A], but I thought [option B] was better. I listened to their reasons and explained mine. In the end, we [result].",
+      "a3": "In [project], a teammate wanted to [option A, for example: add a big state management library], and I thought [option B, for example: React context was enough]. Instead of arguing, I asked to talk about it, listened to their reasons, and suggested we compare both options with a small example. The test showed [finding], so we agreed to [decision]. I learned that using evidence and staying respectful makes disagreements productive.",
+      "tipPt": "Mostre respeito e uso de evidência. Nunca fale mal do colega. Termine com o resultado e o aprendizado.",
+      "followUp": "What would you do if you still disagreed after the discussion?"
+    },
+    {
+      "id": "m6-q18",
+      "module": 6,
+      "lesson": "m6-l06",
+      "level": 4,
+      "kind": "behavioral",
+      "q": "Describe a time when you had to learn something new very quickly.",
+      "qPt": "Descreva uma vez em que você precisou aprender algo novo muito rápido.",
+      "keys": [
+        [
+          "learn",
+          "new",
+          "study"
+        ],
+        [
+          "documentation",
+          "docs",
+          "tutorial",
+          "course",
+          "practice",
+          "small project"
+        ],
+        [
+          "deadline",
+          "week",
+          "days",
+          "quickly",
+          "short time"
+        ],
+        [
+          "result",
+          "delivered",
+          "finished",
+          "able",
+          "in the end"
+        ]
+      ],
+      "keysPt": [
+        "aprender algo novo",
+        "como aprendeu (docs, tutorial, prática)",
+        "prazo curto",
+        "resultado (entregou)"
+      ],
+      "a1": "I had to learn [technology] in [number] days. I read the documentation and practiced. I finished the task on time.",
+      "a2": "At [company], I had to learn [technology] in about [time] for a new project. I read the official documentation, built a small test project, and asked a colleague for help. In the end, I delivered my part on time.",
+      "a3": "At [company], we started a project that used [technology, for example: the Next.js App Router], and I had only [time, for example: one week] to get productive. First, I read the official documentation and focused on the core concepts. Then I built a small practice project to test them, and I asked experienced colleagues specific questions when I got stuck. By the deadline, I delivered [result], and later I helped other team members learn it too. This is also how I'd approach new evaluation guidelines in this role.",
+      "tipPt": "STAR completo com método de aprendizado (docs → prática → perguntar). Conectar com a vaga no final é um bônus.",
+      "followUp": "How do you usually keep up with new technologies?"
+    },
+    {
+      "id": "m6-q19",
+      "module": 6,
+      "lesson": "m6-l07",
+      "level": 1,
+      "kind": "practical",
+      "q": "What do you say if you didn't hear the interviewer's question well?",
+      "qPt": "O que você diz se não ouviu bem a pergunta do entrevistador?",
+      "keys": [
+        [
+          "sorry",
+          "excuse me"
+        ],
+        [
+          "repeat",
+          "say that again",
+          "again"
+        ],
+        [
+          "could you",
+          "can you",
+          "would you",
+          "please"
+        ]
+      ],
+      "keysPt": [
+        "Sorry / Excuse me",
+        "repeat / say that again",
+        "pedido educado (could you / please)"
+      ],
+      "a1": "Sorry, could you repeat the question, please?",
+      "a2": "I'd say: 'Sorry, could you repeat the question, please? I didn't hear it well.'",
+      "a3": "I'd say something like: 'Sorry, could you repeat the question, please? The audio cut out for a second.' If they speak fast, I'd ask: 'Could you say that again a bit more slowly?' It's better to ask than to answer the wrong question.",
+      "tipPt": "Sempre comece com 'Sorry,' e use 'could you'. Nunca só 'What?'.",
+      "followUp": "And what if you hear the words but don't understand the meaning?"
+    },
+    {
+      "id": "m6-q20",
+      "module": 6,
+      "lesson": "m6-l07",
+      "level": 2,
+      "kind": "practical",
+      "q": "The interviewer asks: 'How would you apply the rubric to borderline cases?' You're not sure what 'borderline' means here. What do you say?",
+      "qPt": "O entrevistador pergunta: 'Como você aplicaria a rubrica em casos limítrofes?' Você não tem certeza do que 'borderline' significa aqui. O que você diz?",
+      "keys": [
+        [
+          "what do you mean",
+          "do you mean",
+          "mean by"
+        ],
+        [
+          "borderline"
+        ],
+        [
+          "clarify",
+          "make sure",
+          "understand",
+          "sorry"
+        ]
+      ],
+      "keysPt": [
+        "What do you mean by / Do you mean",
+        "repetir a palavra 'borderline'",
+        "just to clarify / make sure"
+      ],
+      "a1": "Sorry, what do you mean by borderline?",
+      "a2": "Just to clarify, what do you mean by borderline cases? Do you mean responses that are almost acceptable?",
+      "a3": "I'd say: 'Just to make sure I understand, what do you mean by borderline cases? Do you mean responses that are between two scores, for example, not clearly good and not clearly bad?' Then, after they confirm, I'd answer the question. Checking the meaning first shows I'm careful, which is important in evaluation work.",
+      "tipPt": "Repita a palavra que não entendeu ('what do you mean by borderline?') e ofereça um palpite ('Do you mean...?').",
+      "followUp": "Yes, that's what I mean. So, how would you handle them?"
+    },
+    {
+      "id": "m6-q21",
+      "module": 6,
+      "lesson": "m6-l07",
+      "level": 3,
+      "kind": "scenario",
+      "q": "The interviewer says: 'For this task, you'll rate responses on helpfulness and honesty, and flag anything unsafe. Any questions?' Ask one or two clarifying questions.",
+      "qPt": "O entrevistador diz: 'Nesta tarefa, você vai avaliar respostas por utilidade e honestidade, e sinalizar qualquer coisa insegura. Alguma pergunta?' Faça uma ou duas perguntas de esclarecimento.",
+      "keys": [
+        [
+          "do you mean",
+          "what do you mean",
+          "clarify",
+          "make sure"
+        ],
+        [
+          "unsafe",
+          "flag",
+          "safe"
+        ],
+        [
+          "scale",
+          "score",
+          "rate",
+          "rating",
+          "1 to",
+          "one to"
+        ],
+        [
+          "example",
+          "instance",
+          "guideline",
+          "rubric"
+        ]
+      ],
+      "keysPt": [
+        "pergunta de esclarecimento (do you mean / just to clarify)",
+        "sobre 'unsafe' / 'flag'",
+        "sobre a escala de nota",
+        "pedir exemplos/guidelines"
+      ],
+      "a1": "Yes. What do you mean by unsafe? And what is the rating scale?",
+      "a2": "Yes, two questions. First, what is the rating scale, for example, one to five? Second, do you mean unsafe for the user, like harmful advice, or also security problems in code?",
+      "a3": "Yes, I have two quick questions. First, just to clarify the scale: are we rating from one to five, and is there a guideline that describes each score? Second, when you say 'flag anything unsafe,' do you mean only harmful content, or should I also flag things like security vulnerabilities in code? And if a response is very helpful but slightly unsafe, should the safety issue lower the helpfulness score too, or is it a separate flag?",
+      "tipPt": "Boas perguntas mostram atenção a detalhes. Pergunte sobre escala, definição de termos e casos de conflito entre critérios.",
+      "followUp": "Good questions. How would you handle a response that's helpful but has a small security issue?"
+    },
+    {
+      "id": "m6-q22",
+      "module": 6,
+      "lesson": "m6-l08",
+      "level": 1,
+      "kind": "practical",
+      "q": "What can you say when you need a few seconds to think?",
+      "qPt": "O que você pode dizer quando precisa de alguns segundos para pensar?",
+      "keys": [
+        [
+          "good question",
+          "interesting question",
+          "great question"
+        ],
+        [
+          "let me think",
+          "let me see",
+          "think about"
+        ],
+        [
+          "second",
+          "moment",
+          "minute"
+        ]
+      ],
+      "keysPt": [
+        "That's a good question",
+        "Let me think / Let me see",
+        "for a second / moment"
+      ],
+      "a1": "That's a good question. Let me think for a second.",
+      "a2": "I can say: 'That's a good question. Let me think about that for a second.' Then I start my answer.",
+      "a3": "I'd use a short phrase like 'That's an interesting question, let me think about that for a second,' or 'Hmm, let me see.' It shows I'm thinking, not stuck. Then I'd start with a structure, like 'First, I would...', so I can organize my answer while I speak.",
+      "tipPt": "Tenha 2 ou 3 frases prontas e alterne entre elas. Depois da frase, comece logo a responder.",
+      "followUp": "What's the hardest bug you've ever fixed?"
+    },
+    {
+      "id": "m6-q23",
+      "module": 6,
+      "lesson": "m6-l08",
+      "level": 2,
+      "kind": "behavioral",
+      "q": "What's the hardest bug you've ever fixed?",
+      "qPt": "Qual foi o bug mais difícil que você já corrigiu?",
+      "keys": [
+        [
+          "good question",
+          "let me think",
+          "let me see",
+          "interesting"
+        ],
+        [
+          "bug",
+          "problem",
+          "issue",
+          "error"
+        ],
+        [
+          "found",
+          "fixed",
+          "debug",
+          "console",
+          "log",
+          "test"
+        ],
+        [
+          "because",
+          "cause",
+          "so",
+          "the problem was"
+        ]
+      ],
+      "keysPt": [
+        "frase para ganhar tempo",
+        "o bug/problema",
+        "como encontrou e corrigiu",
+        "a causa (because)"
+      ],
+      "a1": "That's a good question. Let me think... I had a bug in [feature]. I found the problem and fixed it.",
+      "a2": "Hmm, let me think... One hard bug was in [feature]. The problem was [cause]. I found it by [method], and I fixed it by [solution].",
+      "a3": "That's a good question, let me think of a good example. In a Next.js project, [describe the bug, for example: users sometimes saw another user's data on a page]. It was hard because it only happened in production. After adding logs, I found that [cause, for example: a response was being cached and shared between users]. I fixed it by [solution, for example: disabling caching for that route], and I added a test for it. I learned to check caching behavior carefully.",
+      "tipPt": "Pratique começar com a frase de 'ganhar tempo' e então contar uma mini história: bug → causa → como achou → correção → aprendizado.",
+      "followUp": "How did you make sure the bug didn't come back?"
+    },
+    {
+      "id": "m6-q24",
+      "module": 6,
+      "lesson": "m6-l09",
+      "level": 1,
+      "kind": "practical",
+      "q": "What do you say when you don't know the answer to a question?",
+      "qPt": "O que você diz quando não sabe a resposta de uma pergunta?",
+      "keys": [
+        [
+          "not sure",
+          "don't know",
+          "dont know",
+          "not 100"
+        ],
+        [
+          "but",
+          "understanding",
+          "i think",
+          "i believe"
+        ],
+        [
+          "check",
+          "look it up",
+          "find out",
+          "documentation",
+          "learn"
+        ]
+      ],
+      "keysPt": [
+        "admitir (I'm not sure / I don't know)",
+        "dizer o que acha (but my understanding is)",
+        "como descobriria (check the documentation)"
+      ],
+      "a1": "I'm not sure, but I think [idea]. I would check the documentation.",
+      "a2": "I say: 'I'm not sure, but my understanding is that [idea].' Then I explain how I would find the answer, for example, in the documentation.",
+      "a3": "I'd be honest and say something like: 'I'm not 100% sure, but my understanding is that [idea].' Then I'd explain how I'd confirm it, like checking the official documentation or testing it quickly. In AI evaluation work, honesty is very important, so I'd never invent an answer, the same way we don't want a model to hallucinate.",
+      "tipPt": "Honestidade + raciocínio + como descobriria. Comparar com alucinação de modelo é ótimo nesse contexto.",
+      "followUp": "Can you give me an example?"
+    },
+    {
+      "id": "m6-q25",
+      "module": 6,
+      "lesson": "m6-l09",
+      "level": 4,
+      "kind": "concept",
+      "q": "What is the difference between RLHF and DPO?",
+      "qPt": "Qual é a diferença entre RLHF e DPO?",
+      "keys": [
+        [
+          "not sure",
+          "not 100",
+          "my understanding",
+          "i think",
+          "i believe"
+        ],
+        [
+          "human",
+          "preference",
+          "feedback"
+        ],
+        [
+          "reward model",
+          "reward"
+        ],
+        [
+          "direct",
+          "without",
+          "simpler",
+          "no reward"
+        ]
+      ],
+      "keysPt": [
+        "admitir incerteza se necessário (my understanding is)",
+        "preferências/feedback humano",
+        "modelo de recompensa (reward model)",
+        "DPO é direto, sem reward model separado"
+      ],
+      "a1": "I'm not 100% sure, but I think both use human preferences to improve the model. DPO is simpler.",
+      "a2": "My understanding is that both use human preference data. RLHF trains a reward model first and then uses reinforcement learning. DPO skips the reward model and trains directly on the preferred and rejected answers.",
+      "a3": "I'm not an expert on the details, but my understanding is this: both methods use human preference data, usually pairs of a better and a worse response. RLHF first trains a separate reward model on those preferences, and then optimizes the language model with reinforcement learning, often PPO. DPO, Direct Preference Optimization, skips the separate reward model and the RL loop, and updates the model directly on the preference pairs with a simpler loss. That's why DPO is usually simpler and more stable to train. If needed, I'd confirm the details in the original papers.",
+      "tipPt": "Mesmo que você saiba pouco, use 'my understanding is' e diga o que sabe: ambos usam preferências humanas; RLHF usa reward model + RL; DPO otimiza direto.",
+      "followUp": "Why would a team choose DPO over RLHF?"
+    },
+    {
+      "id": "m6-q26",
+      "module": 6,
+      "lesson": "m6-l09",
+      "level": 4,
+      "kind": "scenario",
+      "q": "Some of our tasks involve Rust code. Have you worked with Rust?",
+      "qPt": "Algumas das nossas tarefas envolvem código Rust. Você já trabalhou com Rust?",
+      "keys": [
+        [
+          "haven't",
+          "have not",
+          "not directly",
+          "no",
+          "not much"
+        ],
+        [
+          "but",
+          "however"
+        ],
+        [
+          "memory",
+          "safe",
+          "fast",
+          "performance",
+          "type"
+        ],
+        [
+          "learn",
+          "documentation",
+          "docs",
+          "read",
+          "quick",
+          "practice"
+        ]
+      ],
+      "keysPt": [
+        "ser honesto (I haven't...)",
+        "virar para o positivo (but)",
+        "o que sabe de Rust (memory safety, performance, tipos)",
+        "como aprenderia (docs, prática)"
+      ],
+      "a1": "I haven't worked with Rust, but I know it's fast and safe. I can learn it.",
+      "a2": "I haven't worked with Rust directly, but my understanding is that it focuses on memory safety and performance. I'm used to strong types from TypeScript, so I think I can learn to read it quickly.",
+      "a3": "I haven't worked with Rust directly, so I want to be honest about that. My understanding is that Rust focuses on performance and memory safety, using concepts like ownership and borrowing instead of a garbage collector. My experience with TypeScript's type system should help, and many review skills, like checking edge cases, error handling, and logic, are the same in any language. I'd start with the official Rust book and practice on small examples, and until I'm confident, I'd focus on tasks in languages I know well.",
+      "tipPt": "Não finja. 'I haven't... but...' + o que você sabe + plano de aprendizado. Honestidade conta muito em vagas de avaliação.",
+      "followUp": "How would you evaluate code in a language you don't know well?"
+    }
+  ],
+  "exercises": []
+}

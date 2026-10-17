@@ -1,0 +1,2087 @@
+{
+  "module": 5,
+  "title": "Coding Evaluation",
+  "titlePt": "Avaliação de Código",
+  "lessons": [
+    {
+      "id": "m5-l01",
+      "module": 5,
+      "order": 1,
+      "title": "Reading AI code responses",
+      "titlePt": "Lendo respostas de código da IA",
+      "explainPt": "Quando você avalia uma resposta de código gerada por IA, a primeira pergunta é simples: a resposta faz o que o prompt pediu? Leia o prompt com atenção (linguagem, formato, restrições) e depois confira se o código resolve exatamente isso, e não um problema parecido.\n\nA segunda pergunta é: o código roda? Procure erros de sintaxe, imports faltando, funções ou bibliotecas que não existem (a IA às vezes inventa APIs, o que chamamos de alucinação) e variáveis não definidas. Se possível, execute o código com alguns exemplos.\n\nSó depois disso olhe qualidade, estilo e explicação. Um código bonito que não roda ou não responde o prompt deve receber nota baixa.",
+      "terms": [
+        {
+          "en": "prompt",
+          "pt": "prompt: o pedido/instrução do usuário",
+          "say": "PROMPT"
+        },
+        {
+          "en": "to run",
+          "pt": "rodar/executar o código",
+          "say": "tu RAN"
+        },
+        {
+          "en": "syntax error",
+          "pt": "erro de sintaxe: código escrito de forma inválida",
+          "say": "SIN-taks ÉR-or"
+        },
+        {
+          "en": "requirement",
+          "pt": "requisito: algo que o prompt exige",
+          "say": "ri-KUAI-er-ment"
+        },
+        {
+          "en": "hallucinated API",
+          "pt": "API alucinada: função ou biblioteca que não existe",
+          "say": "ha-LU-si-nei-ted ei-pi-ai"
+        },
+        {
+          "en": "output",
+          "pt": "saída: o resultado que o código produz",
+          "say": "ÁUT-put"
+        }
+      ],
+      "example": "Prompt: 'Write a TypeScript function that returns only even numbers.' A resposta usa Python. Mesmo que o código esteja correto, ela não segue o prompt: 'The code works, but it's in Python, and the user asked for TypeScript.'",
+      "shadow": [
+        "First, I check if the code answers the prompt.",
+        "Then I check if the code actually runs.",
+        "This function doesn't exist in the library, so the code will fail.",
+        "The code works, but it ignores one of the requirements."
+      ],
+      "listen": [
+        {
+          "en": "The response is correct, but it doesn't follow the requested language.",
+          "options": [
+            "A resposta está correta, mas não usa a linguagem pedida.",
+            "A resposta está errada e usa a linguagem pedida.",
+            "A resposta não tem código nenhum."
+          ],
+          "correct": 0
+        },
+        {
+          "en": "I ran the code with a few inputs and it crashed on the second one.",
+          "options": [
+            "Eu li o código e parece bom.",
+            "Eu rodei o código com algumas entradas e ele quebrou na segunda.",
+            "Eu rodei o código e todas as entradas funcionaram."
+          ],
+          "correct": 1
+        }
+      ],
+      "questionIds": [
+        "m5-q01",
+        "m5-q02",
+        "m5-q03"
+      ]
+    },
+    {
+      "id": "m5-l02",
+      "module": 5,
+      "order": 2,
+      "title": "Bugs and logic errors",
+      "titlePt": "Bugs e erros de lógica",
+      "explainPt": "Um bug é qualquer comportamento errado no código. Erros de sintaxe são fáceis de achar porque o código nem roda. Erros de lógica são mais perigosos: o código roda, mas devolve o resultado errado.\n\nErros comuns em código de IA: off-by-one (usar <= em vez de < num loop e acessar um índice que não existe), não tratar edge cases (array vazio, null, string vazia, número negativo) e, em JavaScript, esquecer o await. Sem await, você recebe uma Promise em vez do valor, e o código pode quebrar ou continuar com dados errados.\n\nPara achar erros de lógica, simule o código mentalmente com um exemplo pequeno, passo a passo, e compare com o resultado esperado.",
+      "terms": [
+        {
+          "en": "bug",
+          "pt": "bug: erro no código",
+          "say": "BÃG"
+        },
+        {
+          "en": "logic error",
+          "pt": "erro de lógica: roda, mas o resultado está errado",
+          "say": "LÓ-djik ÉR-or"
+        },
+        {
+          "en": "off-by-one error",
+          "pt": "erro de um a mais/a menos, geralmente em loops",
+          "say": "óf-bai-UAN"
+        },
+        {
+          "en": "edge case",
+          "pt": "caso extremo/limite (vazio, zero, null)",
+          "say": "ÉDJ keis"
+        },
+        {
+          "en": "await",
+          "pt": "palavra que espera uma Promise terminar",
+          "say": "a-UEIT"
+        },
+        {
+          "en": "to crash",
+          "pt": "quebrar, parar com erro",
+          "say": "KRÉSH"
+        }
+      ],
+      "example": "for (let i = 0; i <= arr.length; i++) { total += arr[i] } — na última volta, arr[i] é undefined e o total vira NaN. 'This is an off-by-one error. It should be i < arr.length.'",
+      "shadow": [
+        "The loop goes one step too far, so it's an off-by-one error.",
+        "The code runs, but the result is wrong. It's a logic error.",
+        "It doesn't handle an empty array, which is a common edge case.",
+        "The function is missing an await, so it returns a promise."
+      ],
+      "listen": [
+        {
+          "en": "This code will crash if the list is empty.",
+          "options": [
+            "Esse código fica lento se a lista for grande.",
+            "Esse código funciona com qualquer lista.",
+            "Esse código vai quebrar se a lista estiver vazia."
+          ],
+          "correct": 2
+        },
+        {
+          "en": "Without await, the variable holds a promise, not the data.",
+          "options": [
+            "Sem await, a variável guarda uma Promise, não os dados.",
+            "Com await, o código fica mais lento.",
+            "Sem await, a variável guarda os dados corretos."
+          ],
+          "correct": 0
+        }
+      ],
+      "questionIds": [
+        "m5-q04",
+        "m5-q05",
+        "m5-q06",
+        "m5-q07"
+      ]
+    },
+    {
+      "id": "m5-l03",
+      "module": 5,
+      "order": 3,
+      "title": "Test cases",
+      "titlePt": "Casos de teste",
+      "explainPt": "Um caso de teste é uma entrada com o resultado esperado. Você roda o código com essa entrada e compara a saída. Testar é a forma mais confiável de verificar se um código está correto.\n\nPense em três tipos: happy path (o caso normal, que deve funcionar), edge cases (vazio, um elemento só, zero, negativos, valores muito grandes, duplicados) e entradas inválidas (null, tipo errado). Bons avaliadores sempre testam os edge cases, porque é ali que a IA mais erra.\n\nSe você não puder executar o código, faça um 'dry run': siga o código linha a linha com um exemplo pequeno, anotando o valor das variáveis.",
+      "terms": [
+        {
+          "en": "test case",
+          "pt": "caso de teste: entrada + resultado esperado",
+          "say": "TÉST keis"
+        },
+        {
+          "en": "happy path",
+          "pt": "caminho feliz: o caso normal, sem problemas",
+          "say": "HÉ-pi PÉTH"
+        },
+        {
+          "en": "expected output",
+          "pt": "saída esperada",
+          "say": "iks-PÉK-ted ÁUT-put"
+        },
+        {
+          "en": "invalid input",
+          "pt": "entrada inválida",
+          "say": "in-VÁ-lid ÍN-put"
+        },
+        {
+          "en": "dry run",
+          "pt": "simular o código mentalmente, passo a passo",
+          "say": "DRAI RAN"
+        },
+        {
+          "en": "unit test",
+          "pt": "teste unitário: testa uma função isolada",
+          "say": "IU-nit TÉST"
+        }
+      ],
+      "example": "Função reverseString(s). Happy path: 'abc' deve virar 'cba'. Edge cases: '' (string vazia) e 'a' (um caractere). 'I would test the happy path first, then the empty string and a single character.'",
+      "shadow": [
+        "I would start with the happy path, the normal case.",
+        "Then I would test edge cases, like an empty array.",
+        "I compare the actual output with the expected output.",
+        "If I can't run it, I do a dry run step by step."
+      ],
+      "listen": [
+        {
+          "en": "The happy path works, but the empty input fails.",
+          "options": [
+            "Nenhum caso funciona.",
+            "O caso normal funciona, mas a entrada vazia falha.",
+            "A entrada vazia funciona, mas o caso normal falha."
+          ],
+          "correct": 1
+        },
+        {
+          "en": "I'd add a test with negative numbers and duplicates.",
+          "options": [
+            "Eu removeria os testes com números negativos.",
+            "Eu testaria só números positivos.",
+            "Eu adicionaria um teste com números negativos e duplicados."
+          ],
+          "correct": 2
+        }
+      ],
+      "questionIds": [
+        "m5-q08",
+        "m5-q09",
+        "m5-q10",
+        "m5-q11"
+      ]
+    },
+    {
+      "id": "m5-l04",
+      "module": 5,
+      "order": 4,
+      "title": "Code quality",
+      "titlePt": "Qualidade de código",
+      "explainPt": "Depois de correto, o código precisa ser fácil de ler e manter. Qualidade inclui: nomes claros (userCount em vez de x), funções pequenas com uma responsabilidade, sem código repetido e sem complexidade desnecessária.\n\nCódigo idiomático é código escrito do jeito natural da linguagem. Em TypeScript: usar const, tipos claros, map/filter em vez de loops manuais quando fica mais claro. Em Python: list comprehensions, nomes em snake_case, 'with open(...)' para arquivos.\n\nNa avaliação, qualidade é geralmente um critério secundário: primeiro correção, depois qualidade. Mas entre duas respostas corretas, a mais legível normalmente vence.",
+      "terms": [
+        {
+          "en": "readability",
+          "pt": "legibilidade: facilidade de ler",
+          "say": "ri-da-BI-li-ti"
+        },
+        {
+          "en": "naming",
+          "pt": "nomeação de variáveis e funções",
+          "say": "NEI-ming"
+        },
+        {
+          "en": "idiomatic",
+          "pt": "idiomático: no estilo natural da linguagem",
+          "say": "i-di-o-MÁ-tik"
+        },
+        {
+          "en": "maintainable",
+          "pt": "fácil de manter e alterar",
+          "say": "mein-TEI-na-bol"
+        },
+        {
+          "en": "duplicate code",
+          "pt": "código repetido",
+          "say": "DIU-pli-ket KOUD"
+        },
+        {
+          "en": "type safety",
+          "pt": "segurança de tipos (TypeScript)",
+          "say": "TAIP SEIF-ti"
+        }
+      ],
+      "example": "Em Python, 'evens = [n for n in nums if n % 2 == 0]' é mais idiomático do que um loop com append. 'Both are correct, but the list comprehension is more idiomatic and easier to read.'",
+      "shadow": [
+        "The variable names are clear and easy to understand.",
+        "This function does too many things. I would split it.",
+        "Using map and filter here is more idiomatic in TypeScript.",
+        "Both are correct, but this one is easier to maintain."
+      ],
+      "listen": [
+        {
+          "en": "The logic is fine, but names like x and tmp make it hard to read.",
+          "options": [
+            "A lógica está errada e os nomes são bons.",
+            "A lógica está certa, mas nomes como x e tmp dificultam a leitura.",
+            "O código é rápido e fácil de ler."
+          ],
+          "correct": 1
+        },
+        {
+          "en": "In Python, a list comprehension would be more natural here.",
+          "options": [
+            "Em Python, uma list comprehension seria mais natural aqui.",
+            "Em Python, é melhor nunca usar listas.",
+            "Em Python, esse código não roda."
+          ],
+          "correct": 0
+        }
+      ],
+      "questionIds": [
+        "m5-q12",
+        "m5-q13",
+        "m5-q14"
+      ]
+    },
+    {
+      "id": "m5-l05",
+      "module": 5,
+      "order": 5,
+      "title": "Time and space complexity",
+      "titlePt": "Complexidade de tempo e espaço",
+      "explainPt": "Big O descreve como o tempo (ou a memória) de um algoritmo cresce quando a entrada cresce. Não é tempo em segundos, é a tendência de crescimento.\n\nExemplos simples: O(1) é constante (acessar arr[0] ou um item num Set/objeto). O(n) é linear (um loop pela lista). O(n²) é quadrático (um loop dentro de outro loop sobre a mesma lista). O(log n) aparece em busca binária. O(n log n) é típico de ordenação, como Array.prototype.sort.\n\nComplexidade de espaço é a memória extra usada. Um truque comum: trocar um loop aninhado O(n²) por um Set, que tem busca O(1) em média, deixando o algoritmo O(n) de tempo, mas usando O(n) de memória extra. Isso é um trade-off.",
+      "terms": [
+        {
+          "en": "Big O notation",
+          "pt": "notação Big O: mede crescimento do custo",
+          "say": "BIG OU nou-TEI-shan"
+        },
+        {
+          "en": "time complexity",
+          "pt": "complexidade de tempo",
+          "say": "TAIM kom-PLÉK-si-ti"
+        },
+        {
+          "en": "space complexity",
+          "pt": "complexidade de espaço (memória)",
+          "say": "SPEIS kom-PLÉK-si-ti"
+        },
+        {
+          "en": "linear",
+          "pt": "linear: cresce junto com n",
+          "say": "LÍ-ni-ar"
+        },
+        {
+          "en": "quadratic",
+          "pt": "quadrático: n vezes n",
+          "say": "kua-DRÁ-tik"
+        },
+        {
+          "en": "nested loop",
+          "pt": "loop aninhado (loop dentro de loop)",
+          "say": "NÉS-ted LUP"
+        },
+        {
+          "en": "trade-off",
+          "pt": "troca: ganha uma coisa, perde outra",
+          "say": "TREID-óf"
+        }
+      ],
+      "example": "Verificar duplicados com dois loops é O(n²): com 10.000 itens, são cerca de 100 milhões de comparações. Com um Set, é O(n): cerca de 10.000 operações. 'The Set version is O(n) in time, but it uses O(n) extra memory.'",
+      "shadow": [
+        "A nested loop over the same list is O(n squared).",
+        "Using a Set makes the lookup constant time on average.",
+        "This solution is faster, but it uses more memory.",
+        "For small inputs, the difference doesn't really matter."
+      ],
+      "listen": [
+        {
+          "en": "Sorting the array first makes it O(n log n).",
+          "options": [
+            "Ordenar o array primeiro deixa O(1).",
+            "Ordenar o array primeiro deixa O(n²).",
+            "Ordenar o array primeiro deixa O(n log n)."
+          ],
+          "correct": 2
+        },
+        {
+          "en": "It's linear time, but it needs extra space for the set.",
+          "options": [
+            "É tempo linear, mas precisa de espaço extra para o Set.",
+            "É tempo quadrático e não usa memória extra.",
+            "É tempo constante e usa pouca memória."
+          ],
+          "correct": 0
+        }
+      ],
+      "questionIds": [
+        "m5-q15",
+        "m5-q16",
+        "m5-q17"
+      ]
+    },
+    {
+      "id": "m5-l06",
+      "module": 5,
+      "order": 6,
+      "title": "Security",
+      "titlePt": "Segurança",
+      "explainPt": "Código de IA pode funcionar e mesmo assim ser inseguro. Os problemas mais comuns são: injeção (SQL injection), quando o código junta texto do usuário direto na query; a correção é usar queries parametrizadas.\n\nXSS (cross-site scripting): colocar texto do usuário no HTML com innerHTML ou dangerouslySetInnerHTML permite rodar scripts maliciosos. Use textContent, ou deixe o React escapar o texto normalmente com {valor} no JSX.\n\nOutros pontos: segredos no código (API keys, senhas) devem ficar em variáveis de ambiente, nunca no repositório ou no front-end. E evite eval() ou new Function() com entrada do usuário, porque isso executa código arbitrário. Na avaliação, um problema sério de segurança costuma pesar muito na nota.",
+      "terms": [
+        {
+          "en": "SQL injection",
+          "pt": "injeção de SQL via entrada do usuário",
+          "say": "ÉS-kiu-él in-DJÉK-shan"
+        },
+        {
+          "en": "parameterized query",
+          "pt": "query parametrizada (valores separados do SQL)",
+          "say": "pa-RÁ-me-te-raizd KUI-ri"
+        },
+        {
+          "en": "XSS (cross-site scripting)",
+          "pt": "injeção de script na página",
+          "say": "éks-és-ÉS"
+        },
+        {
+          "en": "to sanitize / to escape",
+          "pt": "limpar/escapar a entrada para ficar segura",
+          "say": "SÁ-ni-taiz / is-KEIP"
+        },
+        {
+          "en": "secret",
+          "pt": "segredo: chave de API, senha, token",
+          "say": "SÍ-kret"
+        },
+        {
+          "en": "environment variable",
+          "pt": "variável de ambiente",
+          "say": "en-VAI-ron-ment VÉ-ri-a-bol"
+        },
+        {
+          "en": "unsafe eval",
+          "pt": "uso perigoso de eval com entrada externa",
+          "say": "an-SEIF i-VÁL"
+        }
+      ],
+      "example": "cursor.execute(f\"SELECT * FROM users WHERE name = '{name}'\") permite que alguém envie ' OR '1'='1. O correto: cursor.execute(\"SELECT * FROM users WHERE name = %s\", (name,)). 'This is vulnerable to SQL injection. It should use a parameterized query.'",
+      "shadow": [
+        "This query is vulnerable to SQL injection.",
+        "It should use a parameterized query instead of string formatting.",
+        "Using innerHTML with user input can cause XSS.",
+        "The API key should be in an environment variable, not in the code."
+      ],
+      "listen": [
+        {
+          "en": "Never pass user input to eval.",
+          "options": [
+            "Sempre use eval com dados do usuário.",
+            "Nunca passe entrada do usuário para eval.",
+            "Eval deixa o código mais rápido."
+          ],
+          "correct": 1
+        },
+        {
+          "en": "The secret key is hardcoded in the frontend.",
+          "options": [
+            "A chave secreta está escrita direto no front-end.",
+            "A chave secreta está numa variável de ambiente.",
+            "Não existe chave secreta no código."
+          ],
+          "correct": 0
+        }
+      ],
+      "questionIds": [
+        "m5-q18",
+        "m5-q19",
+        "m5-q20"
+      ]
+    },
+    {
+      "id": "m5-l07",
+      "module": 5,
+      "order": 7,
+      "title": "Comparing two implementations",
+      "titlePt": "Comparando duas implementações",
+      "explainPt": "Em muitas tarefas você vê duas respostas (A e B) e precisa escolher a melhor. Use uma ordem fixa de critérios: 1) correção (roda e dá o resultado certo, incluindo edge cases), 2) segurança, 3) atende todas as instruções do prompt, 4) eficiência, 5) legibilidade e explicação.\n\nUm erro grave (bug, falha de segurança) quase sempre pesa mais que estilo. Se as duas estão corretas, compare eficiência e clareza. Se as duas têm problemas, escolha a que tem o problema menos grave e diga isso.\n\nSeja específico: cite a linha ou o trecho. 'Response A fails on an empty array' é muito melhor que 'Response A is bad'.",
+      "terms": [
+        {
+          "en": "criteria",
+          "pt": "critérios (singular: criterion)",
+          "say": "krai-TÍ-ri-a"
+        },
+        {
+          "en": "correctness",
+          "pt": "correção: estar certo",
+          "say": "ko-RÉKT-nes"
+        },
+        {
+          "en": "efficiency",
+          "pt": "eficiência",
+          "say": "i-FÍ-shen-si"
+        },
+        {
+          "en": "severity",
+          "pt": "gravidade de um problema",
+          "say": "se-VÉ-ri-ti"
+        },
+        {
+          "en": "to outweigh",
+          "pt": "pesar mais que",
+          "say": "aut-UEI"
+        },
+        {
+          "en": "slightly better",
+          "pt": "um pouco melhor",
+          "say": "SLAIT-li BÉ-ter"
+        }
+      ],
+      "example": "A é O(n) mas quebra com array vazio; B é O(n²) mas sempre correta. 'I prefer B, because correctness outweighs performance. A crashes on an empty array.'",
+      "shadow": [
+        "Both responses work, but Response B is easier to read.",
+        "Response A has a bug, so I prefer Response B.",
+        "A security issue outweighs a small style problem.",
+        "Response A is slightly better because it handles edge cases."
+      ],
+      "listen": [
+        {
+          "en": "Both solutions are correct, so I'll compare readability and performance.",
+          "options": [
+            "As duas soluções estão erradas.",
+            "Só uma solução está correta.",
+            "As duas soluções estão corretas, então vou comparar legibilidade e desempenho."
+          ],
+          "correct": 2
+        },
+        {
+          "en": "B is faster, but A is safer, so I choose A.",
+          "options": [
+            "B é mais rápida, mas A é mais segura, então escolho A.",
+            "A é mais rápida e mais segura.",
+            "B é mais segura, então escolho B."
+          ],
+          "correct": 0
+        }
+      ],
+      "questionIds": [
+        "m5-q21",
+        "m5-q22",
+        "m5-q23"
+      ]
+    },
+    {
+      "id": "m5-l08",
+      "module": 5,
+      "order": 8,
+      "title": "Explaining technical decisions in English",
+      "titlePt": "Explicando decisões técnicas em inglês",
+      "explainPt": "Na entrevista e no trabalho, não basta escolher a melhor resposta: você precisa justificar em inglês claro. Use uma estrutura simples: decisão + motivo + evidência + (opcional) ressalva.\n\nExemplo de estrutura: 'I chose Response B because it handles empty input. For example, Response A throws an error when the array is empty. However, Response B could be a bit more readable.'\n\nPalavras úteis: because (porque), so (então), for example (por exemplo), however (porém), on the other hand (por outro lado), the main issue is (o principal problema é), overall (no geral). Frases curtas são melhores que frases longas e confusas.",
+      "terms": [
+        {
+          "en": "to justify",
+          "pt": "justificar",
+          "say": "DJÃS-ti-fai"
+        },
+        {
+          "en": "trade-off",
+          "pt": "troca entre vantagens e desvantagens",
+          "say": "TREID-óf"
+        },
+        {
+          "en": "however",
+          "pt": "porém, no entanto",
+          "say": "hau-É-ver"
+        },
+        {
+          "en": "the main issue is",
+          "pt": "o principal problema é",
+          "say": "de MEIN Í-shu iz"
+        },
+        {
+          "en": "overall",
+          "pt": "no geral",
+          "say": "ou-ver-ÓL"
+        },
+        {
+          "en": "evidence",
+          "pt": "evidência, prova",
+          "say": "É-vi-dens"
+        }
+      ],
+      "example": "Ruim: 'B is better.' Bom: 'I'd choose B because it uses a parameterized query, so it's safe from SQL injection. Response A builds the query with string formatting. Overall, B is much better.'",
+      "shadow": [
+        "I chose this option because it's simpler and easier to test.",
+        "The main issue with Response A is that it doesn't handle errors.",
+        "However, the other solution uses less memory.",
+        "Overall, I think Response B is the better choice."
+      ],
+      "listen": [
+        {
+          "en": "The main issue is that it mutates the original array.",
+          "options": [
+            "O principal problema é que ele é lento.",
+            "O principal problema é que ele modifica o array original.",
+            "Não há nenhum problema com o array."
+          ],
+          "correct": 1
+        },
+        {
+          "en": "On the other hand, it's harder to read.",
+          "options": [
+            "Por outro lado, é mais difícil de ler.",
+            "Por isso, é mais fácil de ler.",
+            "No geral, é perfeito."
+          ],
+          "correct": 0
+        }
+      ],
+      "questionIds": [
+        "m5-q24",
+        "m5-q25",
+        "m5-q26"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "m5-q01",
+      "module": 5,
+      "lesson": "m5-l01",
+      "level": 1,
+      "kind": "concept",
+      "q": "What is the first thing you check in an AI code response?",
+      "qPt": "Qual é a primeira coisa que você verifica numa resposta de código da IA?",
+      "keys": [
+        [
+          "prompt",
+          "question",
+          "request",
+          "asked",
+          "task"
+        ],
+        [
+          "answer",
+          "follow",
+          "does what",
+          "solve"
+        ],
+        [
+          "run",
+          "work",
+          "error",
+          "execute"
+        ]
+      ],
+      "keysPt": [
+        "o prompt / o que foi pedido",
+        "se a resposta atende/resolve o pedido",
+        "se o código roda/funciona"
+      ],
+      "a1": "I check if the code answers the prompt. Then I check if it runs.",
+      "a2": "First, I check if the code does what the prompt asked, in the right language. Then I check if it runs without errors.",
+      "a3": "The first thing I check is whether the response actually answers the prompt: the right language, the right task, and all the constraints. Then I check if the code runs, looking for syntax errors, missing imports, or functions that don't exist. Only after that do I look at style and explanation.",
+      "tipPt": "Comece sempre por 'answers the prompt' e 'runs'. Estilo vem depois. O entrevistador quer ver uma ordem de prioridades.",
+      "followUp": "What do you do if the code runs but doesn't follow all the instructions?"
+    },
+    {
+      "id": "m5-q02",
+      "module": 5,
+      "lesson": "m5-l01",
+      "level": 2,
+      "kind": "practical",
+      "q": "How do you know if an AI code answer really follows the user's instructions?",
+      "qPt": "Como você sabe se uma resposta de código da IA realmente segue as instruções do usuário?",
+      "keys": [
+        [
+          "read",
+          "list",
+          "check"
+        ],
+        [
+          "requirement",
+          "instruction",
+          "constraint",
+          "rule"
+        ],
+        [
+          "language",
+          "format",
+          "input",
+          "output"
+        ],
+        [
+          "compare",
+          "each",
+          "every",
+          "all"
+        ]
+      ],
+      "keysPt": [
+        "ler/conferir o prompt",
+        "requisitos/instruções/restrições",
+        "linguagem, formato, entrada e saída",
+        "comparar cada item"
+      ],
+      "a1": "I read the prompt and make a list of the requirements. Then I check each one in the code.",
+      "a2": "I read the prompt carefully and list every requirement, like the language, the function name, and the output format. Then I compare the code with that list, one by one.",
+      "a3": "I break the prompt into a short checklist of requirements: the language, the input and output format, any constraints like 'no external libraries', and edge cases the user mentioned. Then I check the code against each item. If even one important requirement is missing, I point it out clearly, because a correct solution to the wrong problem isn't helpful.",
+      "tipPt": "Mencione 'checklist' e 'requirements'. Mostre que você é sistemático, não que lê por intuição.",
+      "followUp": "What if the prompt is ambiguous?"
+    },
+    {
+      "id": "m5-q03",
+      "module": 5,
+      "lesson": "m5-l01",
+      "level": 4,
+      "kind": "scenario",
+      "q": "The AI's code looks clean, but it calls a library function that doesn't exist. How would you rate it, and what would you write in your feedback?",
+      "qPt": "O código da IA parece limpo, mas chama uma função de biblioteca que não existe. Como você avaliaria e o que escreveria no feedback?",
+      "keys": [
+        [
+          "low",
+          "bad",
+          "poor",
+          "fail",
+          "not good"
+        ],
+        [
+          "exist",
+          "hallucinat",
+          "invent",
+          "fake"
+        ],
+        [
+          "run",
+          "error",
+          "crash",
+          "work"
+        ],
+        [
+          "specific",
+          "which function",
+          "name",
+          "line",
+          "suggest",
+          "fix",
+          "replace"
+        ]
+      ],
+      "keysPt": [
+        "nota baixa",
+        "a função não existe / alucinação",
+        "o código não vai rodar / erro",
+        "ser específico e sugerir a correção"
+      ],
+      "a1": "I would give it a low rating. The function doesn't exist, so the code will not run.",
+      "a2": "I'd rate it low, because the code calls a function that doesn't exist, so it will throw an error. In my feedback, I'd name the function and suggest the correct one.",
+      "a3": "I'd give it a low score for correctness, even if the style is clean. Calling a function that doesn't exist is a hallucination, and the code will fail with an error the moment it runs. In my feedback, I'd name the exact function and line, explain that it's not part of the library, and suggest the real API that does the same thing. Clean code doesn't help the user if it doesn't run.",
+      "tipPt": "Use a palavra 'hallucination'. Mostre que clareza não compensa código que não roda, e que o feedback deve ser específico.",
+      "followUp": "How would you verify that a function really exists?"
+    },
+    {
+      "id": "m5-q04",
+      "module": 5,
+      "lesson": "m5-l02",
+      "level": 1,
+      "kind": "concept",
+      "q": "What is an off-by-one error?",
+      "qPt": "O que é um erro off-by-one?",
+      "keys": [
+        [
+          "loop",
+          "index",
+          "count"
+        ],
+        [
+          "one",
+          "1"
+        ],
+        [
+          "more",
+          "less",
+          "too far",
+          "extra",
+          "miss"
+        ],
+        [
+          "less than",
+          "equal",
+          "<=",
+          "length",
+          "boundary"
+        ]
+      ],
+      "keysPt": [
+        "loop / índice",
+        "um (1)",
+        "uma vez a mais ou a menos",
+        "< vs <=, length, limite"
+      ],
+      "a1": "It's when a loop runs one time too many or one time too few.",
+      "a2": "An off-by-one error is when a loop or index is wrong by one. For example, using 'less than or equal' instead of 'less than' with the array length.",
+      "a3": "An off-by-one error happens when a loop or an index goes one step too far or stops one step too early. A classic example in JavaScript is looping with i <= arr.length instead of i < arr.length, so the last iteration reads undefined. It's very common in AI-generated code, so I always check loop boundaries.",
+      "tipPt": "Dê o exemplo do i <= arr.length. Exemplo concreto mostra que você entende de verdade.",
+      "followUp": "How would you write a test to catch that?"
+    },
+    {
+      "id": "m5-q05",
+      "module": 5,
+      "lesson": "m5-l02",
+      "level": 1,
+      "kind": "concept",
+      "q": "What is an edge case?",
+      "qPt": "O que é um edge case?",
+      "keys": [
+        [
+          "unusual",
+          "extreme",
+          "special",
+          "rare",
+          "limit",
+          "boundary"
+        ],
+        [
+          "input",
+          "value",
+          "case"
+        ],
+        [
+          "empty",
+          "zero",
+          "null",
+          "negative",
+          "one element"
+        ]
+      ],
+      "keysPt": [
+        "entrada incomum/extrema/limite",
+        "um valor de entrada",
+        "vazio, zero, null, negativo"
+      ],
+      "a1": "An edge case is an unusual input, like an empty array or zero.",
+      "a2": "An edge case is an input at the limit of what the code expects, like an empty list, null, zero, or a very big number. Code often fails on these.",
+      "a3": "An edge case is an input at the boundary of what the function normally handles, such as an empty array, a single element, null, zero, negative numbers, or very large values. The normal case might work fine while an edge case crashes or gives a wrong result. When I review code, I always ask what happens with these inputs.",
+      "tipPt": "Liste 2 ou 3 exemplos (empty, null, zero). Isso conta muito na avaliação.",
+      "followUp": "What edge cases would you test for a function that divides two numbers?"
+    },
+    {
+      "id": "m5-q06",
+      "module": 5,
+      "lesson": "m5-l02",
+      "level": 2,
+      "kind": "concept",
+      "q": "What happens if you forget to use await before a promise in JavaScript?",
+      "qPt": "O que acontece se você esquecer o await antes de uma Promise em JavaScript?",
+      "keys": [
+        [
+          "promise"
+        ],
+        [
+          "not the value",
+          "not the data",
+          "instead",
+          "pending",
+          "wrong"
+        ],
+        [
+          "error",
+          "crash",
+          "undefined",
+          "fail",
+          "bug"
+        ],
+        [
+          "order",
+          "before",
+          "finish",
+          "wait"
+        ]
+      ],
+      "keysPt": [
+        "Promise",
+        "você recebe a Promise e não o valor",
+        "erro / undefined / bug",
+        "o código não espera terminar"
+      ],
+      "a1": "You get a promise, not the real value. The code can break.",
+      "a2": "Without await, the variable holds a pending promise instead of the data. So if you try to use it, you get errors or undefined, and the code doesn't wait for the operation to finish.",
+      "a3": "If you forget await, the expression returns a pending promise instead of the resolved value. The function keeps running without waiting, so you might call a method that doesn't exist on the promise, like res.json on an unresolved fetch, or return data before it's ready. Errors can also become unhandled promise rejections. In reviews, I check that every async call is awaited or handled with then and catch.",
+      "tipPt": "Diga claramente: 'you get a promise instead of the value'. Um exemplo com fetch impressiona.",
+      "followUp": "How would you run several async calls at the same time?"
+    },
+    {
+      "id": "m5-q07",
+      "module": 5,
+      "lesson": "m5-l02",
+      "level": 3,
+      "kind": "practical",
+      "q": "How do you find logic errors in code that runs without crashing?",
+      "qPt": "Como você encontra erros de lógica em um código que roda sem quebrar?",
+      "keys": [
+        [
+          "test",
+          "example",
+          "input"
+        ],
+        [
+          "expected",
+          "compare",
+          "correct result"
+        ],
+        [
+          "step by step",
+          "trace",
+          "dry run",
+          "line by line"
+        ],
+        [
+          "edge",
+          "empty",
+          "boundary",
+          "condition"
+        ]
+      ],
+      "keysPt": [
+        "testar com exemplos",
+        "comparar com o resultado esperado",
+        "seguir passo a passo / dry run",
+        "edge cases e condições"
+      ],
+      "a1": "I test it with examples and compare the result with the expected result.",
+      "a2": "I run the code with small examples where I know the answer, and compare. I also trace the code step by step and check conditions and edge cases.",
+      "a3": "Since the code doesn't crash, I need to check the output, not just the execution. I pick small inputs where I already know the correct answer, run them, and compare. If I can't run it, I do a dry run, tracing variables line by line. I pay special attention to conditions, loop boundaries, and edge cases, because that's where logic errors usually hide.",
+      "tipPt": "O ponto-chave: código que roda não é código correto. Fale de 'expected output' e 'dry run'.",
+      "followUp": "Can you give an example of a logic error you found?"
+    },
+    {
+      "id": "m5-q08",
+      "module": 5,
+      "lesson": "m5-l03",
+      "level": 1,
+      "kind": "concept",
+      "q": "What is a test case?",
+      "qPt": "O que é um caso de teste?",
+      "keys": [
+        [
+          "input"
+        ],
+        [
+          "expected",
+          "result",
+          "output"
+        ],
+        [
+          "check",
+          "compare",
+          "verify"
+        ]
+      ],
+      "keysPt": [
+        "uma entrada",
+        "o resultado esperado",
+        "verificar/comparar"
+      ],
+      "a1": "A test case is an input and the expected result.",
+      "a2": "A test case is an input with the result you expect. You run the code with that input and check if the output matches.",
+      "a3": "A test case is a specific input paired with the expected output. You run the code with the input and compare the actual output to the expected one. A good set of test cases covers the normal case, edge cases, and invalid input.",
+      "tipPt": "Use a dupla 'input' + 'expected output'. É a definição que o entrevistador espera.",
+      "followUp": "Can you give me an example of a test case?"
+    },
+    {
+      "id": "m5-q09",
+      "module": 5,
+      "lesson": "m5-l03",
+      "level": 1,
+      "kind": "concept",
+      "q": "What is the happy path?",
+      "qPt": "O que é o happy path?",
+      "keys": [
+        [
+          "normal",
+          "common",
+          "typical",
+          "expected"
+        ],
+        [
+          "case",
+          "input",
+          "scenario"
+        ],
+        [
+          "work",
+          "no error",
+          "no problem",
+          "correct"
+        ]
+      ],
+      "keysPt": [
+        "caso normal/comum",
+        "um caso/cenário de entrada",
+        "que deve funcionar sem erro"
+      ],
+      "a1": "The happy path is the normal case, when everything works.",
+      "a2": "The happy path is the normal scenario with valid input and no errors. It's the first thing you test, but it's not enough.",
+      "a3": "The happy path is the typical scenario where the input is valid and everything goes as expected. It's the first thing I test, because if it fails, nothing else matters. But passing the happy path isn't enough, so I always test edge cases and invalid input too.",
+      "tipPt": "Mostre que happy path é necessário mas não suficiente.",
+      "followUp": "What do you test after the happy path?"
+    },
+    {
+      "id": "m5-q10",
+      "module": 5,
+      "lesson": "m5-l03",
+      "level": 2,
+      "kind": "practical",
+      "q": "How would you check if this code is correct?",
+      "qPt": "Como você verificaria se este código está correto?",
+      "keys": [
+        [
+          "run",
+          "execute"
+        ],
+        [
+          "test",
+          "example",
+          "input"
+        ],
+        [
+          "edge",
+          "empty",
+          "null",
+          "zero"
+        ],
+        [
+          "expected",
+          "compare",
+          "result",
+          "output"
+        ]
+      ],
+      "keysPt": [
+        "rodar o código",
+        "testar com exemplos",
+        "edge cases (vazio, null, zero)",
+        "comparar com o resultado esperado"
+      ],
+      "a1": "I would run it with some tests. I'd check normal inputs and edge cases.",
+      "a2": "First, I'd run the code with a normal input and compare the output with the expected result. Then I'd test edge cases, like an empty array or null.",
+      "a3": "I'd start by reading it to understand the intent, then run it with a few test cases. First the happy path, then edge cases like an empty input, a single element, or negative numbers, and finally invalid input. For each one I'd compare the actual output to the expected output. If I can't run it, I'd trace it by hand with a small example.",
+      "tipPt": "Pergunta muito comum. Estrutura: run → happy path → edge cases → compare expected output.",
+      "followUp": "What if you can't run the code?"
+    },
+    {
+      "id": "m5-q11",
+      "module": 5,
+      "lesson": "m5-l03",
+      "level": 3,
+      "kind": "scenario",
+      "q": "Which test cases would you write for a function that sorts an array of numbers?",
+      "qPt": "Quais casos de teste você escreveria para uma função que ordena um array de números?",
+      "keys": [
+        [
+          "empty"
+        ],
+        [
+          "one element",
+          "single",
+          "one item"
+        ],
+        [
+          "duplicate",
+          "same",
+          "repeated"
+        ],
+        [
+          "negative",
+          "sorted",
+          "reverse",
+          "decimal"
+        ]
+      ],
+      "keysPt": [
+        "array vazio",
+        "um elemento só",
+        "valores duplicados",
+        "negativos, já ordenado, ordem inversa"
+      ],
+      "a1": "I would test an empty array, an array with one number, and an array with duplicates.",
+      "a2": "I'd test a normal unsorted array, an empty array, one element, duplicates, and negative numbers. I'd also test an array that's already sorted.",
+      "a3": "I'd cover a normal unsorted array first, then edge cases: an empty array, a single element, duplicates, negative numbers, and arrays already sorted or in reverse order. In JavaScript I'd also add numbers like 10 and 9, because the default sort compares strings, so [10, 9, 1] doesn't sort numerically without a compare function. I'd also check whether the function changes the original array.",
+      "tipPt": "Citar o sort padrão do JavaScript (ordena como string) é um diferencial forte.",
+      "followUp": "How would you check that the original array isn't changed?"
+    },
+    {
+      "id": "m5-q12",
+      "module": 5,
+      "lesson": "m5-l04",
+      "level": 1,
+      "kind": "concept",
+      "q": "What makes code readable?",
+      "qPt": "O que torna um código legível?",
+      "keys": [
+        [
+          "name",
+          "naming"
+        ],
+        [
+          "clear",
+          "simple",
+          "easy"
+        ],
+        [
+          "small",
+          "short",
+          "function"
+        ],
+        [
+          "comment",
+          "format",
+          "consistent"
+        ]
+      ],
+      "keysPt": [
+        "bons nomes",
+        "claro/simples",
+        "funções pequenas",
+        "comentários/formatação consistente"
+      ],
+      "a1": "Clear names and small, simple functions.",
+      "a2": "Readable code has clear names, small functions that do one thing, and consistent formatting. Someone else can understand it quickly.",
+      "a3": "Readable code uses descriptive names, keeps functions small with one responsibility, and follows a consistent style. It avoids clever tricks when a simple version works, and it uses comments to explain why, not what. The test is simple: could another developer understand it quickly without asking me?",
+      "tipPt": "Fale 'clear names' e 'small functions'. Simples e direto.",
+      "followUp": "Can you give an example of a bad variable name?"
+    },
+    {
+      "id": "m5-q13",
+      "module": 5,
+      "lesson": "m5-l04",
+      "level": 2,
+      "kind": "concept",
+      "q": "Why are good variable names important?",
+      "qPt": "Por que bons nomes de variáveis são importantes?",
+      "keys": [
+        [
+          "understand",
+          "read",
+          "clear"
+        ],
+        [
+          "other",
+          "team",
+          "people",
+          "later"
+        ],
+        [
+          "bug",
+          "mistake",
+          "error",
+          "maintain"
+        ]
+      ],
+      "keysPt": [
+        "ajudam a entender/ler",
+        "outras pessoas/time/no futuro",
+        "evitam bugs, facilitam manutenção"
+      ],
+      "a1": "Good names help people understand the code quickly.",
+      "a2": "Good names make the code easy to understand, for your team and for you later. For example, userCount is much clearer than x. It also helps avoid bugs.",
+      "a3": "Good names make code self-explanatory. A name like activeUserCount tells you what the value is without reading the whole function, while x or data2 forces you to guess. That saves time for the team, makes reviews faster, and reduces bugs caused by misunderstanding what a variable holds.",
+      "tipPt": "Dê um exemplo ruim vs bom (x vs userCount).",
+      "followUp": "How do naming conventions differ between TypeScript and Python?"
+    },
+    {
+      "id": "m5-q14",
+      "module": 5,
+      "lesson": "m5-l04",
+      "level": 3,
+      "kind": "concept",
+      "q": "What does idiomatic code mean? Give an example in TypeScript or Python.",
+      "qPt": "O que significa código idiomático? Dê um exemplo em TypeScript ou Python.",
+      "keys": [
+        [
+          "natural",
+          "common",
+          "style",
+          "convention"
+        ],
+        [
+          "language"
+        ],
+        [
+          "example",
+          "instance",
+          "like"
+        ],
+        [
+          "map",
+          "filter",
+          "comprehension",
+          "const",
+          "snake",
+          "with"
+        ]
+      ],
+      "keysPt": [
+        "estilo natural/convenções",
+        "da linguagem",
+        "dar um exemplo",
+        "map/filter, list comprehension, const, snake_case, with"
+      ],
+      "a1": "Idiomatic code uses the normal style of the language. In Python, a list comprehension is idiomatic.",
+      "a2": "Idiomatic code follows the natural style and conventions of a language. For example, in TypeScript we use const and array methods like map and filter. In Python, we use list comprehensions and snake_case names.",
+      "a3": "Idiomatic code is code written the way experienced developers of that language usually write it, following its conventions. For example, in Python, squares = [n * n for n in nums] is more idiomatic than a loop with append, and we use snake_case and with open() for files. In TypeScript, using const, clear types, and map or filter instead of manual index loops is usually more idiomatic. Idiomatic code is easier for other developers to read.",
+      "tipPt": "Sempre dê um exemplo concreto. Como você domina TS, use TS e mencione um de Python também.",
+      "followUp": "Is idiomatic code always better?"
+    },
+    {
+      "id": "m5-q15",
+      "module": 5,
+      "lesson": "m5-l05",
+      "level": 1,
+      "kind": "concept",
+      "q": "What does Big O notation describe?",
+      "qPt": "O que a notação Big O descreve?",
+      "keys": [
+        [
+          "grow",
+          "increase",
+          "scale"
+        ],
+        [
+          "time",
+          "memory",
+          "space",
+          "speed"
+        ],
+        [
+          "input",
+          "size",
+          "n",
+          "data"
+        ]
+      ],
+      "keysPt": [
+        "como cresce",
+        "tempo ou memória",
+        "conforme o tamanho da entrada"
+      ],
+      "a1": "Big O shows how the time grows when the input gets bigger.",
+      "a2": "Big O describes how the running time or memory of an algorithm grows when the input size grows. It's about the trend, not exact seconds.",
+      "a3": "Big O notation describes how the time or memory an algorithm needs grows as the input size n grows. It ignores constants and focuses on the worst-case trend, so O(n) means the work grows linearly and O(n squared) means it grows much faster. It helps compare solutions independently of the machine.",
+      "tipPt": "Diga 'how it grows as the input grows'. Não diga que mede segundos.",
+      "followUp": "What's the difference between O(n) and O(n squared)?"
+    },
+    {
+      "id": "m5-q16",
+      "module": 5,
+      "lesson": "m5-l05",
+      "level": 2,
+      "kind": "concept",
+      "q": "What's the time complexity of a nested loop?",
+      "qPt": "Qual é a complexidade de tempo de um loop aninhado?",
+      "keys": [
+        [
+          "n squared",
+          "n^2",
+          "n2",
+          "quadratic",
+          "n times n",
+          "n x n"
+        ],
+        [
+          "loop",
+          "inside",
+          "each"
+        ],
+        [
+          "slow",
+          "grow",
+          "big",
+          "large"
+        ]
+      ],
+      "keysPt": [
+        "O(n²) / quadrático",
+        "um loop dentro do outro, para cada item",
+        "fica lento com entradas grandes"
+      ],
+      "a1": "Usually it's O(n squared), because there's a loop inside a loop.",
+      "a2": "If both loops go over the same list of n items, it's O(n squared). For each item, the inner loop runs n times, so it gets slow with big inputs.",
+      "a3": "If the outer and inner loops both iterate over the same n items, the time complexity is O(n squared), because the inner loop runs n times for each of the n outer iterations. If they iterate over different inputs of size n and m, it's O(n times m). It's fine for small inputs, but it gets slow fast, so I often look for a way to replace the inner loop with a Set or a Map.",
+      "tipPt": "Explique o porquê ('n times for each item'). Mencionar O(n·m) mostra precisão.",
+      "followUp": "How could you make it faster?"
+    },
+    {
+      "id": "m5-q17",
+      "module": 5,
+      "lesson": "m5-l05",
+      "level": 3,
+      "kind": "practical",
+      "q": "How can a Set make a duplicate check faster?",
+      "qPt": "Como um Set pode deixar a verificação de duplicados mais rápida?",
+      "keys": [
+        [
+          "set"
+        ],
+        [
+          "constant",
+          "o(1)",
+          "of 1",
+          "of one",
+          "fast lookup",
+          "has"
+        ],
+        [
+          "linear",
+          "o(n)",
+          "of n",
+          "one loop",
+          "once"
+        ],
+        [
+          "memory",
+          "space",
+          "trade"
+        ]
+      ],
+      "keysPt": [
+        "Set",
+        "busca em tempo constante O(1)",
+        "fica O(n), um loop só",
+        "usa mais memória (trade-off)"
+      ],
+      "a1": "With a Set, checking if an item exists is very fast, so you only need one loop.",
+      "a2": "A Set checks if a value exists in constant time on average. So instead of a nested loop, which is O(n squared), you use one loop and the Set, which is O(n). It uses a bit more memory.",
+      "a3": "With a nested loop, you compare every pair, which is O(n squared). With a Set, you loop once: for each item, you check set.has(item), which is O(1) on average, and if it's not there you add it. That makes the whole check O(n) in time. The trade-off is O(n) extra memory for the Set, which is usually worth it.",
+      "tipPt": "Fale dos dois lados: tempo melhora (O(n)), memória piora (O(n) extra).",
+      "followUp": "Is there a case where the nested loop is better?"
+    },
+    {
+      "id": "m5-q18",
+      "module": 5,
+      "lesson": "m5-l06",
+      "level": 1,
+      "kind": "concept",
+      "q": "Why should you never put API keys in your code?",
+      "qPt": "Por que você nunca deve colocar chaves de API no código?",
+      "keys": [
+        [
+          "secret",
+          "key",
+          "password"
+        ],
+        [
+          "see",
+          "steal",
+          "leak",
+          "public",
+          "expose",
+          "access"
+        ],
+        [
+          "environment",
+          "env",
+          ".env",
+          "variable",
+          "server"
+        ]
+      ],
+      "keysPt": [
+        "segredo/chave",
+        "outras pessoas podem ver/roubar/vazar",
+        "usar variáveis de ambiente no servidor"
+      ],
+      "a1": "Other people can see and steal the key. It should be in an environment variable.",
+      "a2": "If the key is in the code, anyone who sees the repository or the frontend bundle can steal it. Keys should be in environment variables on the server.",
+      "a3": "If an API key is hardcoded, it can leak through the Git history, a public repository, or the JavaScript bundle sent to the browser. Someone can then use it, run up costs, or access data. Secrets should live in environment variables or a secrets manager, used only on the server. In Next.js, for example, anything prefixed with NEXT_PUBLIC_ is exposed to the browser, so secrets must not use that prefix.",
+      "tipPt": "Mencione 'environment variables'. O exemplo do NEXT_PUBLIC_ mostra experiência real.",
+      "followUp": "What would you do if you saw a key committed to a repository?"
+    },
+    {
+      "id": "m5-q19",
+      "module": 5,
+      "lesson": "m5-l06",
+      "level": 2,
+      "kind": "concept",
+      "q": "What is SQL injection, and how do you prevent it?",
+      "qPt": "O que é SQL injection e como você previne?",
+      "keys": [
+        [
+          "user",
+          "input"
+        ],
+        [
+          "query",
+          "sql",
+          "database"
+        ],
+        [
+          "parameter",
+          "prepared",
+          "placeholder",
+          "orm"
+        ],
+        [
+          "attack",
+          "run",
+          "change",
+          "steal",
+          "delete"
+        ]
+      ],
+      "keysPt": [
+        "entrada do usuário",
+        "query/SQL/banco",
+        "query parametrizada/prepared statement",
+        "o atacante altera/rouba/apaga dados"
+      ],
+      "a1": "It's when user input changes the SQL query. You prevent it with parameterized queries.",
+      "a2": "SQL injection is when an attacker sends input that changes your SQL query, for example to read or delete data. You prevent it with parameterized queries, not string concatenation.",
+      "a3": "SQL injection happens when user input is concatenated directly into a SQL string, so an attacker can send something like ' OR '1'='1 and change the meaning of the query, reading or deleting data. The main fix is parameterized queries or prepared statements, where the values are sent separately from the SQL. Using a well-known ORM or query builder also helps, plus validating input and using a database user with limited permissions.",
+      "tipPt": "A palavra mágica é 'parameterized queries'. Evite dizer apenas 'validar input' como solução principal.",
+      "followUp": "Can an ORM still be vulnerable to injection?"
+    },
+    {
+      "id": "m5-q20",
+      "module": 5,
+      "lesson": "m5-l06",
+      "level": 4,
+      "kind": "scenario",
+      "q": "What would you look for when reviewing AI-generated code for security?",
+      "qPt": "O que você procuraria ao revisar código gerado por IA em relação à segurança?",
+      "keys": [
+        [
+          "injection",
+          "sql",
+          "query"
+        ],
+        [
+          "xss",
+          "innerhtml",
+          "dangerously",
+          "script"
+        ],
+        [
+          "secret",
+          "key",
+          "password",
+          "hardcod"
+        ],
+        [
+          "eval",
+          "validat",
+          "sanitiz",
+          "input"
+        ],
+        [
+          "auth",
+          "permission",
+          "dependenc",
+          "package"
+        ]
+      ],
+      "keysPt": [
+        "injeção / SQL",
+        "XSS / innerHTML / dangerouslySetInnerHTML",
+        "segredos/chaves no código",
+        "eval, validação de entrada",
+        "autenticação/permissões/dependências"
+      ],
+      "a1": "I would look for SQL injection, XSS, secrets in the code, and unsafe eval.",
+      "a2": "I'd check how user input is used: SQL injection, XSS with innerHTML, and eval. I'd also look for hardcoded secrets and missing authentication checks.",
+      "a3": "I'd follow the user input through the code. First, injection: is input concatenated into SQL or shell commands instead of using parameters? Second, XSS: is untrusted content rendered with innerHTML or dangerouslySetInnerHTML? Third, hardcoded secrets like API keys or passwords, and any eval or new Function with external data. I'd also check authentication and authorization on API routes, input validation, and whether it imports packages that are outdated or don't even exist. A serious security issue would lower my rating a lot, even if the code works.",
+      "tipPt": "Tenha uma lista mental: injection, XSS, secrets, eval, auth. Falar 'follow the user input' mostra método.",
+      "followUp": "How would you explain an XSS risk to a junior developer?"
+    },
+    {
+      "id": "m5-q21",
+      "module": 5,
+      "lesson": "m5-l07",
+      "level": 3,
+      "kind": "practical",
+      "q": "What criteria do you use to compare two code solutions?",
+      "qPt": "Quais critérios você usa para comparar duas soluções de código?",
+      "keys": [
+        [
+          "correct",
+          "work",
+          "bug"
+        ],
+        [
+          "secur",
+          "safe"
+        ],
+        [
+          "prompt",
+          "instruction",
+          "requirement"
+        ],
+        [
+          "efficien",
+          "performance",
+          "fast",
+          "complexity"
+        ],
+        [
+          "readab",
+          "clear",
+          "clean",
+          "quality"
+        ]
+      ],
+      "keysPt": [
+        "correção / funciona",
+        "segurança",
+        "segue o prompt",
+        "eficiência / complexidade",
+        "legibilidade / qualidade"
+      ],
+      "a1": "I check if it's correct, safe, fast, and easy to read.",
+      "a2": "First correctness, then security, then whether it follows the prompt. After that, I compare efficiency and readability.",
+      "a3": "I use a fixed order. First correctness: does it run and handle edge cases? Second, security, because a vulnerability is serious even if the code works. Third, does it follow all the instructions in the prompt? Then efficiency, like time complexity, and finally readability and the quality of the explanation. A major issue in an earlier criterion usually outweighs small advantages in a later one.",
+      "tipPt": "A ordem importa: correctness > security > instructions > efficiency > readability.",
+      "followUp": "What if one solution is faster but harder to read?"
+    },
+    {
+      "id": "m5-q22",
+      "module": 5,
+      "lesson": "m5-l07",
+      "level": 2,
+      "kind": "scenario",
+      "q": "If two solutions are both correct, how do you choose the better one?",
+      "qPt": "Se duas soluções estão corretas, como você escolhe a melhor?",
+      "keys": [
+        [
+          "readab",
+          "clear",
+          "simple",
+          "easy"
+        ],
+        [
+          "efficien",
+          "fast",
+          "complexity",
+          "performance"
+        ],
+        [
+          "edge",
+          "error",
+          "robust"
+        ],
+        [
+          "explain",
+          "explanation",
+          "comment"
+        ]
+      ],
+      "keysPt": [
+        "legibilidade/simplicidade",
+        "eficiência/complexidade",
+        "trata edge cases e erros",
+        "qualidade da explicação"
+      ],
+      "a1": "I choose the one that is easier to read and faster.",
+      "a2": "I compare readability, efficiency, and how well each one handles errors. I also look at the explanation. The clearer and more complete one wins.",
+      "a3": "If both are correct, I look at secondary criteria: time and space complexity, readability, error handling, and how idiomatic the code is. I also consider the explanation, because a clear explanation helps the user. If they're very close, I'd say one is slightly better, or call it a tie, and explain why.",
+      "tipPt": "Mostre que você conhece 'slightly better' e 'tie'. Nem sempre há grande diferença.",
+      "followUp": "When would you call it a tie?"
+    },
+    {
+      "id": "m5-q23",
+      "module": 5,
+      "lesson": "m5-l07",
+      "level": 4,
+      "kind": "scenario",
+      "q": "Response A is fast but hard to read. Response B is slower but very clear. Which one do you prefer, and why?",
+      "qPt": "A resposta A é rápida mas difícil de ler. A resposta B é mais lenta mas muito clara. Qual você prefere e por quê?",
+      "keys": [
+        [
+          "depend",
+          "context"
+        ],
+        [
+          "input",
+          "size",
+          "data",
+          "scale"
+        ],
+        [
+          "readab",
+          "clear",
+          "maintain"
+        ],
+        [
+          "because",
+          "so",
+          "since"
+        ],
+        [
+          "prompt",
+          "user",
+          "asked",
+          "performance"
+        ]
+      ],
+      "keysPt": [
+        "depende do contexto",
+        "tamanho da entrada",
+        "legibilidade/manutenção",
+        "justificativa (because/so)",
+        "o que o usuário pediu"
+      ],
+      "a1": "It depends. If the data is small, I prefer B because it's clear.",
+      "a2": "It depends on the context. If the input is small, I prefer B, because it's easier to maintain. If the prompt asks for performance or the data is big, I prefer A.",
+      "a3": "It depends on the context, so I'd check the prompt first. If the user asked for performance, or the input can be very large, the faster solution matters more, and I'd prefer A, maybe suggesting comments to make it clearer. If the input is small, the speed difference won't be noticeable, so I'd prefer B because it's easier to read, test, and maintain. Either way, I'd explain the trade-off in my justification.",
+      "tipPt": "'It depends' sozinho é fraco. Diga do que depende (prompt, tamanho da entrada) e escolha em cada caso.",
+      "followUp": "How big would the input need to be for you to change your mind?"
+    },
+    {
+      "id": "m5-q24",
+      "module": 5,
+      "lesson": "m5-l08",
+      "level": 3,
+      "kind": "practical",
+      "q": "How do you explain the reasoning behind your rating in a clear way?",
+      "qPt": "Como você explica o raciocínio por trás da sua nota de forma clara?",
+      "keys": [
+        [
+          "because",
+          "reason",
+          "why"
+        ],
+        [
+          "example",
+          "instance",
+          "specific",
+          "line"
+        ],
+        [
+          "short",
+          "simple",
+          "clear",
+          "structure"
+        ],
+        [
+          "however",
+          "but",
+          "issue",
+          "problem"
+        ]
+      ],
+      "keysPt": [
+        "dar o motivo (because)",
+        "exemplo/trecho específico",
+        "frases curtas e estrutura",
+        "mencionar problemas/ressalvas"
+      ],
+      "a1": "I say my choice, then the reason, and I give an example.",
+      "a2": "I start with my decision, then I give the main reason with because, and then a specific example from the code. I keep my sentences short.",
+      "a3": "I use a simple structure: decision, reason, evidence, and any limitation. For example: 'I rated it 2 out of 5 because it fails on empty input. On line 3 it divides by the array length, which is zero. However, the rest of the logic is correct.' Being specific makes the rating easy to check and more useful for training the model.",
+      "tipPt": "Estrutura: decision → because → example → however. Pratique essa sequência em voz alta.",
+      "followUp": "What's the difference between a good and a bad justification?"
+    },
+    {
+      "id": "m5-q25",
+      "module": 5,
+      "lesson": "m5-l08",
+      "level": 2,
+      "kind": "concept",
+      "q": "Why would you choose a simple solution over a clever one?",
+      "qPt": "Por que você escolheria uma solução simples em vez de uma solução 'esperta'?",
+      "keys": [
+        [
+          "read",
+          "understand",
+          "clear"
+        ],
+        [
+          "maintain",
+          "change",
+          "team"
+        ],
+        [
+          "bug",
+          "error",
+          "test"
+        ],
+        [
+          "because",
+          "so"
+        ]
+      ],
+      "keysPt": [
+        "fácil de ler/entender",
+        "fácil de manter/time",
+        "menos bugs, fácil de testar",
+        "justificar com because/so"
+      ],
+      "a1": "Because simple code is easier to understand and has fewer bugs.",
+      "a2": "I'd choose the simple one because it's easier to read and test. Other developers can change it later, so there are fewer bugs.",
+      "a3": "Simple code is easier to read, review, and test, so bugs are easier to find. A clever one-liner might save a few lines, but if the team can't understand it quickly, it costs more time later. Unless the clever version has a real advantage, like much better performance that the use case needs, I'd choose the simple one.",
+      "tipPt": "Use 'because' e 'so'. E mostre equilíbrio: 'unless...' (a não ser que).",
+      "followUp": "Can you think of a case where the clever solution is better?"
+    },
+    {
+      "id": "m5-q26",
+      "module": 5,
+      "lesson": "m5-l08",
+      "level": 4,
+      "kind": "scenario",
+      "q": "Imagine you need to explain to a non-technical manager why you rejected an AI code response. What would you say?",
+      "qPt": "Imagine que você precisa explicar a um gerente não técnico por que rejeitou uma resposta de código da IA. O que você diria?",
+      "keys": [
+        [
+          "simple",
+          "plain",
+          "no jargon",
+          "easy"
+        ],
+        [
+          "risk",
+          "problem",
+          "fail",
+          "break",
+          "unsafe"
+        ],
+        [
+          "user",
+          "customer",
+          "data",
+          "business"
+        ],
+        [
+          "because",
+          "so",
+          "for example",
+          "instance"
+        ]
+      ],
+      "keysPt": [
+        "linguagem simples, sem jargão",
+        "risco/problema/falha",
+        "impacto no usuário/dados/negócio",
+        "justificar com because e exemplo"
+      ],
+      "a1": "I'd say: the code looks good, but it doesn't work in some cases, so it can cause problems for users.",
+      "a2": "I'd avoid technical words. I'd say the code works in normal cases, but it breaks in some situations, for example when a list is empty, so users would see an error.",
+      "a3": "I'd focus on impact, not jargon. For example: 'The code looks fine at first, but it has a security problem. It puts user input directly into a database command, so an attacker could read or delete customer data. That's why I rejected it, and the other response avoids this risk.' Managers care about risk to users and the business, so I'd explain the problem in those terms and keep it short.",
+      "tipPt": "Para não técnicos: impacto (users, data, risk) e não termos técnicos. Mostra boa comunicação.",
+      "followUp": "How would your explanation change for a senior engineer?"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "m5-x01",
+      "module": 5,
+      "level": 1,
+      "type": "code",
+      "prompt": "Write a JavaScript function that returns the sum of all numbers in an array.",
+      "responseA": "Response A:\nfunction sum(arr) {\n  let total = 0;\n  for (let i = 0; i <= arr.length; i++) {\n    total += arr[i];\n  }\n  return total;\n}",
+      "responseB": "Response B:\nfunction sum(arr) {\n  let total = 0;\n  for (let i = 0; i < arr.length; i++) {\n    total += arr[i];\n  }\n  return total;\n}",
+      "better": "B",
+      "question": "Which response is better and why?",
+      "keys": [
+        [
+          "response b",
+          "option b",
+          "b is better",
+          "second one",
+          "the second"
+        ],
+        [
+          "off by one",
+          "off-by-one",
+          "one too",
+          "extra",
+          "less than",
+          "<="
+        ],
+        [
+          "undefined",
+          "nan",
+          "wrong",
+          "error"
+        ],
+        [
+          "because",
+          "so"
+        ]
+      ],
+      "keysPt": [
+        "escolher B",
+        "erro off-by-one no loop (<=)",
+        "arr[i] vira undefined e o total vira NaN",
+        "justificar com because/so"
+      ],
+      "modelAnswer": "Response B is better. Response A has an off-by-one error, because the loop uses less than or equal to the array length. On the last iteration, arr[i] is undefined, so the total becomes NaN. Response B uses less than, so it stops at the last valid index. The rest of the code is the same, so this bug decides it.",
+      "explainPt": "Em A, i vai até arr.length. Como o último índice válido é arr.length - 1, a última volta soma undefined, e número + undefined = NaN. B usa < e está correta."
+    },
+    {
+      "id": "m5-x02",
+      "module": 5,
+      "level": 2,
+      "type": "code",
+      "prompt": "Write a TypeScript function that returns true if an array has duplicate values.",
+      "responseA": "Response A:\nfunction hasDuplicates(arr: number[]): boolean {\n  const seen = new Set<number>();\n  for (const n of arr) {\n    if (seen.has(n)) return true;\n    seen.add(n);\n  }\n  return false;\n}",
+      "responseB": "Response B:\nfunction hasDuplicates(arr: number[]): boolean {\n  for (let i = 0; i < arr.length; i++) {\n    for (let j = 0; j < arr.length; j++) {\n      if (i !== j && arr[i] === arr[j]) return true;\n    }\n  }\n  return false;\n}",
+      "better": "A",
+      "question": "Both are correct. Which one is better and why?",
+      "keys": [
+        [
+          "response a",
+          "option a",
+          "a is better",
+          "first one",
+          "the first"
+        ],
+        [
+          "set"
+        ],
+        [
+          "o(n)",
+          "of n",
+          "linear",
+          "faster",
+          "fast"
+        ],
+        [
+          "nested",
+          "n squared",
+          "n^2",
+          "quadratic",
+          "slow"
+        ],
+        [
+          "memory",
+          "space"
+        ]
+      ],
+      "keysPt": [
+        "escolher A",
+        "usa Set",
+        "O(n), linear, mais rápida",
+        "B tem loop aninhado O(n²)",
+        "trade-off de memória"
+      ],
+      "modelAnswer": "Both responses are correct, but Response A is better. It uses a Set, so each lookup is constant time on average, and the whole function is O(n). Response B uses a nested loop, which is O(n squared), so it gets slow with large arrays. Response A uses some extra memory for the Set, but that's a good trade-off. It's also easy to read.",
+      "explainPt": "As duas dão o resultado certo. A percorre o array uma vez e usa Set.has (O(1) em média): O(n) de tempo e O(n) de memória. B compara todos os pares: O(n²). Para arrays grandes, A é muito melhor."
+    },
+    {
+      "id": "m5-x03",
+      "module": 5,
+      "level": 2,
+      "type": "code",
+      "prompt": "Write a Python function that finds a user by username in a SQLite database.",
+      "responseA": "Response A:\ndef find_user(conn, username):\n    cur = conn.cursor()\n    cur.execute(f\"SELECT * FROM users WHERE username = '{username}'\")\n    return cur.fetchone()",
+      "responseB": "Response B:\ndef find_user(conn, username):\n    cur = conn.cursor()\n    cur.execute(\"SELECT * FROM users WHERE username = ?\", (username,))\n    return cur.fetchone()",
+      "better": "B",
+      "question": "Which response is better and why?",
+      "keys": [
+        [
+          "response b",
+          "option b",
+          "b is better",
+          "second one",
+          "the second"
+        ],
+        [
+          "injection",
+          "sql injection"
+        ],
+        [
+          "parameter",
+          "placeholder",
+          "question mark",
+          "prepared"
+        ],
+        [
+          "f-string",
+          "f string",
+          "string",
+          "format",
+          "concat",
+          "input"
+        ]
+      ],
+      "keysPt": [
+        "escolher B",
+        "A é vulnerável a SQL injection",
+        "B usa query parametrizada (?)",
+        "A coloca a entrada do usuário direto na string"
+      ],
+      "modelAnswer": "Response B is better. Response A puts the username directly into the SQL string with an f-string, so it's vulnerable to SQL injection. For example, an attacker could send a quote and change the query. Response B uses a parameterized query with a question mark placeholder, so the database treats the input only as a value. Both return the same result for normal input, but B is safe.",
+      "explainPt": "Em A, um username como ' OR '1'='1 muda a query e retorna usuários indevidos. Em B, o sqlite3 envia o valor separado do SQL (placeholder ?), o que impede a injeção. Segurança pesa muito na avaliação."
+    },
+    {
+      "id": "m5-x04",
+      "module": 5,
+      "level": 2,
+      "type": "code",
+      "prompt": "Write an async JavaScript function that fetches a user from /api/users/:id and returns the JSON data.",
+      "responseA": "Response A:\nasync function getUser(id) {\n  const res = await fetch('/api/users/' + id);\n  if (!res.ok) throw new Error('Request failed');\n  return await res.json();\n}",
+      "responseB": "Response B:\nasync function getUser(id) {\n  const res = fetch('/api/users/' + id);\n  return res.json();\n}",
+      "better": "A",
+      "question": "Which response is better and why?",
+      "keys": [
+        [
+          "response a",
+          "option a",
+          "a is better",
+          "first one",
+          "the first"
+        ],
+        [
+          "await"
+        ],
+        [
+          "promise"
+        ],
+        [
+          "error",
+          "res.ok",
+          "status",
+          "check",
+          "fail"
+        ]
+      ],
+      "keysPt": [
+        "escolher A",
+        "B esquece o await",
+        "res é uma Promise, não a resposta",
+        "A verifica erro (res.ok)"
+      ],
+      "modelAnswer": "Response A is better. Response B is missing await before fetch, so res is a promise, not a response. Calling res.json on a promise throws an error, because promises don't have a json method. Response A awaits the fetch and also checks res.ok, so it handles failed requests. So A is correct and more robust.",
+      "explainPt": "Sem await, fetch() devolve uma Promise, e Promise não tem o método .json(): TypeError 'res.json is not a function'. A espera a resposta e ainda trata status de erro com res.ok."
+    },
+    {
+      "id": "m5-x05",
+      "module": 5,
+      "level": 3,
+      "type": "code",
+      "prompt": "Write a TypeScript function that returns the scores sorted from lowest to highest. Do not change the original array.",
+      "responseA": "Response A:\nfunction sortScores(scores: number[]): number[] {\n  return scores.sort((a, b) => a - b);\n}",
+      "responseB": "Response B:\nfunction sortScores(scores: number[]): number[] {\n  return [...scores].sort((a, b) => a - b);\n}",
+      "better": "B",
+      "question": "Which response follows the prompt better and why?",
+      "keys": [
+        [
+          "response b",
+          "option b",
+          "b is better",
+          "second one",
+          "the second"
+        ],
+        [
+          "copy",
+          "spread",
+          "new array"
+        ],
+        [
+          "mutat",
+          "change",
+          "modif",
+          "original"
+        ],
+        [
+          "prompt",
+          "instruction",
+          "asked",
+          "requirement"
+        ]
+      ],
+      "keysPt": [
+        "escolher B",
+        "B cria uma cópia com spread",
+        "A modifica (muta) o array original",
+        "o prompt pedia para não alterar"
+      ],
+      "modelAnswer": "Response B is better. Both sort the numbers correctly with a compare function. But sort changes the array in place, so Response A mutates the original array, and the prompt said not to do that. Response B makes a copy with the spread operator first, so the original stays the same. A ignores an explicit requirement, so B wins.",
+      "explainPt": "Array.prototype.sort ordena no próprio array (in place). A altera o array recebido, violando a instrução. B copia com [...scores] antes. (Também seria válido usar scores.toSorted() em ambientes modernos.) Ambas usam (a, b) => a - b, que ordena números corretamente."
+    },
+    {
+      "id": "m5-x06",
+      "module": 5,
+      "level": 2,
+      "type": "code",
+      "prompt": "Write a Python function that returns the average of a list of numbers. Return 0 for an empty list.",
+      "responseA": "Response A:\ndef average(nums):\n    if not nums:\n        return 0\n    return sum(nums) / len(nums)",
+      "responseB": "Response B:\ndef average(nums):\n    total = 0\n    for n in nums:\n        total += n\n    return total / len(nums)",
+      "better": "A",
+      "question": "Which response is better and why?",
+      "keys": [
+        [
+          "response a",
+          "option a",
+          "a is better",
+          "first one",
+          "the first"
+        ],
+        [
+          "empty"
+        ],
+        [
+          "zero",
+          "0",
+          "division",
+          "divide"
+        ],
+        [
+          "error",
+          "crash",
+          "exception"
+        ]
+      ],
+      "keysPt": [
+        "escolher A",
+        "lista vazia (edge case)",
+        "divisão por zero",
+        "B lança erro/quebra"
+      ],
+      "modelAnswer": "Response A is better. The prompt says to return 0 for an empty list, and Response A checks that first. Response B divides by the length, so with an empty list it divides by zero and raises a ZeroDivisionError. Response A is also more idiomatic, because it uses the built-in sum and len. So A is correct and cleaner.",
+      "explainPt": "Com nums = [], B faz 0 / 0 e o Python lança ZeroDivisionError. A trata o edge case pedido no prompt e usa sum() e len(), mais idiomático em Python."
+    },
+    {
+      "id": "m5-x07",
+      "module": 5,
+      "level": 3,
+      "type": "code",
+      "prompt": "Write a JavaScript function that shows a user's comment inside the element with id 'comment'.",
+      "responseA": "Response A:\nfunction showComment(text) {\n  const el = document.getElementById('comment');\n  el.innerHTML = text;\n}",
+      "responseB": "Response B:\nfunction showComment(text) {\n  const el = document.getElementById('comment');\n  el.textContent = text;\n}",
+      "better": "B",
+      "question": "Which response is better and why?",
+      "keys": [
+        [
+          "response b",
+          "option b",
+          "b is better",
+          "second one",
+          "the second"
+        ],
+        [
+          "xss",
+          "cross site",
+          "script"
+        ],
+        [
+          "innerhtml",
+          "html"
+        ],
+        [
+          "textcontent",
+          "text content",
+          "plain text",
+          "safe"
+        ]
+      ],
+      "keysPt": [
+        "escolher B",
+        "A permite XSS",
+        "innerHTML interpreta HTML",
+        "textContent trata como texto puro (seguro)"
+      ],
+      "modelAnswer": "Response B is better. Response A uses innerHTML with user input, so if the comment contains HTML, like an image tag with an onerror attribute, the browser will run it. That's an XSS vulnerability. Response B uses textContent, which shows the text as plain text and doesn't run any code. Both display normal comments the same way, but B is safe.",
+      "explainPt": "innerHTML interpreta o texto como HTML: um comentário como <img src=x onerror=alert(1)> executa JavaScript. textContent insere apenas texto. No React, o equivalente seguro é renderizar {text} no JSX, e o perigoso é dangerouslySetInnerHTML."
+    },
+    {
+      "id": "m5-x08",
+      "module": 5,
+      "level": 3,
+      "type": "code",
+      "prompt": "Write a JavaScript function that reads a settings object from a JSON string sent by the user.",
+      "responseA": "Response A:\nfunction parseSettings(input) {\n  try {\n    return JSON.parse(input);\n  } catch {\n    return null;\n  }\n}",
+      "responseB": "Response B:\nfunction parseSettings(input) {\n  return eval('(' + input + ')');\n}",
+      "better": "A",
+      "question": "Which response is better and why?",
+      "keys": [
+        [
+          "response a",
+          "option a",
+          "a is better",
+          "first one",
+          "the first"
+        ],
+        [
+          "eval"
+        ],
+        [
+          "json.parse",
+          "json parse",
+          "parse"
+        ],
+        [
+          "run",
+          "execute",
+          "code",
+          "secur",
+          "danger",
+          "unsafe"
+        ],
+        [
+          "error",
+          "invalid",
+          "try",
+          "catch"
+        ]
+      ],
+      "keysPt": [
+        "escolher A",
+        "B usa eval",
+        "A usa JSON.parse",
+        "eval executa código arbitrário (inseguro)",
+        "A trata JSON inválido com try/catch"
+      ],
+      "modelAnswer": "Response A is better. Response B uses eval on user input, which is dangerous, because eval runs any JavaScript code, not only JSON. An attacker could send code that steals data. Response A uses JSON.parse, which only accepts valid JSON, and it handles invalid input with try and catch. So A is safe and more robust.",
+      "explainPt": "eval executa qualquer código que o usuário enviar, então é uma falha grave de segurança. JSON.parse só aceita JSON válido e o try/catch evita que o programa quebre com entrada inválida."
+    }
+  ]
+}

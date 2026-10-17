@@ -1,0 +1,1402 @@
+[
+  {
+    "en": "artificial intelligence (AI)",
+    "pt": "inteligência artificial (IA)",
+    "defPt": "Área da computação que cria sistemas capazes de realizar tarefas que normalmente exigem inteligência humana, como entender linguagem ou reconhecer imagens.",
+    "exampleEn": "Artificial intelligence powers tools like chatbots and translators.",
+    "say": "ar-tih-FISH-ul in-TEL-ih-jens",
+    "cat": "ai"
+  },
+  {
+    "en": "machine learning",
+    "pt": "aprendizado de máquina",
+    "defPt": "Ramo da IA em que o sistema aprende padrões a partir de dados, em vez de ser programado com regras explícitas.",
+    "exampleEn": "We used machine learning to detect spam emails.",
+    "say": "muh-SHEEN LER-ning",
+    "cat": "ai"
+  },
+  {
+    "en": "deep learning",
+    "pt": "aprendizado profundo",
+    "defPt": "Tipo de aprendizado de máquina que usa redes neurais com muitas camadas.",
+    "exampleEn": "Deep learning made image recognition much more accurate.",
+    "say": "DEEP LER-ning",
+    "cat": "ai"
+  },
+  {
+    "en": "neural network",
+    "pt": "rede neural",
+    "defPt": "Modelo formado por camadas de neurônios artificiais conectados; os pesos dessas conexões são ajustados durante o treinamento.",
+    "exampleEn": "A neural network learns by adjusting its weights.",
+    "say": "NOO-rul NET-werk",
+    "cat": "ai"
+  },
+  {
+    "en": "model",
+    "pt": "modelo",
+    "defPt": "Sistema treinado que recebe uma entrada e produz uma saída, como uma previsão, uma classificação ou um texto.",
+    "exampleEn": "The model answered the question correctly.",
+    "say": "MAH-dul",
+    "cat": "ai"
+  },
+  {
+    "en": "algorithm",
+    "pt": "algoritmo",
+    "defPt": "Sequência finita de passos bem definidos para resolver um problema.",
+    "exampleEn": "This sorting algorithm runs in O(n log n) time.",
+    "say": "AL-go-ri-thum",
+    "cat": "ai"
+  },
+  {
+    "en": "classification",
+    "pt": "classificação",
+    "defPt": "Tarefa de atribuir uma categoria a uma entrada, por exemplo, spam ou não spam.",
+    "exampleEn": "Sentiment classification labels a review as positive or negative.",
+    "say": "klas-ih-fih-KAY-shun",
+    "cat": "ai"
+  },
+  {
+    "en": "prediction",
+    "pt": "previsão / predição",
+    "defPt": "Saída que o modelo produz para uma entrada.",
+    "exampleEn": "The model's prediction was wrong for this example.",
+    "say": "pree-DIK-shun",
+    "cat": "ai"
+  },
+  {
+    "en": "generative AI",
+    "pt": "IA generativa",
+    "defPt": "IA que cria conteúdo novo, como texto, imagens, áudio ou código.",
+    "exampleEn": "Generative AI can write a first draft of an email in seconds.",
+    "say": "JEN-er-uh-tiv AY-AI",
+    "cat": "ai"
+  },
+  {
+    "en": "natural language processing (NLP)",
+    "pt": "processamento de linguagem natural (PLN)",
+    "defPt": "Área da IA que trata de entender e gerar linguagem humana.",
+    "exampleEn": "NLP is used in translation apps and chatbots.",
+    "say": "NATCH-rul LANG-gwij PRAH-ses-ing",
+    "cat": "ai"
+  },
+  {
+    "en": "supervised learning",
+    "pt": "aprendizado supervisionado",
+    "defPt": "Treinamento com exemplos rotulados, ou seja, cada entrada vem com a resposta correta.",
+    "exampleEn": "Supervised learning needs a lot of labeled data.",
+    "say": "SOO-per-vyzd LER-ning",
+    "cat": "ai"
+  },
+  {
+    "en": "unsupervised learning",
+    "pt": "aprendizado não supervisionado",
+    "defPt": "Treinamento com dados sem rótulos, para encontrar padrões ou grupos sozinho.",
+    "exampleEn": "Clustering customers by behavior is a type of unsupervised learning.",
+    "say": "un-SOO-per-vyzd LER-ning",
+    "cat": "ai"
+  },
+  {
+    "en": "reinforcement learning",
+    "pt": "aprendizado por reforço",
+    "defPt": "Aprendizado em que um agente executa ações, recebe recompensas ou penalidades e aprende a maximizar a recompensa total.",
+    "exampleEn": "Reinforcement learning taught the agent to win the game.",
+    "say": "ree-in-FORS-ment LER-ning",
+    "cat": "ai"
+  },
+  {
+    "en": "agent",
+    "pt": "agente",
+    "defPt": "Sistema de IA que planeja e executa várias ações, como chamar ferramentas ou navegar na web, para atingir um objetivo.",
+    "exampleEn": "The agent searched the web and then wrote a summary.",
+    "say": "AY-jent",
+    "cat": "ai"
+  },
+  {
+    "en": "multimodal",
+    "pt": "multimodal",
+    "defPt": "Modelo que processa mais de um tipo de dado, como texto, imagem e áudio.",
+    "exampleEn": "A multimodal model can describe what is in a photo.",
+    "say": "mul-tee-MOH-dul",
+    "cat": "ai"
+  },
+  {
+    "en": "feature",
+    "pt": "característica / atributo (ou funcionalidade)",
+    "defPt": "Em ML, é uma variável de entrada usada pelo modelo; em software, significa uma funcionalidade do produto.",
+    "exampleEn": "Age is an important feature in this dataset.",
+    "say": "FEE-cher",
+    "cat": "ai"
+  },
+  {
+    "en": "large language model (LLM)",
+    "pt": "modelo de linguagem grande",
+    "defPt": "Modelo treinado com enormes volumes de texto para prever o próximo token; com isso consegue responder perguntas, resumir e escrever código.",
+    "exampleEn": "An LLM can answer questions, write code, and summarize text.",
+    "say": "LARJ LANG-gwij MAH-dul",
+    "cat": "llm"
+  },
+  {
+    "en": "token",
+    "pt": "token",
+    "defPt": "Pedaço de texto (palavra, parte de palavra, pontuação ou espaço) que o modelo processa como uma unidade.",
+    "exampleEn": "The word \"unhappiness\" may be split into several tokens.",
+    "say": "TOH-ken",
+    "cat": "llm"
+  },
+  {
+    "en": "tokenizer",
+    "pt": "tokenizador",
+    "defPt": "Componente que divide o texto em tokens e converte cada um em um número (ID).",
+    "exampleEn": "The tokenizer turns the sentence into a list of token IDs.",
+    "say": "TOH-ken-eye-zer",
+    "cat": "llm"
+  },
+  {
+    "en": "embedding",
+    "pt": "embedding / vetor de representação",
+    "defPt": "Vetor de números que representa o significado de um token ou texto; textos com significado parecido têm vetores próximos.",
+    "exampleEn": "We compare embeddings to find similar documents.",
+    "say": "em-BED-ing",
+    "cat": "llm"
+  },
+  {
+    "en": "transformer",
+    "pt": "transformer",
+    "defPt": "Arquitetura de rede neural baseada no mecanismo de atenção; é a base da maioria dos LLMs modernos.",
+    "exampleEn": "Most modern LLMs are based on the transformer architecture.",
+    "say": "trans-FOR-mer",
+    "cat": "llm"
+  },
+  {
+    "en": "attention",
+    "pt": "atenção",
+    "defPt": "Mecanismo que permite ao modelo pesar a importância de cada token em relação aos outros ao processar o texto.",
+    "exampleEn": "Attention helps the model connect the word \"it\" to the right noun.",
+    "say": "uh-TEN-shun",
+    "cat": "llm"
+  },
+  {
+    "en": "self-attention",
+    "pt": "autoatenção",
+    "defPt": "Tipo de atenção em que cada token de uma sequência olha para os outros tokens da mesma sequência.",
+    "exampleEn": "Self-attention lets each word look at the other words in the sentence.",
+    "say": "SELF uh-TEN-shun",
+    "cat": "llm"
+  },
+  {
+    "en": "context window",
+    "pt": "janela de contexto",
+    "defPt": "Quantidade máxima de tokens (entrada mais saída) que o modelo consegue considerar de uma vez.",
+    "exampleEn": "The document was too long to fit in the context window.",
+    "say": "KON-tekst WIN-doh",
+    "cat": "llm"
+  },
+  {
+    "en": "parameters",
+    "pt": "parâmetros",
+    "defPt": "Valores numéricos internos do modelo, principalmente os pesos, aprendidos no treinamento; o número de parâmetros indica o tamanho do modelo.",
+    "exampleEn": "The model has 70 billion parameters.",
+    "say": "puh-RAM-ih-terz",
+    "cat": "llm"
+  },
+  {
+    "en": "weights",
+    "pt": "pesos",
+    "defPt": "Parâmetros que definem a força das conexões entre os neurônios; são ajustados durante o treinamento.",
+    "exampleEn": "Fine-tuning updates the model's weights.",
+    "say": "WAYTS",
+    "cat": "llm"
+  },
+  {
+    "en": "temperature",
+    "pt": "temperatura",
+    "defPt": "Parâmetro de geração que controla a aleatoriedade: valor baixo deixa as respostas mais previsíveis, valor alto deixa mais variadas e criativas.",
+    "exampleEn": "Set the temperature to 0 for more consistent answers.",
+    "say": "TEM-per-uh-cher",
+    "cat": "llm"
+  },
+  {
+    "en": "top-p (nucleus sampling)",
+    "pt": "top-p (amostragem por núcleo)",
+    "defPt": "Método de geração que sorteia o próximo token apenas entre os mais prováveis cuja probabilidade somada chega a p.",
+    "exampleEn": "With top-p set to 0.9, very unlikely tokens are never chosen.",
+    "say": "TOP-PEE",
+    "cat": "llm"
+  },
+  {
+    "en": "top-k",
+    "pt": "top-k",
+    "defPt": "Método de geração que considera apenas os k tokens mais prováveis a cada passo.",
+    "exampleEn": "A top-k of 40 limits the choice to the 40 most likely tokens.",
+    "say": "TOP-KAY",
+    "cat": "llm"
+  },
+  {
+    "en": "logits",
+    "pt": "logits",
+    "defPt": "Pontuações brutas que o modelo dá a cada token possível antes de serem convertidas em probabilidades pela função softmax.",
+    "exampleEn": "The logits are converted into probabilities with softmax.",
+    "say": "LOH-jits",
+    "cat": "llm"
+  },
+  {
+    "en": "softmax",
+    "pt": "softmax",
+    "defPt": "Função que transforma uma lista de pontuações (logits) em probabilidades que somam 1.",
+    "exampleEn": "Softmax turns the logits into a probability distribution.",
+    "say": "SOFT-maks",
+    "cat": "llm"
+  },
+  {
+    "en": "inference",
+    "pt": "inferência",
+    "defPt": "Uso do modelo já treinado para gerar respostas; é diferente de treinamento.",
+    "exampleEn": "Inference cost depends on how many tokens we process.",
+    "say": "IN-fer-ens",
+    "cat": "llm"
+  },
+  {
+    "en": "latency",
+    "pt": "latência",
+    "defPt": "Tempo de espera entre o envio de um pedido e o recebimento da resposta.",
+    "exampleEn": "Users complained about the high latency of the chatbot.",
+    "say": "LAY-ten-see",
+    "cat": "llm"
+  },
+  {
+    "en": "throughput",
+    "pt": "vazão",
+    "defPt": "Quantidade de trabalho, como tokens ou pedidos, processada por unidade de tempo.",
+    "exampleEn": "Batching requests increases throughput on the server.",
+    "say": "THROO-put",
+    "cat": "llm"
+  },
+  {
+    "en": "prompt",
+    "pt": "prompt / instrução",
+    "defPt": "Texto de entrada enviado ao modelo.",
+    "exampleEn": "The prompt asked for a summary in three bullet points.",
+    "say": "PROMPT",
+    "cat": "llm"
+  },
+  {
+    "en": "system prompt",
+    "pt": "prompt de sistema",
+    "defPt": "Instruções iniciais que definem o papel, o comportamento e as regras do modelo na conversa.",
+    "exampleEn": "The system prompt tells the model to answer only in Portuguese.",
+    "say": "SIS-tem PROMPT",
+    "cat": "llm"
+  },
+  {
+    "en": "prompt engineering",
+    "pt": "engenharia de prompt",
+    "defPt": "Prática de escrever e ajustar prompts para obter respostas melhores do modelo.",
+    "exampleEn": "Better prompt engineering reduced formatting errors by half.",
+    "say": "PROMPT en-jih-NEER-ing",
+    "cat": "llm"
+  },
+  {
+    "en": "few-shot prompting",
+    "pt": "prompt com poucos exemplos (few-shot)",
+    "defPt": "Técnica de colocar alguns exemplos de entrada e saída no prompt para mostrar ao modelo o que se espera.",
+    "exampleEn": "We used few-shot prompting with three examples of the format.",
+    "say": "FYOO-shot PROMP-ting",
+    "cat": "llm"
+  },
+  {
+    "en": "zero-shot",
+    "pt": "zero-shot (sem exemplos)",
+    "defPt": "Pedir uma tarefa ao modelo sem dar nenhum exemplo no prompt.",
+    "exampleEn": "The model solved the task zero-shot, with no examples.",
+    "say": "ZEE-roh-shot",
+    "cat": "llm"
+  },
+  {
+    "en": "chain of thought",
+    "pt": "cadeia de raciocínio",
+    "defPt": "Raciocínio passo a passo que o modelo produz antes da resposta final; costuma melhorar tarefas de lógica e matemática.",
+    "exampleEn": "Chain of thought helps the model solve math problems.",
+    "say": "CHAYN uv THOT",
+    "cat": "llm"
+  },
+  {
+    "en": "hallucination",
+    "pt": "alucinação",
+    "defPt": "Quando o modelo gera informação falsa ou inventada apresentada como verdade.",
+    "exampleEn": "The response cites a paper that does not exist, which is a hallucination.",
+    "say": "huh-LOO-sih-NAY-shun",
+    "cat": "llm"
+  },
+  {
+    "en": "retrieval-augmented generation (RAG)",
+    "pt": "geração aumentada por recuperação",
+    "defPt": "Técnica que busca documentos relevantes e os coloca no prompt para que o modelo responda com base neles.",
+    "exampleEn": "RAG lets the chatbot answer using the company's own documents.",
+    "say": "RAG (rih-TREE-vul awg-MEN-tid jen-er-AY-shun)",
+    "cat": "llm"
+  },
+  {
+    "en": "autoregressive",
+    "pt": "autorregressivo",
+    "defPt": "Modelo que gera um token por vez, usando todos os tokens anteriores como entrada para prever o próximo.",
+    "exampleEn": "LLMs are autoregressive, so each token depends on the previous ones.",
+    "say": "aw-toh-rih-GRES-iv",
+    "cat": "llm"
+  },
+  {
+    "en": "decoding",
+    "pt": "decodificação",
+    "defPt": "Processo de escolher os tokens de saída, um de cada vez, a partir das probabilidades do modelo.",
+    "exampleEn": "Greedy decoding always picks the most likely next token.",
+    "say": "dee-KOH-ding",
+    "cat": "llm"
+  },
+  {
+    "en": "tool use (function calling)",
+    "pt": "uso de ferramentas (chamada de função)",
+    "defPt": "Capacidade do modelo de pedir a execução de funções externas, como uma API, uma busca ou uma calculadora, e usar o resultado.",
+    "exampleEn": "With function calling, the model can check a weather API.",
+    "say": "TOOL YOOS",
+    "cat": "llm"
+  },
+  {
+    "en": "max tokens",
+    "pt": "limite máximo de tokens",
+    "defPt": "Número máximo de tokens que o modelo pode gerar em uma resposta.",
+    "exampleEn": "The answer was cut off because it reached max tokens.",
+    "say": "MAKS TOH-kenz",
+    "cat": "llm"
+  },
+  {
+    "en": "knowledge cutoff",
+    "pt": "data de corte do conhecimento",
+    "defPt": "Data até a qual vão os dados de treinamento do modelo; ele não conhece fatos posteriores sem uma ferramenta de busca.",
+    "exampleEn": "The model doesn't know about recent events because of its knowledge cutoff.",
+    "say": "NOL-ij KUT-off",
+    "cat": "llm"
+  },
+  {
+    "en": "jailbreak",
+    "pt": "jailbreak (burlar as regras)",
+    "defPt": "Prompt criado para fazer o modelo ignorar suas regras de segurança.",
+    "exampleEn": "The user tried a jailbreak to get dangerous instructions.",
+    "say": "JAYL-brayk",
+    "cat": "llm"
+  },
+  {
+    "en": "prompt injection",
+    "pt": "injeção de prompt",
+    "defPt": "Ataque em que um texto malicioso, por exemplo dentro de um site ou documento, dá instruções que o modelo segue indevidamente.",
+    "exampleEn": "The webpage contained a hidden prompt injection.",
+    "say": "PROMPT in-JEK-shun",
+    "cat": "llm"
+  },
+  {
+    "en": "training",
+    "pt": "treinamento",
+    "defPt": "Processo de ajustar os parâmetros do modelo usando dados.",
+    "exampleEn": "Training a large model takes weeks on thousands of GPUs.",
+    "say": "TRAY-ning",
+    "cat": "training"
+  },
+  {
+    "en": "pretraining",
+    "pt": "pré-treinamento",
+    "defPt": "Primeira fase do treinamento, em que o modelo aprende a prever o próximo token em grandes volumes de texto.",
+    "exampleEn": "During pretraining, the model learns from trillions of tokens.",
+    "say": "pree-TRAY-ning",
+    "cat": "training"
+  },
+  {
+    "en": "fine-tuning",
+    "pt": "ajuste fino",
+    "defPt": "Treinamento adicional de um modelo já pré-treinado com dados específicos de uma tarefa, domínio ou estilo.",
+    "exampleEn": "We fine-tuned the model on customer support conversations.",
+    "say": "FYN TOO-ning",
+    "cat": "training"
+  },
+  {
+    "en": "supervised fine-tuning (SFT)",
+    "pt": "ajuste fino supervisionado",
+    "defPt": "Ajuste fino com exemplos de prompts e respostas ideais, escritas ou aprovadas por humanos.",
+    "exampleEn": "SFT data includes high-quality example answers written by experts.",
+    "say": "SOO-per-vyzd FYN TOO-ning",
+    "cat": "training"
+  },
+  {
+    "en": "RLHF (reinforcement learning from human feedback)",
+    "pt": "aprendizado por reforço com feedback humano",
+    "defPt": "Técnica que usa preferências humanas para treinar um modelo de recompensa e depois otimiza o LLM com aprendizado por reforço para obter notas altas desse modelo.",
+    "exampleEn": "RLHF made the assistant more helpful and more polite.",
+    "say": "AR-EL-AYCH-EF",
+    "cat": "training"
+  },
+  {
+    "en": "reward model",
+    "pt": "modelo de recompensa",
+    "defPt": "Modelo treinado com preferências humanas que dá uma nota para a qualidade de uma resposta.",
+    "exampleEn": "The reward model gives higher scores to helpful answers.",
+    "say": "rih-WORD MAH-dul",
+    "cat": "training"
+  },
+  {
+    "en": "DPO (direct preference optimization)",
+    "pt": "otimização direta de preferências",
+    "defPt": "Método que treina o modelo diretamente com pares de respostas (preferida e rejeitada), sem precisar de um modelo de recompensa separado.",
+    "exampleEn": "DPO is simpler than RLHF because it skips the reward model.",
+    "say": "DEE-PEE-OH",
+    "cat": "training"
+  },
+  {
+    "en": "preference data",
+    "pt": "dados de preferência",
+    "defPt": "Dados em que humanos indicam qual de duas ou mais respostas é melhor para o mesmo prompt.",
+    "exampleEn": "Annotators created preference data by choosing the better response.",
+    "say": "PREF-er-ens DAY-tuh",
+    "cat": "training"
+  },
+  {
+    "en": "alignment",
+    "pt": "alinhamento",
+    "defPt": "Trabalho de fazer o comportamento do modelo seguir as intenções e os valores humanos: ser útil, honesto e seguro.",
+    "exampleEn": "Alignment research tries to make models safe and helpful.",
+    "say": "uh-LYN-ment",
+    "cat": "training"
+  },
+  {
+    "en": "overfitting",
+    "pt": "sobreajuste (overfitting)",
+    "defPt": "Quando o modelo decora os dados de treino e vai mal em dados novos.",
+    "exampleEn": "The model is overfitting: 99% on training data but 60% on test data.",
+    "say": "OH-ver-fit-ing",
+    "cat": "training"
+  },
+  {
+    "en": "underfitting",
+    "pt": "subajuste (underfitting)",
+    "defPt": "Quando o modelo é simples demais ou foi pouco treinado e vai mal até nos dados de treino.",
+    "exampleEn": "Underfitting means the model is too simple to learn the pattern.",
+    "say": "UN-der-fit-ing",
+    "cat": "training"
+  },
+  {
+    "en": "dataset",
+    "pt": "conjunto de dados",
+    "defPt": "Coleção organizada de exemplos usada para treinar ou avaliar um modelo.",
+    "exampleEn": "The dataset has ten thousand labeled examples.",
+    "say": "DAY-tuh-set",
+    "cat": "training"
+  },
+  {
+    "en": "training set",
+    "pt": "conjunto de treino",
+    "defPt": "Parte dos dados usada para treinar o modelo.",
+    "exampleEn": "We used 80% of the data as the training set.",
+    "say": "TRAY-ning SET",
+    "cat": "training"
+  },
+  {
+    "en": "test set",
+    "pt": "conjunto de teste",
+    "defPt": "Dados separados, que o modelo nunca viu no treino, usados para medir o desempenho final.",
+    "exampleEn": "The test set must never be used during training.",
+    "say": "TEST SET",
+    "cat": "training"
+  },
+  {
+    "en": "validation set",
+    "pt": "conjunto de validação",
+    "defPt": "Dados usados durante o desenvolvimento para ajustar hiperparâmetros e detectar overfitting.",
+    "exampleEn": "We stopped training when the validation loss started to go up.",
+    "say": "val-ih-DAY-shun SET",
+    "cat": "training"
+  },
+  {
+    "en": "epoch",
+    "pt": "época",
+    "defPt": "Uma passada completa por todo o conjunto de treino.",
+    "exampleEn": "We trained the model for three epochs.",
+    "say": "EP-uk",
+    "cat": "training"
+  },
+  {
+    "en": "loss function",
+    "pt": "função de perda",
+    "defPt": "Função que mede o erro do modelo; o treinamento tenta minimizar esse valor.",
+    "exampleEn": "Cross-entropy is a common loss function for language models.",
+    "say": "LOSS FUNK-shun",
+    "cat": "training"
+  },
+  {
+    "en": "gradient descent",
+    "pt": "descida do gradiente",
+    "defPt": "Algoritmo de otimização que ajusta os pesos aos poucos na direção que reduz a perda.",
+    "exampleEn": "Gradient descent updates the weights to reduce the error.",
+    "say": "GRAY-dee-ent dih-SENT",
+    "cat": "training"
+  },
+  {
+    "en": "hyperparameter",
+    "pt": "hiperparâmetro",
+    "defPt": "Configuração definida antes do treinamento, como a taxa de aprendizado ou o número de épocas; não é aprendida pelo modelo.",
+    "exampleEn": "The learning rate is the most important hyperparameter to tune.",
+    "say": "HY-per-puh-RAM-ih-ter",
+    "cat": "training"
+  },
+  {
+    "en": "learning rate",
+    "pt": "taxa de aprendizado",
+    "defPt": "Hiperparâmetro que define o tamanho de cada ajuste feito nos pesos durante o treinamento.",
+    "exampleEn": "If the learning rate is too high, training becomes unstable.",
+    "say": "LER-ning RAYT",
+    "cat": "training"
+  },
+  {
+    "en": "checkpoint",
+    "pt": "checkpoint (ponto de salvamento)",
+    "defPt": "Cópia salva dos pesos do modelo em um determinado momento do treinamento.",
+    "exampleEn": "We compared two checkpoints to see which one performed better.",
+    "say": "CHEK-poynt",
+    "cat": "training"
+  },
+  {
+    "en": "synthetic data",
+    "pt": "dados sintéticos",
+    "defPt": "Dados gerados artificialmente, por exemplo por outro modelo, em vez de coletados do mundo real.",
+    "exampleEn": "We used synthetic data to add more math examples.",
+    "say": "sin-THET-ik DAY-tuh",
+    "cat": "training"
+  },
+  {
+    "en": "data contamination",
+    "pt": "contaminação de dados",
+    "defPt": "Quando exemplos de um benchmark aparecem nos dados de treino, deixando os resultados artificialmente altos.",
+    "exampleEn": "High scores may be caused by data contamination.",
+    "say": "DAY-tuh kun-tam-ih-NAY-shun",
+    "cat": "training"
+  },
+  {
+    "en": "reward hacking",
+    "pt": "exploração da recompensa (reward hacking)",
+    "defPt": "Quando o modelo encontra um atalho para conseguir nota alta sem realmente cumprir bem a tarefa.",
+    "exampleEn": "The model wrote longer answers just to get a higher reward, which is reward hacking.",
+    "say": "rih-WORD HAK-ing",
+    "cat": "training"
+  },
+  {
+    "en": "sycophancy",
+    "pt": "bajulação",
+    "defPt": "Tendência do modelo de concordar com o usuário ou elogiá-lo mesmo quando ele está errado.",
+    "exampleEn": "Agreeing with the user's wrong math is an example of sycophancy.",
+    "say": "SIK-uh-fan-see",
+    "cat": "training"
+  },
+  {
+    "en": "red teaming",
+    "pt": "red teaming (teste adversarial)",
+    "defPt": "Testar o modelo de propósito com ataques e prompts difíceis para encontrar falhas de segurança antes do lançamento.",
+    "exampleEn": "Red teaming found that the model could be tricked into giving unsafe advice.",
+    "say": "RED TEE-ming",
+    "cat": "training"
+  },
+  {
+    "en": "constitutional AI",
+    "pt": "IA constitucional",
+    "defPt": "Método da Anthropic em que o modelo critica e revisa as próprias respostas com base em uma lista de princípios escritos (uma constituição), reduzindo a necessidade de rótulos humanos sobre conteúdo nocivo.",
+    "exampleEn": "Constitutional AI uses written principles to guide the model's feedback.",
+    "say": "kon-stih-TOO-shun-ul AY-AI",
+    "cat": "training"
+  },
+  {
+    "en": "evaluation (eval)",
+    "pt": "avaliação",
+    "defPt": "Processo de medir a qualidade, a segurança ou o desempenho das respostas de um modelo.",
+    "exampleEn": "We ran an evaluation on 500 coding prompts.",
+    "say": "ih-val-yoo-AY-shun",
+    "cat": "evaluation"
+  },
+  {
+    "en": "accuracy",
+    "pt": "acurácia",
+    "defPt": "Proporção de respostas corretas em relação ao total.",
+    "exampleEn": "The model reached 92% accuracy on the test set.",
+    "say": "AK-yur-uh-see",
+    "cat": "evaluation"
+  },
+  {
+    "en": "precision",
+    "pt": "precisão",
+    "defPt": "Das previsões positivas do modelo, a proporção que estava realmente correta.",
+    "exampleEn": "High precision means few false alarms.",
+    "say": "prih-SIZH-un",
+    "cat": "evaluation"
+  },
+  {
+    "en": "recall",
+    "pt": "revocação / sensibilidade",
+    "defPt": "Dos casos positivos reais, a proporção que o modelo conseguiu encontrar.",
+    "exampleEn": "Low recall means the filter misses many harmful messages.",
+    "say": "REE-kawl",
+    "cat": "evaluation"
+  },
+  {
+    "en": "F1 score",
+    "pt": "pontuação F1",
+    "defPt": "Média harmônica entre precisão e revocação; resume as duas em um único número.",
+    "exampleEn": "The F1 score balances precision and recall.",
+    "say": "EF-WUN SKOR",
+    "cat": "evaluation"
+  },
+  {
+    "en": "helpfulness",
+    "pt": "utilidade",
+    "defPt": "Quanto a resposta realmente ajuda o usuário a atingir o seu objetivo.",
+    "exampleEn": "Response A wins on helpfulness because it gives working code.",
+    "say": "HELP-ful-nes",
+    "cat": "evaluation"
+  },
+  {
+    "en": "harmlessness",
+    "pt": "inofensividade",
+    "defPt": "Quanto a resposta evita causar dano, como conteúdo perigoso, ofensivo ou ilegal.",
+    "exampleEn": "The answer fails harmlessness because it explains how to make a weapon.",
+    "say": "HARM-les-nes",
+    "cat": "evaluation"
+  },
+  {
+    "en": "honesty",
+    "pt": "honestidade",
+    "defPt": "Ser verdadeiro, não enganar o usuário e admitir incerteza ou limitações quando necessário.",
+    "exampleEn": "Saying \"I'm not sure\" can be a sign of honesty.",
+    "say": "ON-es-tee",
+    "cat": "evaluation"
+  },
+  {
+    "en": "relevance",
+    "pt": "relevância",
+    "defPt": "Quanto a resposta trata do que foi realmente perguntado.",
+    "exampleEn": "The second paragraph has low relevance to the question.",
+    "say": "REL-uh-vens",
+    "cat": "evaluation"
+  },
+  {
+    "en": "completeness",
+    "pt": "completude",
+    "defPt": "Se a resposta cobre todas as partes do pedido do usuário.",
+    "exampleEn": "The response lacks completeness because it ignores the second question.",
+    "say": "kum-PLEET-nes",
+    "cat": "evaluation"
+  },
+  {
+    "en": "conciseness",
+    "pt": "concisão",
+    "defPt": "Dizer o necessário com poucas palavras, sem repetição nem enrolação.",
+    "exampleEn": "I prefer Response B for its conciseness.",
+    "say": "kun-SYS-nes",
+    "cat": "evaluation"
+  },
+  {
+    "en": "verbosity",
+    "pt": "verbosidade / prolixidade",
+    "defPt": "Excesso de palavras ou de detalhes desnecessários em uma resposta.",
+    "exampleEn": "Response A is correct, but its verbosity makes it hard to read.",
+    "say": "ver-BOS-ih-tee",
+    "cat": "evaluation"
+  },
+  {
+    "en": "rubric",
+    "pt": "rubrica / critérios de avaliação",
+    "defPt": "Conjunto de critérios e níveis que orientam como dar a nota a uma resposta.",
+    "exampleEn": "According to the rubric, a factual error is a major issue.",
+    "say": "ROO-brik",
+    "cat": "evaluation"
+  },
+  {
+    "en": "Likert scale",
+    "pt": "escala Likert",
+    "defPt": "Escala de notas ordenadas, por exemplo de 1 a 5, indo de \"muito ruim\" a \"excelente\".",
+    "exampleEn": "I rated the response 4 on a 5-point Likert scale.",
+    "say": "LIK-ert SKAYL",
+    "cat": "evaluation"
+  },
+  {
+    "en": "pairwise comparison",
+    "pt": "comparação par a par",
+    "defPt": "Avaliar duas respostas para o mesmo prompt e decidir qual é melhor.",
+    "exampleEn": "In a pairwise comparison, I choose between Response A and Response B.",
+    "say": "PAIR-wyz kum-PAIR-ih-sun",
+    "cat": "evaluation"
+  },
+  {
+    "en": "side-by-side (SxS)",
+    "pt": "lado a lado",
+    "defPt": "Formato de avaliação em que duas respostas aparecem lado a lado para comparação, geralmente com uma escala de preferência.",
+    "exampleEn": "In the side-by-side task, Response B was slightly better.",
+    "say": "SYD by SYD",
+    "cat": "evaluation"
+  },
+  {
+    "en": "ground truth",
+    "pt": "verdade de referência (gabarito)",
+    "defPt": "Resposta correta conhecida, usada como referência para comparar a saída do modelo.",
+    "exampleEn": "We compared the model's answers with the ground truth.",
+    "say": "GROWND TROOTH",
+    "cat": "evaluation"
+  },
+  {
+    "en": "benchmark",
+    "pt": "benchmark (teste de referência)",
+    "defPt": "Conjunto padronizado de tarefas usado para medir e comparar modelos.",
+    "exampleEn": "The new model scored higher on a popular coding benchmark.",
+    "say": "BENCH-mark",
+    "cat": "evaluation"
+  },
+  {
+    "en": "factuality",
+    "pt": "factualidade",
+    "defPt": "Se as afirmações da resposta são verdadeiras e verificáveis.",
+    "exampleEn": "The response has a factuality problem: the date is wrong.",
+    "say": "fak-choo-AL-ih-tee",
+    "cat": "evaluation"
+  },
+  {
+    "en": "grounding",
+    "pt": "ancoragem (grounding)",
+    "defPt": "Basear a resposta nas fontes fornecidas, como documentos ou resultados de busca, sem inventar além delas.",
+    "exampleEn": "The answer is well grounded in the provided article.",
+    "say": "GROWN-ding",
+    "cat": "evaluation"
+  },
+  {
+    "en": "citation",
+    "pt": "citação",
+    "defPt": "Referência à fonte que sustenta uma afirmação.",
+    "exampleEn": "Each claim should have a citation to a real source.",
+    "say": "sy-TAY-shun",
+    "cat": "evaluation"
+  },
+  {
+    "en": "refusal",
+    "pt": "recusa",
+    "defPt": "Quando o modelo se recusa a atender um pedido.",
+    "exampleEn": "The refusal was correct because the request was harmful.",
+    "say": "rih-FYOO-zul",
+    "cat": "evaluation"
+  },
+  {
+    "en": "over-refusal",
+    "pt": "recusa excessiva",
+    "defPt": "Quando o modelo recusa um pedido seguro e legítimo por excesso de cautela.",
+    "exampleEn": "Refusing to explain how to kill a Linux process is over-refusal.",
+    "say": "OH-ver rih-FYOO-zul",
+    "cat": "evaluation"
+  },
+  {
+    "en": "instruction following",
+    "pt": "seguimento de instruções",
+    "defPt": "Se o modelo obedeceu a todas as instruções do prompt, como formato, tamanho, idioma e restrições.",
+    "exampleEn": "The response fails instruction following because it used more than 100 words.",
+    "say": "in-STRUK-shun FOL-oh-ing",
+    "cat": "evaluation"
+  },
+  {
+    "en": "coherence",
+    "pt": "coerência",
+    "defPt": "Se a resposta é lógica, organizada e não se contradiz.",
+    "exampleEn": "The answer lacks coherence: the conclusion contradicts the first paragraph.",
+    "say": "koh-HEER-ens",
+    "cat": "evaluation"
+  },
+  {
+    "en": "fluency",
+    "pt": "fluência",
+    "defPt": "Se o texto soa natural e gramaticalmente correto.",
+    "exampleEn": "The translation is accurate, but its fluency is poor.",
+    "say": "FLOO-en-see",
+    "cat": "evaluation"
+  },
+  {
+    "en": "tone",
+    "pt": "tom",
+    "defPt": "O estilo e a atitude da resposta, por exemplo formal, amigável ou rude.",
+    "exampleEn": "The tone is too casual for a customer support reply.",
+    "say": "TOHN",
+    "cat": "evaluation"
+  },
+  {
+    "en": "safety",
+    "pt": "segurança",
+    "defPt": "Ausência de conteúdo que possa causar dano físico, psicológico, legal ou social.",
+    "exampleEn": "Safety comes first, even if the answer is less helpful.",
+    "say": "SAYF-tee",
+    "cat": "evaluation"
+  },
+  {
+    "en": "toxicity",
+    "pt": "toxicidade",
+    "defPt": "Presença de conteúdo ofensivo, agressivo, discriminatório ou de ódio.",
+    "exampleEn": "The filter detected toxicity in the response.",
+    "say": "tok-SIS-ih-tee",
+    "cat": "evaluation"
+  },
+  {
+    "en": "human evaluation",
+    "pt": "avaliação humana",
+    "defPt": "Avaliação em que pessoas leem e julgam as respostas do modelo.",
+    "exampleEn": "Human evaluation is slower but captures quality better than metrics.",
+    "say": "HYOO-mun ih-val-yoo-AY-shun",
+    "cat": "evaluation"
+  },
+  {
+    "en": "LLM-as-a-judge",
+    "pt": "LLM como juiz",
+    "defPt": "Uso de um modelo de linguagem para avaliar ou dar nota às respostas de outro modelo.",
+    "exampleEn": "We used LLM-as-a-judge to score thousands of responses quickly.",
+    "say": "EL-EL-EM az uh JUJ",
+    "cat": "evaluation"
+  },
+  {
+    "en": "win rate",
+    "pt": "taxa de vitória",
+    "defPt": "Porcentagem de comparações em que um modelo foi preferido em relação ao outro.",
+    "exampleEn": "The new model had a 60% win rate against the old one.",
+    "say": "WIN RAYT",
+    "cat": "evaluation"
+  },
+  {
+    "en": "severity",
+    "pt": "gravidade",
+    "defPt": "Quão sério é um erro; por exemplo, um erro factual grave pesa mais que um erro de formatação.",
+    "exampleEn": "A wrong medical dosage is a high-severity error.",
+    "say": "sih-VER-ih-tee",
+    "cat": "evaluation"
+  },
+  {
+    "en": "false positive",
+    "pt": "falso positivo",
+    "defPt": "Quando o sistema indica que algo está presente (por exemplo, conteúdo nocivo), mas na verdade não está.",
+    "exampleEn": "Flagging a cooking recipe as dangerous is a false positive.",
+    "say": "FAWLS POZ-ih-tiv",
+    "cat": "evaluation"
+  },
+  {
+    "en": "false negative",
+    "pt": "falso negativo",
+    "defPt": "Quando o sistema não detecta algo que realmente está presente.",
+    "exampleEn": "Missing a real threat in the message is a false negative.",
+    "say": "FAWLS NEG-uh-tiv",
+    "cat": "evaluation"
+  },
+  {
+    "en": "annotation",
+    "pt": "anotação",
+    "defPt": "Trabalho de adicionar rótulos, notas ou comentários a dados para treinar ou avaliar modelos.",
+    "exampleEn": "Annotation quality directly affects model quality.",
+    "say": "an-oh-TAY-shun",
+    "cat": "annotation"
+  },
+  {
+    "en": "annotator",
+    "pt": "anotador",
+    "defPt": "Pessoa que faz a anotação dos dados seguindo as diretrizes.",
+    "exampleEn": "Each prompt was reviewed by three annotators.",
+    "say": "AN-oh-tay-ter",
+    "cat": "annotation"
+  },
+  {
+    "en": "label",
+    "pt": "rótulo",
+    "defPt": "Categoria ou valor atribuído a um exemplo de dados.",
+    "exampleEn": "I gave this response the label \"partially correct\".",
+    "say": "LAY-bul",
+    "cat": "annotation"
+  },
+  {
+    "en": "guidelines",
+    "pt": "diretrizes",
+    "defPt": "Documento com as regras e os critérios que o anotador deve seguir.",
+    "exampleEn": "The guidelines say that any safety issue is an automatic fail.",
+    "say": "GYD-lynz",
+    "cat": "annotation"
+  },
+  {
+    "en": "inter-annotator agreement",
+    "pt": "concordância entre anotadores",
+    "defPt": "Medida de quanto anotadores diferentes dão o mesmo rótulo ao mesmo item; indica se a tarefa e as diretrizes estão claras.",
+    "exampleEn": "Low inter-annotator agreement suggests the guidelines are unclear.",
+    "say": "IN-ter AN-oh-tay-ter uh-GREE-ment",
+    "cat": "annotation"
+  },
+  {
+    "en": "borderline case",
+    "pt": "caso limítrofe",
+    "defPt": "Exemplo difícil, que fica entre duas categorias e não se encaixa claramente nas diretrizes.",
+    "exampleEn": "This is a borderline case, so I explained my reasoning in the comments.",
+    "say": "BOR-der-lyn KAYS",
+    "cat": "annotation"
+  },
+  {
+    "en": "escalate",
+    "pt": "escalar / encaminhar",
+    "defPt": "Levar um problema ou dúvida para um revisor, líder ou equipe responsável.",
+    "exampleEn": "If the prompt contains personal data, I escalate it to the team lead.",
+    "say": "ES-kuh-layt",
+    "cat": "annotation"
+  },
+  {
+    "en": "quality assurance (QA)",
+    "pt": "garantia de qualidade",
+    "defPt": "Processo de revisar o trabalho para garantir que ele atende aos padrões de qualidade.",
+    "exampleEn": "The QA team reviews 10% of all tasks.",
+    "say": "KWAL-ih-tee uh-SHUR-ens (KYOO-AY)",
+    "cat": "annotation"
+  },
+  {
+    "en": "consistency",
+    "pt": "consistência",
+    "defPt": "Aplicar os mesmos critérios da mesma forma em todos os itens e ao longo do tempo.",
+    "exampleEn": "Consistency matters: similar responses should get similar scores.",
+    "say": "kun-SIS-ten-see",
+    "cat": "annotation"
+  },
+  {
+    "en": "bias",
+    "pt": "viés",
+    "defPt": "Tendência sistemática que distorce resultados ou julgamentos, por exemplo favorecer respostas longas ou um grupo de pessoas.",
+    "exampleEn": "I try to avoid length bias when I compare two responses.",
+    "say": "BY-us",
+    "cat": "annotation"
+  },
+  {
+    "en": "rationale",
+    "pt": "justificativa",
+    "defPt": "Explicação escrita do motivo de uma nota ou decisão.",
+    "exampleEn": "My rationale is that Response B has a factual error.",
+    "say": "rash-uh-NAL",
+    "cat": "annotation"
+  },
+  {
+    "en": "gold standard",
+    "pt": "padrão-ouro",
+    "defPt": "Conjunto de exemplos com respostas corretas verificadas por especialistas, usado para treinar e medir anotadores.",
+    "exampleEn": "Our scores are checked against a gold standard set.",
+    "say": "GOHLD STAN-derd",
+    "cat": "annotation"
+  },
+  {
+    "en": "ambiguous",
+    "pt": "ambíguo",
+    "defPt": "Que pode ser entendido de mais de uma forma.",
+    "exampleEn": "The prompt is ambiguous, so a good response should ask a clarifying question.",
+    "say": "am-BIG-yoo-us",
+    "cat": "annotation"
+  },
+  {
+    "en": "calibration",
+    "pt": "calibração",
+    "defPt": "Alinhar a forma como diferentes anotadores interpretam as diretrizes, geralmente revisando exemplos juntos.",
+    "exampleEn": "We had a calibration session to agree on how to rate tone.",
+    "say": "kal-ih-BRAY-shun",
+    "cat": "annotation"
+  },
+  {
+    "en": "flag",
+    "pt": "sinalizar",
+    "defPt": "Marcar um item para revisão por ter um problema, como conteúdo sensível ou erro na tarefa.",
+    "exampleEn": "I flagged the task because the prompt was in the wrong language.",
+    "say": "FLAG",
+    "cat": "annotation"
+  },
+  {
+    "en": "ranking",
+    "pt": "ranqueamento / classificação",
+    "defPt": "Ordenar várias respostas da melhor para a pior.",
+    "exampleEn": "The task asks for a ranking of four responses.",
+    "say": "RANK-ing",
+    "cat": "annotation"
+  },
+  {
+    "en": "personally identifiable information (PII)",
+    "pt": "informações pessoais identificáveis",
+    "defPt": "Dados que identificam uma pessoa, como nome completo, CPF, endereço, telefone ou e-mail.",
+    "exampleEn": "The response leaked PII, so I flagged it.",
+    "say": "PER-suh-nuh-lee eye-DEN-tih-fy-uh-bul (PEE-EYE-EYE)",
+    "cat": "annotation"
+  },
+  {
+    "en": "bug",
+    "pt": "bug / defeito",
+    "defPt": "Erro no código que faz o programa se comportar de forma errada.",
+    "exampleEn": "There's a bug: the function returns null for empty input.",
+    "say": "BUG",
+    "cat": "coding"
+  },
+  {
+    "en": "edge case",
+    "pt": "caso extremo / caso limite",
+    "defPt": "Entrada incomum ou no limite do esperado, como lista vazia, zero, número negativo ou valor muito grande.",
+    "exampleEn": "The code fails on the edge case of an empty array.",
+    "say": "EJ KAYS",
+    "cat": "coding"
+  },
+  {
+    "en": "off-by-one error",
+    "pt": "erro de um a mais/um a menos (off-by-one)",
+    "defPt": "Erro em que um laço ou índice vai uma posição além ou aquém do correto, por exemplo usar <= em vez de <.",
+    "exampleEn": "Using i <= arr.length causes an off-by-one error.",
+    "say": "OFF by WUN ER-er",
+    "cat": "coding"
+  },
+  {
+    "en": "test case",
+    "pt": "caso de teste",
+    "defPt": "Um conjunto específico de entrada e saída esperada usado para verificar o código.",
+    "exampleEn": "I added a test case for negative numbers.",
+    "say": "TEST KAYS",
+    "cat": "coding"
+  },
+  {
+    "en": "unit test",
+    "pt": "teste unitário",
+    "defPt": "Teste automatizado que verifica uma pequena parte do código, como uma única função, de forma isolada.",
+    "exampleEn": "Every new function should have a unit test.",
+    "say": "YOO-nit TEST",
+    "cat": "coding"
+  },
+  {
+    "en": "integration test",
+    "pt": "teste de integração",
+    "defPt": "Teste que verifica se várias partes do sistema funcionam corretamente juntas.",
+    "exampleEn": "The integration test checks the API and the database together.",
+    "say": "in-tih-GRAY-shun TEST",
+    "cat": "coding"
+  },
+  {
+    "en": "time complexity",
+    "pt": "complexidade de tempo",
+    "defPt": "Como o tempo de execução de um algoritmo cresce conforme o tamanho da entrada aumenta.",
+    "exampleEn": "The time complexity of this nested loop is O(n²).",
+    "say": "TYM kum-PLEK-sih-tee",
+    "cat": "coding"
+  },
+  {
+    "en": "space complexity",
+    "pt": "complexidade de espaço",
+    "defPt": "Quanta memória extra um algoritmo usa conforme o tamanho da entrada aumenta.",
+    "exampleEn": "Using a hash map improves speed but increases space complexity.",
+    "say": "SPAYS kum-PLEK-sih-tee",
+    "cat": "coding"
+  },
+  {
+    "en": "Big O notation",
+    "pt": "notação Big O",
+    "defPt": "Notação que descreve o crescimento do custo de um algoritmo no pior caso, como O(1), O(n) ou O(n log n).",
+    "exampleEn": "Binary search is O(log n) in Big O notation.",
+    "say": "BIG OH noh-TAY-shun",
+    "cat": "coding"
+  },
+  {
+    "en": "refactor",
+    "pt": "refatorar",
+    "defPt": "Reestruturar o código para deixá-lo mais limpo ou mais fácil de manter, sem mudar o comportamento.",
+    "exampleEn": "I refactored the function into three smaller functions.",
+    "say": "ree-FAK-ter",
+    "cat": "coding"
+  },
+  {
+    "en": "readability",
+    "pt": "legibilidade",
+    "defPt": "Quão fácil é para uma pessoa ler e entender o código.",
+    "exampleEn": "Clear variable names improve readability.",
+    "say": "ree-duh-BIL-ih-tee",
+    "cat": "coding"
+  },
+  {
+    "en": "maintainability",
+    "pt": "manutenibilidade",
+    "defPt": "Quão fácil é corrigir, alterar e evoluir o código no futuro.",
+    "exampleEn": "Duplicated code hurts maintainability.",
+    "say": "mayn-tay-nuh-BIL-ih-tee",
+    "cat": "coding"
+  },
+  {
+    "en": "SQL injection",
+    "pt": "injeção de SQL",
+    "defPt": "Ataque em que a entrada do usuário é inserida diretamente em uma consulta SQL e altera o comando; evita-se com consultas parametrizadas.",
+    "exampleEn": "Concatenating user input into the query allows SQL injection.",
+    "say": "ES-KYOO-EL in-JEK-shun",
+    "cat": "coding"
+  },
+  {
+    "en": "cross-site scripting (XSS)",
+    "pt": "cross-site scripting (XSS)",
+    "defPt": "Vulnerabilidade em que um script malicioso é injetado em uma página e executado no navegador de outros usuários; evita-se escapando ou sanitizando a saída.",
+    "exampleEn": "Rendering raw user HTML with dangerouslySetInnerHTML can cause XSS.",
+    "say": "KROS SYT SKRIP-ting (EKS-ES-ES)",
+    "cat": "coding"
+  },
+  {
+    "en": "race condition",
+    "pt": "condição de corrida",
+    "defPt": "Bug em que o resultado depende da ordem ou do tempo de execução de operações concorrentes.",
+    "exampleEn": "Two requests updated the balance at the same time, causing a race condition.",
+    "say": "RAYS kun-DISH-un",
+    "cat": "coding"
+  },
+  {
+    "en": "asynchronous (async)",
+    "pt": "assíncrono",
+    "defPt": "Código que inicia uma operação demorada (como uma requisição de rede) e continua executando sem bloquear, tratando o resultado depois.",
+    "exampleEn": "The fetch call is async, so you need to await the result.",
+    "say": "ay-SING-kruh-nus (AY-sink)",
+    "cat": "coding"
+  },
+  {
+    "en": "linter",
+    "pt": "linter",
+    "defPt": "Ferramenta que analisa o código sem executá-lo e aponta erros prováveis e problemas de estilo, como o ESLint.",
+    "exampleEn": "The linter warned about an unused variable.",
+    "say": "LIN-ter",
+    "cat": "coding"
+  },
+  {
+    "en": "runtime error",
+    "pt": "erro em tempo de execução",
+    "defPt": "Erro que acontece enquanto o programa está rodando, como acessar uma propriedade de undefined.",
+    "exampleEn": "The code compiles, but it throws a runtime error on empty input.",
+    "say": "RUN-tym ER-er",
+    "cat": "coding"
+  },
+  {
+    "en": "syntax error",
+    "pt": "erro de sintaxe",
+    "defPt": "Erro na escrita do código que impede que ele seja interpretado ou compilado, como um parêntese faltando.",
+    "exampleEn": "The missing bracket causes a syntax error.",
+    "say": "SIN-taks ER-er",
+    "cat": "coding"
+  },
+  {
+    "en": "exception",
+    "pt": "exceção",
+    "defPt": "Evento de erro lançado durante a execução que interrompe o fluxo normal, a menos que seja tratado (try/catch).",
+    "exampleEn": "The function throws an exception if the file doesn't exist.",
+    "say": "ek-SEP-shun",
+    "cat": "coding"
+  },
+  {
+    "en": "null reference",
+    "pt": "referência nula",
+    "defPt": "Erro ao tentar usar um valor nulo ou indefinido como se fosse um objeto válido.",
+    "exampleEn": "The crash was caused by a null reference.",
+    "say": "NUL REF-er-ens",
+    "cat": "coding"
+  },
+  {
+    "en": "infinite loop",
+    "pt": "laço infinito",
+    "defPt": "Laço que nunca termina porque a condição de parada nunca é atingida.",
+    "exampleEn": "The counter is never incremented, so it's an infinite loop.",
+    "say": "IN-fih-nit LOOP",
+    "cat": "coding"
+  },
+  {
+    "en": "recursion",
+    "pt": "recursão",
+    "defPt": "Técnica em que uma função chama a si mesma; precisa de um caso base para parar.",
+    "exampleEn": "Without a base case, the recursion causes a stack overflow.",
+    "say": "rih-KER-zhun",
+    "cat": "coding"
+  },
+  {
+    "en": "debugging",
+    "pt": "depuração",
+    "defPt": "Processo de encontrar e corrigir bugs.",
+    "exampleEn": "I spent an hour debugging the login issue.",
+    "say": "dee-BUG-ing",
+    "cat": "coding"
+  },
+  {
+    "en": "stack trace",
+    "pt": "rastreamento de pilha (stack trace)",
+    "defPt": "Lista das chamadas de função ativas no momento de um erro; ajuda a localizar onde ele aconteceu.",
+    "exampleEn": "The stack trace shows the error happened in line 42.",
+    "say": "STAK TRAYS",
+    "cat": "coding"
+  },
+  {
+    "en": "regression",
+    "pt": "regressão",
+    "defPt": "Bug novo em algo que funcionava antes, geralmente causado por uma alteração recente.",
+    "exampleEn": "The update introduced a regression in the checkout page.",
+    "say": "rih-GRESH-un",
+    "cat": "coding"
+  },
+  {
+    "en": "dependency",
+    "pt": "dependência",
+    "defPt": "Biblioteca ou pacote externo de que o projeto precisa para funcionar.",
+    "exampleEn": "We need to update this dependency to fix a security issue.",
+    "say": "dih-PEN-den-see",
+    "cat": "coding"
+  },
+  {
+    "en": "deprecated",
+    "pt": "obsoleto / descontinuado",
+    "defPt": "Recurso que ainda funciona, mas não é mais recomendado e pode ser removido em versões futuras.",
+    "exampleEn": "The response uses a deprecated API, so I marked it down.",
+    "say": "DEP-ruh-kay-tid",
+    "cat": "coding"
+  },
+  {
+    "en": "input validation",
+    "pt": "validação de entrada",
+    "defPt": "Verificar se os dados recebidos têm o formato e os valores esperados antes de usá-los.",
+    "exampleEn": "Input validation prevents many security bugs.",
+    "say": "IN-put val-ih-DAY-shun",
+    "cat": "coding"
+  },
+  {
+    "en": "hardcoded",
+    "pt": "fixo no código (hardcoded)",
+    "defPt": "Valor escrito diretamente no código em vez de vir de configuração ou entrada.",
+    "exampleEn": "The API key is hardcoded, which is a security risk.",
+    "say": "HARD-koh-did",
+    "cat": "coding"
+  },
+  {
+    "en": "trade-off",
+    "pt": "compensação / escolha com prós e contras",
+    "defPt": "Situação em que ganhar algo significa perder outra coisa, como velocidade versus memória.",
+    "exampleEn": "There's a trade-off between speed and accuracy.",
+    "say": "TRAYD-off",
+    "cat": "interview"
+  },
+  {
+    "en": "clarify",
+    "pt": "esclarecer",
+    "defPt": "Tornar algo mais claro, geralmente fazendo perguntas.",
+    "exampleEn": "Could you clarify what you mean by \"short\"?",
+    "say": "KLAIR-ih-fy",
+    "cat": "interview"
+  },
+  {
+    "en": "assumption",
+    "pt": "suposição / premissa",
+    "defPt": "Algo que você considera verdadeiro sem ter confirmado.",
+    "exampleEn": "My assumption is that the input is always sorted.",
+    "say": "uh-SUMP-shun",
+    "cat": "interview"
+  },
+  {
+    "en": "prioritize",
+    "pt": "priorizar",
+    "defPt": "Decidir o que é mais importante e fazer isso primeiro.",
+    "exampleEn": "I prioritize safety issues over style issues.",
+    "say": "pry-OR-ih-tyz",
+    "cat": "interview"
+  },
+  {
+    "en": "collaborate",
+    "pt": "colaborar",
+    "defPt": "Trabalhar junto com outras pessoas para atingir um objetivo.",
+    "exampleEn": "I collaborate with reviewers to keep our ratings consistent.",
+    "say": "kuh-LAB-uh-rayt",
+    "cat": "interview"
+  },
+  {
+    "en": "deadline",
+    "pt": "prazo",
+    "defPt": "Data ou horário limite para entregar um trabalho.",
+    "exampleEn": "I always plan my tasks to meet the deadline.",
+    "say": "DED-lyn",
+    "cat": "interview"
+  },
+  {
+    "en": "feedback",
+    "pt": "feedback / retorno",
+    "defPt": "Comentários sobre o seu trabalho para ajudar a melhorar.",
+    "exampleEn": "I use reviewer feedback to improve my next tasks.",
+    "say": "FEED-bak",
+    "cat": "interview"
+  },
+  {
+    "en": "attention to detail",
+    "pt": "atenção aos detalhes",
+    "defPt": "Capacidade de notar pequenos erros e inconsistências.",
+    "exampleEn": "Attention to detail is essential when checking code for bugs.",
+    "say": "uh-TEN-shun too DEE-tayl",
+    "cat": "interview"
+  },
+  {
+    "en": "walk me through",
+    "pt": "me explique passo a passo",
+    "defPt": "Expressão usada pelo entrevistador para pedir que você explique um processo do início ao fim.",
+    "exampleEn": "Can you walk me through how you would evaluate this response?",
+    "say": "WAWK mee THROO",
+    "cat": "interview"
+  },
+  {
+    "en": "strengths and weaknesses",
+    "pt": "pontos fortes e pontos fracos",
+    "defPt": "Pergunta comum de entrevista sobre suas qualidades e o que você ainda precisa melhorar.",
+    "exampleEn": "One of my strengths is that I'm very careful with details.",
+    "say": "STRENGTHS and WEEK-nes-iz",
+    "cat": "interview"
+  },
+  {
+    "en": "background",
+    "pt": "experiência / formação",
+    "defPt": "Seu histórico profissional e de estudos.",
+    "exampleEn": "My background is in front-end development with React.",
+    "say": "BAK-grownd",
+    "cat": "interview"
+  },
+  {
+    "en": "reliable",
+    "pt": "confiável",
+    "defPt": "Que faz o trabalho bem e de forma constante, cumprindo o combinado.",
+    "exampleEn": "I'm reliable: I deliver on time and follow the guidelines.",
+    "say": "rih-LY-uh-bul",
+    "cat": "interview"
+  },
+  {
+    "en": "ownership",
+    "pt": "responsabilidade / senso de dono",
+    "defPt": "Assumir a responsabilidade pelo resultado do seu trabalho, inclusive pelos erros.",
+    "exampleEn": "I take ownership of my mistakes and fix them quickly.",
+    "say": "OH-ner-ship",
+    "cat": "interview"
+  },
+  {
+    "en": "fast learner",
+    "pt": "aprendo rápido",
+    "defPt": "Pessoa que aprende coisas novas rapidamente.",
+    "exampleEn": "I'm a fast learner, and I adapted quickly to new guidelines.",
+    "say": "FAST LER-ner",
+    "cat": "interview"
+  },
+  {
+    "en": "remote work",
+    "pt": "trabalho remoto",
+    "defPt": "Trabalho feito a distância, normalmente de casa.",
+    "exampleEn": "I have three years of experience with remote work.",
+    "say": "rih-MOHT WERK",
+    "cat": "interview"
+  },
+  {
+    "en": "time zone",
+    "pt": "fuso horário",
+    "defPt": "Região com o mesmo horário oficial.",
+    "exampleEn": "I'm in the Brasília time zone, which is UTC minus three.",
+    "say": "TYM ZOHN",
+    "cat": "interview"
+  },
+  {
+    "en": "Could you repeat that, please?",
+    "pt": "Você poderia repetir, por favor?",
+    "defPt": "Frase educada para pedir que a pessoa repita a pergunta; é normal usar em entrevistas.",
+    "exampleEn": "Sorry, could you repeat that, please?",
+    "say": "kud yoo rih-PEET THAT, PLEEZ",
+    "cat": "interview"
+  }
+]

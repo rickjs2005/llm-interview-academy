@@ -1,0 +1,591 @@
+{
+  "module": 4,
+  "title": "AI Training & Data Annotation",
+  "titlePt": "AI Training e Anotação de Dados",
+  "lessons": [
+    {
+      "id": "m4-l01", "module": 4, "order": 1,
+      "title": "Data labeling",
+      "titlePt": "Rotulagem de dados",
+      "explainPt": "Data labeling (rotulagem) é adicionar informações corretas a dados brutos para que um modelo possa aprender com eles. Exemplos: marcar o sentimento de um comentário (positivo, negativo, neutro), classificar o tema de um texto, marcar se uma resposta é tóxica, ou destacar nomes de pessoas e empresas em uma frase.\n\nNo treinamento de LLMs, os dados rotulados por humanos são usados em várias etapas: SFT (supervised fine-tuning), onde humanos escrevem ou corrigem respostas ideais, e RLHF ou DPO, onde humanos comparam respostas e indicam a preferida.\n\nO princípio é simples: 'garbage in, garbage out'. Se os rótulos estão errados ou inconsistentes, o modelo aprende errado. Por isso, qualidade e consistência são mais importantes do que velocidade.",
+      "terms": [
+        { "en": "label", "pt": "rótulo: a categoria ou informação adicionada ao dado", "say": "LAY-bol" },
+        { "en": "annotator", "pt": "anotador: pessoa que rotula os dados", "say": "AN-o-tay-tor" },
+        { "en": "category / class", "pt": "categoria / classe", "say": "KAT-e-go-ree / KLAS" },
+        { "en": "training data", "pt": "dados de treinamento", "say": "TRAY-ning DAY-ta" },
+        { "en": "ground truth", "pt": "verdade de referência: o rótulo correto", "say": "GRAUND TROOTH" },
+        { "en": "garbage in, garbage out", "pt": "dados ruins geram um modelo ruim", "say": "GAR-bij IN, GAR-bij AUT" }
+      ],
+      "example": "Texto: 'The delivery was fast, but the screen arrived broken.' Rótulos possíveis: sentimento = negativo (ou misto, se a guideline tiver essa opção), tema = entrega e qualidade do produto. O anotador escolhe segundo as regras do projeto, não pela opinião pessoal.",
+      "shadow": [
+        "Data labeling means adding the correct label to each example.",
+        "Bad labels teach the model the wrong thing.",
+        "I follow the guidelines, not my personal opinion.",
+        "Quality is more important than speed."
+      ],
+      "listen": [
+        { "en": "Human labels are used to train and evaluate the model.", "options": ["Os rótulos humanos são usados para treinar e avaliar o modelo", "O modelo cria os rótulos sozinho", "Os humanos são treinados pelo modelo"], "correct": 0 },
+        { "en": "If the labels are wrong, the model learns the wrong patterns.", "options": ["Se o modelo está errado, os rótulos também estão", "Se os rótulos estão errados, o modelo aprende padrões errados", "Rótulos errados não afetam o modelo"], "correct": 1 }
+      ],
+      "questionIds": ["m4-q01", "m4-q02", "m4-q03", "m4-q04"]
+    },
+    {
+      "id": "m4-l02", "module": 4, "order": 2,
+      "title": "Annotation guidelines",
+      "titlePt": "Diretrizes de anotação",
+      "explainPt": "Annotation guidelines são o manual do projeto. Elas definem as categorias, explicam cada critério, dão exemplos bons e ruins, e dizem o que fazer em casos difíceis. Em projetos de avaliação de LLMs, as guidelines podem ter dezenas de páginas.\n\nO anotador deve ler as guidelines com atenção antes de começar, voltar a elas sempre que tiver dúvida, e acompanhar as atualizações (elas mudam com frequência). A regra principal: a guideline vence a opinião pessoal. Se você discorda de uma regra, siga a regra e dê feedback pelo canal certo.\n\nNa entrevista, mostre que você é cuidadoso: lê tudo, faz anotações, revisa exemplos e pergunta quando algo não está claro.",
+      "terms": [
+        { "en": "guidelines", "pt": "diretrizes: as regras do projeto", "say": "GAID-lainz" },
+        { "en": "criteria", "pt": "critérios (singular: criterion)", "say": "krai-TEER-ee-a" },
+        { "en": "definition", "pt": "definição", "say": "de-fi-NI-shun" },
+        { "en": "update", "pt": "atualização", "say": "UP-dayt" },
+        { "en": "edge case", "pt": "caso limite: situação rara ou difícil", "say": "EJ KAYS" },
+        { "en": "feedback channel", "pt": "canal de feedback / dúvidas", "say": "FEED-bak CHA-nel" }
+      ],
+      "example": "Guideline: 'Label a comment as Toxic if it insults a person or a group. Criticism of an idea is Not Toxic.' Então: 'This code is terrible' = Not Toxic (critica o código). 'You are an idiot' = Toxic (insulta a pessoa).",
+      "shadow": [
+        "I read the guidelines carefully before I start.",
+        "The guidelines are more important than my opinion.",
+        "I check the examples when a case is not clear.",
+        "I always look for guideline updates."
+      ],
+      "listen": [
+        { "en": "The guidelines changed last week, so I reviewed them again.", "options": ["As guidelines não mudaram, então não revisei", "As guidelines mudaram semana passada, então revisei de novo", "Eu mudei as guidelines semana passada"], "correct": 1 },
+        { "en": "If I disagree with a rule, I still follow it and send feedback.", "options": ["Se discordo de uma regra, ignoro a regra", "Se discordo de uma regra, paro de trabalhar", "Se discordo de uma regra, ainda sigo e envio feedback"], "correct": 2 }
+      ],
+      "questionIds": ["m4-q05", "m4-q06", "m4-q07"]
+    },
+    {
+      "id": "m4-l03", "module": 4, "order": 3,
+      "title": "Quality assurance and inter-annotator agreement",
+      "titlePt": "Garantia de qualidade e concordância entre anotadores",
+      "explainPt": "Quality assurance (QA) são os processos para garantir dados de boa qualidade. Exemplos: revisores que checam uma amostra das tarefas, perguntas 'gold' (com resposta já conhecida) misturadas nas tarefas, sessões de calibração e auditorias.\n\nInter-annotator agreement (IAA) mede o quanto anotadores diferentes concordam quando rotulam o mesmo item. Métricas comuns: porcentagem de concordância, Cohen's kappa (dois anotadores) e Fleiss' kappa ou Krippendorff's alpha (vários anotadores). O kappa corrige a concordância que aconteceria por acaso.\n\nConcordância baixa geralmente indica um problema: guidelines confusas, categorias mal definidas ou uma tarefa realmente subjetiva. A solução costuma ser melhorar as definições, adicionar exemplos e fazer calibração.",
+      "terms": [
+        { "en": "quality assurance (QA)", "pt": "garantia de qualidade", "say": "KWOL-i-tee a-SHUR-ans" },
+        { "en": "inter-annotator agreement", "pt": "concordância entre anotadores", "say": "IN-ter AN-o-tay-tor a-GREE-ment" },
+        { "en": "Cohen's kappa", "pt": "métrica de concordância entre 2 anotadores, corrigindo o acaso", "say": "KO-enz KA-pa" },
+        { "en": "gold question", "pt": "pergunta de controle com resposta já conhecida", "say": "GOLD KWES-chun" },
+        { "en": "reviewer / audit", "pt": "revisor / auditoria", "say": "ri-VYOO-er / O-dit" },
+        { "en": "calibration session", "pt": "sessão para alinhar critérios entre anotadores", "say": "ka-li-BRAY-shun SE-shun" }
+      ],
+      "example": "Dois anotadores rotulam 100 comentários como Toxic ou Not Toxic e concordam em 90. A concordância simples é 90%. Mas se quase todos os comentários forem Not Toxic, eles concordariam muito só por acaso; por isso o Cohen's kappa pode ser bem menor que 0,9.",
+      "shadow": [
+        "Low agreement often means the guidelines are not clear.",
+        "Gold questions help us measure annotator quality.",
+        "Kappa corrects for agreement that happens by chance.",
+        "We fixed the problem with a calibration session."
+      ],
+      "listen": [
+        { "en": "The two annotators disagreed on almost half of the examples.", "options": ["Os dois anotadores discordaram em quase metade dos exemplos", "Os dois anotadores concordaram em todos os exemplos", "Só metade dos anotadores trabalhou"], "correct": 0 },
+        { "en": "A reviewer checks a random sample of the completed tasks.", "options": ["Um revisor faz todas as tarefas de novo", "Um revisor verifica uma amostra aleatória das tarefas concluídas", "Um revisor escolhe as tarefas mais fáceis"], "correct": 1 }
+      ],
+      "questionIds": ["m4-q08", "m4-q09", "m4-q10"]
+    },
+    {
+      "id": "m4-l04", "module": 4, "order": 4,
+      "title": "Preference ranking",
+      "titlePt": "Ranking de preferência",
+      "explainPt": "Em preference ranking, o anotador vê duas ou mais respostas do modelo para o mesmo prompt e indica qual prefere, às vezes com a intensidade ('A is much better', 'A is slightly better'). Esses pares (resposta escolhida vs rejeitada) são usados para treinar um reward model em RLHF, ou diretamente o modelo em métodos como DPO.\n\nComo o modelo aprende exatamente o que os humanos preferem, as preferências precisam ser cuidadosas. Se os anotadores preferem respostas longas só porque parecem mais completas, o modelo aprende a ser verboso (length bias). Se preferem respostas que concordam com o usuário, o modelo aprende sycophancy.\n\nBoas práticas: julgar primeiro segurança, precisão e instruções; usar a escala de intensidade com honestidade; e não escolher pela aparência.",
+      "terms": [
+        { "en": "preference data", "pt": "dados de preferência: qual resposta humanos preferem", "say": "PREF-er-ens DAY-ta" },
+        { "en": "chosen / rejected", "pt": "resposta escolhida / rejeitada", "say": "CHO-zen / ri-JEK-ted" },
+        { "en": "reward model", "pt": "modelo de recompensa: aprende a dar nota como um humano", "say": "ri-WORD MOD-el" },
+        { "en": "slightly / much better", "pt": "um pouco melhor / muito melhor", "say": "SLAIT-lee / MUCH BET-er" },
+        { "en": "length bias", "pt": "viés de tamanho: preferir respostas longas sem motivo", "say": "LENGTH BAI-as" },
+        { "en": "RLHF / DPO", "pt": "métodos de treino com preferências humanas", "say": "ar-el-aych-ef / dee-pee-oh" }
+      ],
+      "example": "Prompt: 'Explain useEffect in one paragraph.' A: um parágrafo correto e claro. B: três parágrafos, também corretos. Mesmo que B pareça 'mais completa', A é melhor porque segue a instrução. Escolher B ensinaria o modelo a ignorar limites de tamanho.",
+      "shadow": [
+        "Preference data teaches the model what people want.",
+        "I don't choose the longer answer just because it looks complete.",
+        "Response A is slightly better than Response B.",
+        "My choices train the reward model."
+      ],
+      "listen": [
+        { "en": "The chosen response and the rejected response are saved as a pair.", "options": ["As duas respostas são descartadas", "A resposta escolhida e a rejeitada são salvas como um par", "Só a resposta rejeitada é salva"], "correct": 1 },
+        { "en": "If we always prefer long answers, the model becomes verbose.", "options": ["Se sempre preferirmos respostas longas, o modelo fica verboso", "Respostas longas deixam o modelo mais preciso", "O modelo prefere respostas curtas"], "correct": 0 }
+      ],
+      "questionIds": ["m4-q11", "m4-q12", "m4-q13"]
+    },
+    {
+      "id": "m4-l05", "module": 4, "order": 5,
+      "title": "Error identification and evaluating AI content",
+      "titlePt": "Identificação de erros e avaliação de conteúdo gerado por IA",
+      "explainPt": "Muitas tarefas pedem para você encontrar e classificar erros em textos ou códigos gerados por IA. Tipos comuns: erro factual, alucinação (fonte ou função que não existe), erro de lógica ou de cálculo, bug no código, instrução ignorada, problema de segurança, e problemas de estilo ou gramática.\n\nUm bom processo: leia o prompt e liste os requisitos; leia a resposta inteira; verifique fatos e teste o código; marque cada erro com o tipo e a gravidade (major ou minor); e escreva uma explicação curta e específica. Às vezes a tarefa também pede para reescrever ou corrigir a resposta (rewrite).\n\nCuidado com respostas fluentes: o texto pode soar profissional e ainda assim estar errado. Avalie o conteúdo, não o tom.",
+      "terms": [
+        { "en": "error type", "pt": "tipo de erro", "say": "ER-or TAIP" },
+        { "en": "severity", "pt": "gravidade do erro", "say": "se-VER-i-tee" },
+        { "en": "logic error", "pt": "erro de lógica ou raciocínio", "say": "LOJ-ik ER-or" },
+        { "en": "bug", "pt": "erro no código", "say": "BUG" },
+        { "en": "fluent", "pt": "fluente: soa natural e profissional", "say": "FLOO-ent" },
+        { "en": "rewrite", "pt": "reescrever / corrigir a resposta", "say": "ree-RAIT" }
+      ],
+      "example": "Resposta da IA: 'In JavaScript, Array.map() changes the original array.' Erro factual sobre código (major): map retorna um novo array e não muda o original. Justificativa: 'Major factual error: map returns a new array; forEach or direct assignment would be needed to mutate.'",
+      "shadow": [
+        "This is a logic error, not a grammar error.",
+        "I mark each error with its type and severity.",
+        "The text sounds fluent, but the facts are wrong.",
+        "I tested the code, and it fails on empty input."
+      ],
+      "listen": [
+        { "en": "The calculation in step three is wrong, so the final answer is wrong.", "options": ["O passo três está certo, mas a resposta final está errada", "O cálculo no passo três está errado, então a resposta final está errada", "A resposta final está certa apesar do erro"], "correct": 1 },
+        { "en": "It's a minor style issue, not a real error.", "options": ["É um erro grave de conteúdo", "É um bug no código", "É um pequeno problema de estilo, não um erro real"], "correct": 2 }
+      ],
+      "questionIds": ["m4-q14", "m4-q15", "m4-q16"]
+    },
+    {
+      "id": "m4-l06", "module": 4, "order": 6,
+      "title": "Prompt writing for training data",
+      "titlePt": "Escrita de prompts para dados de treinamento",
+      "explainPt": "Em muitos projetos, o anotador também escreve prompts: perguntas e tarefas que serão usadas para treinar ou testar o modelo. Um bom prompt de treinamento é claro, realista (parece algo que um usuário real perguntaria), específico e tem um objetivo: testar uma habilidade, como seguir um formato, raciocinar em passos ou escrever código.\n\nBoas práticas: incluir restrições verificáveis (por exemplo, 'in 3 bullet points', 'under 100 words', 'use TypeScript'), dar contexto suficiente, variar temas e níveis de dificuldade, e evitar prompts ambíguos sem querer. Alguns projetos pedem prompts difíceis, que fazem o modelo errar (adversarial prompts), para encontrar fraquezas.\n\nNunca copie conteúdo protegido e não inclua dados pessoais reais (PII) nos prompts.",
+      "terms": [
+        { "en": "prompt", "pt": "instrução ou pergunta dada ao modelo", "say": "PROMPT" },
+        { "en": "realistic", "pt": "realista: parece de um usuário real", "say": "ree-a-LIS-tik" },
+        { "en": "verifiable constraint", "pt": "restrição que dá para verificar (ex.: 3 itens)", "say": "VER-i-fai-a-bol kon-STRAYNT" },
+        { "en": "diversity", "pt": "diversidade de temas e dificuldade", "say": "dai-VER-si-tee" },
+        { "en": "adversarial prompt", "pt": "prompt feito para fazer o modelo errar", "say": "ad-ver-SAIR-ee-al PROMPT" },
+        { "en": "PII", "pt": "dados pessoais identificáveis (nome, CPF, endereço)", "say": "pee-ai-ai" }
+      ],
+      "example": "Prompt fraco: 'Write about React.' Prompt bom: 'I'm a junior developer. In under 150 words, explain when I should use useMemo in React, and give one short TypeScript example.' O segundo tem público, limite, tema específico e formato que dá para verificar.",
+      "shadow": [
+        "A good prompt is clear, specific and realistic.",
+        "I add constraints that are easy to check.",
+        "I try to cover different topics and difficulty levels.",
+        "I never put real personal data in a prompt."
+      ],
+      "listen": [
+        { "en": "This prompt is too vague, so the answers will be very different.", "options": ["Este prompt é vago demais, então as respostas serão muito diferentes", "Este prompt é claro, então as respostas serão iguais", "Este prompt é longo demais"], "correct": 0 },
+        { "en": "The goal of this prompt is to test multi-step reasoning.", "options": ["O objetivo deste prompt é testar a gramática", "O objetivo deste prompt é testar raciocínio em várias etapas", "Este prompt não tem objetivo"], "correct": 1 }
+      ],
+      "questionIds": ["m4-q17", "m4-q18", "m4-q19", "m4-q20"]
+    },
+    {
+      "id": "m4-l07", "module": 4, "order": 7,
+      "title": "Bias and consistency",
+      "titlePt": "Viés e consistência",
+      "explainPt": "Bias (viés) em respostas de IA aparece quando o modelo trata grupos de pessoas de forma injusta ou usa estereótipos: por exemplo, supor que um enfermeiro é sempre mulher e um engenheiro é sempre homem, ou dar conselhos diferentes dependendo do nome ou do país da pessoa. O avaliador deve identificar e marcar esses problemas.\n\nO anotador também pode ter viés: preferir respostas que concordam com sua opinião política, com seu estilo de escrita, ou respostas mais longas. Para reduzir isso, use os critérios da rubrica e pergunte a si mesmo: 'Eu daria a mesma nota se o grupo ou a opinião fossem diferentes?'\n\nConsistency (consistência) significa tratar casos parecidos da mesma forma, hoje e daqui a uma semana. Isso exige reler as guidelines, anotar suas decisões em casos difíceis e cuidar do cansaço.",
+      "terms": [
+        { "en": "bias", "pt": "viés: tratamento injusto ou parcial", "say": "BAI-as" },
+        { "en": "stereotype", "pt": "estereótipo", "say": "STER-ee-o-taip" },
+        { "en": "fair / fairness", "pt": "justo / justiça, imparcialidade", "say": "FAIR / FAIR-ness" },
+        { "en": "neutral", "pt": "neutro, sem tomar lado", "say": "NOO-tral" },
+        { "en": "consistent", "pt": "consistente: mesmo critério para casos parecidos", "say": "kon-SIS-tent" },
+        { "en": "personal opinion", "pt": "opinião pessoal", "say": "PER-so-nal o-PIN-yun" }
+      ],
+      "example": "Prompt: 'Write a short story about a doctor and a nurse.' Resposta: 'The doctor, a confident man, explained the plan. The nurse, a sweet young woman, smiled and obeyed.' Isso reforça estereótipos de gênero. Uma versão melhor descreve as pessoas pelas ações, sem papéis fixos.",
+      "shadow": [
+        "This response uses a gender stereotype.",
+        "I ask myself if I would give the same score to the other group.",
+        "I try to keep my personal opinion out of my ratings.",
+        "Similar cases should get similar labels."
+      ],
+      "listen": [
+        { "en": "The response gives different advice only because of the user's name.", "options": ["A resposta dá conselhos diferentes só por causa do nome do usuário", "A resposta usa o nome do usuário corretamente", "O usuário mudou de nome"], "correct": 0 },
+        { "en": "I labeled a similar case differently yesterday, so I need to check.", "options": ["Eu rotulei todos os casos igual ontem", "Ontem eu rotulei um caso parecido de forma diferente, então preciso verificar", "Ontem eu não trabalhei"], "correct": 1 }
+      ],
+      "questionIds": ["m4-q21", "m4-q22", "m4-q23"]
+    },
+    {
+      "id": "m4-l08", "module": 4, "order": 8,
+      "title": "Edge cases and escalating ambiguous cases",
+      "titlePt": "Casos limite e escalonamento de casos ambíguos",
+      "explainPt": "Edge cases são situações raras ou estranhas que as guidelines não cobrem bem: um texto em duas línguas, um comentário sarcástico, uma imagem cortada, um prompt que pode ter dois significados. Casos ambíguos são aqueles em que duas respostas parecem corretas.\n\nO processo recomendado: 1) releia as guidelines e os exemplos; 2) procure decisões parecidas no FAQ ou no canal do projeto; 3) escolha a opção mais próxima do espírito da guideline; 4) se continuar em dúvida, use a opção de flag/skip ou pergunte ao líder (escalate); 5) escreva uma nota explicando seu raciocínio.\n\nO que NÃO fazer: chutar sem avisar, inventar regras novas, ou passar muito tempo travado em uma tarefa. Escalar não é fraqueza: ajuda o time a melhorar as guidelines.",
+      "terms": [
+        { "en": "edge case", "pt": "caso limite, raro ou incomum", "say": "EJ KAYS" },
+        { "en": "ambiguous", "pt": "ambíguo: pode ter mais de um significado", "say": "am-BIG-yoo-us" },
+        { "en": "escalate", "pt": "escalar: levar a dúvida para o líder ou revisor", "say": "ES-ka-layt" },
+        { "en": "flag", "pt": "sinalizar uma tarefa com problema", "say": "FLAG" },
+        { "en": "skip", "pt": "pular a tarefa (quando permitido)", "say": "SKIP" },
+        { "en": "spirit of the guidelines", "pt": "a intenção por trás das regras", "say": "SPIR-it ov the GAID-lainz" }
+      ],
+      "example": "Guideline de sentimento: Positive, Negative, Neutral. Texto: 'Oh great, my order is late again.' É sarcasmo: as palavras são positivas, mas o sentido é negativo. Se a guideline não fala de sarcasmo, você rotula pelo significado real (Negative), escreve uma nota e sugere adicionar uma regra sobre sarcasmo.",
+      "shadow": [
+        "The guidelines don't cover this case, so I will flag it.",
+        "I choose the label that is closest to the spirit of the guidelines.",
+        "I write a short note to explain my decision.",
+        "Escalating helps the team improve the guidelines."
+      ],
+      "listen": [
+        { "en": "This comment is sarcastic, so the real meaning is negative.", "options": ["Este comentário é sincero e positivo", "Este comentário é sarcástico, então o sentido real é negativo", "Este comentário não tem sentido"], "correct": 1 },
+        { "en": "Don't guess silently. Ask your team lead.", "options": ["Não chute em silêncio. Pergunte ao seu líder", "Chute e não conte para ninguém", "Pergunte a outro anotador e copie a resposta"], "correct": 0 }
+      ],
+      "questionIds": ["m4-q24", "m4-q25", "m4-q26"]
+    }
+  ],
+  "questions": [
+    {
+      "id": "m4-q01", "module": 4, "lesson": "m4-l01", "level": 1, "kind": "concept",
+      "q": "What is data labeling?",
+      "qPt": "O que é rotulagem de dados?",
+      "keys": [["label", "tag", "category", "class"], ["data", "example", "text", "image"], ["model", "train", "learn"]],
+      "keysPt": ["adicionar um rótulo ou categoria", "aos dados ou exemplos", "para o modelo aprender"],
+      "a1": "Data labeling means adding labels to data. The model uses this data to learn.",
+      "a2": "Data labeling is adding the correct category or information to each example, like positive or negative for a review. Then the model learns from these labeled examples.",
+      "a3": "Data labeling is the process of adding correct, structured information to raw data, for example a sentiment category for a review or a toxicity label for a comment. That labeled data is used to train and evaluate models. For LLMs, it also includes writing ideal responses for fine-tuning and comparing responses for preference training.",
+      "tipPt": "Dê um exemplo simples (sentimento) e conecte com LLMs.",
+      "followUp": "Why is the quality of labels so important?"
+    },
+    {
+      "id": "m4-q02", "module": 4, "lesson": "m4-l01", "level": 2, "kind": "concept",
+      "q": "How is human-labeled data used to train large language models?",
+      "qPt": "Como os dados rotulados por humanos são usados para treinar LLMs?",
+      "keys": [["sft", "fine-tun", "fine tun", "supervised"], ["rlhf", "dpo", "preference", "reward"], ["write", "ideal", "example", "demonstration"], ["compare", "rank", "choose", "better"]],
+      "keysPt": ["fine-tuning supervisionado (SFT)", "RLHF / DPO / preferências", "humanos escrevem respostas ideais", "humanos comparam e escolhem respostas"],
+      "a1": "Humans write good answers for fine-tuning. They also compare answers, and the model learns from their choices.",
+      "a2": "In supervised fine-tuning, humans write or fix ideal responses, and the model learns from them. In RLHF or DPO, humans compare two responses and choose the better one, so the model learns their preferences.",
+      "a3": "There are two main uses. In supervised fine-tuning, or SFT, annotators write or correct high-quality demonstration responses, and the model learns to imitate them. In preference training, like RLHF or DPO, annotators compare model outputs and pick the better one; in RLHF those choices train a reward model, and DPO uses the pairs directly. Human-labeled data is also used for evaluation, to measure if a new model is actually better.",
+      "tipPt": "Mencionar SFT, RLHF com reward model, e DPO mostra conhecimento técnico atual.",
+      "followUp": "What is the difference between RLHF and DPO?"
+    },
+    {
+      "id": "m4-q03", "module": 4, "lesson": "m4-l01", "level": 3, "kind": "behavioral",
+      "q": "How do you balance speed and quality in annotation work?",
+      "qPt": "Como você equilibra velocidade e qualidade no trabalho de anotação?",
+      "keys": [["quality", "accurate", "correct"], ["first", "more important", "priority"], ["speed", "fast", "time", "faster"], ["practice", "experience", "guideline", "routine"]],
+      "keysPt": ["qualidade", "vem primeiro", "a velocidade melhora", "com prática e conhecimento das guidelines"],
+      "a1": "Quality comes first. I get faster with practice.",
+      "a2": "For me, quality is the priority, because bad labels hurt the model. With practice and good knowledge of the guidelines, I become faster without losing quality.",
+      "a3": "I always put quality first, because one wrong label can be worse than no label at all. At the start of a project, I go slower and study the guidelines and examples carefully. As I learn the common patterns, my speed improves naturally. I also watch the project's time expectations, and if a task takes much longer than expected, I check if I'm overthinking it or if it should be flagged.",
+      "tipPt": "Não diga que é 'muito rápido'. Diga que qualidade vem primeiro e a velocidade vem com prática.",
+      "followUp": "What do you do if a task is taking much longer than the expected time?"
+    },
+    {
+      "id": "m4-q04", "module": 4, "lesson": "m4-l01", "level": 4, "kind": "scenario",
+      "q": "You notice that you labeled about fifty examples using the wrong definition of a category. What do you do?",
+      "qPt": "Você percebe que rotulou cerca de cinquenta exemplos usando a definição errada de uma categoria. O que você faz?",
+      "keys": [["tell", "inform", "report", "lead", "reviewer"], ["fix", "correct", "redo", "relabel", "update"], ["honest", "transparent", "quickly", "immediately"], ["learn", "prevent", "note", "again"]],
+      "keysPt": ["aviso o líder ou revisor", "corrijo / refaço os rótulos", "sou honesto e rápido", "aprendo para não repetir"],
+      "a1": "I tell my team lead right away. Then I fix the labels if I can.",
+      "a2": "I tell the team lead or reviewer immediately and explain the mistake. If the platform allows it, I correct the labels. Then I review the definition so it doesn't happen again.",
+      "a3": "I'd report it to my team lead right away, with a clear description: which tasks, what definition I used, and what the correct one is. Being transparent quickly matters, because those labels might already be going into training data. If the platform lets me edit, I'd relabel them, or I'd ask how the team wants to handle it. Then I'd check my other work for the same issue and add a note to myself, so it doesn't happen again.",
+      "tipPt": "Honestidade e rapidez são o que importa. Nunca esconda o erro.",
+      "followUp": "How would you make sure this doesn't happen again?"
+    },
+    {
+      "id": "m4-q05", "module": 4, "lesson": "m4-l02", "level": 1, "kind": "concept",
+      "q": "What are annotation guidelines?",
+      "qPt": "O que são diretrizes de anotação?",
+      "keys": [["rule", "instruction", "manual", "document"], ["label", "annotat", "task", "how to"], ["example", "definition", "category"]],
+      "keysPt": ["regras / manual do projeto", "explicam como rotular", "com definições e exemplos"],
+      "a1": "Guidelines are the rules of the project. They explain how to label the data.",
+      "a2": "Annotation guidelines are a document with the rules of the task. They define each category and give examples, so all annotators label the same way.",
+      "a3": "Annotation guidelines are the project's instruction manual. They define the task, each label or criterion, give good and bad examples, and explain how to handle difficult cases. Their main goal is consistency: different annotators should make the same decision on the same item.",
+      "tipPt": "A palavra-chave é consistency: as guidelines existem para todos decidirem igual.",
+      "followUp": "What do you do when the guidelines change?"
+    },
+    {
+      "id": "m4-q06", "module": 4, "lesson": "m4-l02", "level": 2, "kind": "behavioral",
+      "q": "What do you do if you disagree with a rule in the guidelines?",
+      "qPt": "O que você faz se discorda de uma regra nas diretrizes?",
+      "keys": [["follow", "still use", "respect"], ["feedback", "suggest", "tell", "ask"], ["lead", "team", "channel", "reviewer"], ["opinion", "personal", "consistent"]],
+      "keysPt": ["ainda sigo a regra", "dou feedback / sugestão", "pelo canal certo, para o líder ou time", "porque a consistência é mais importante que minha opinião"],
+      "a1": "I follow the rule. Then I give feedback to my team lead.",
+      "a2": "I still follow the rule, because consistency is important. But I send my feedback through the right channel, with an example, so the team can decide.",
+      "a3": "I follow the rule in my work, because if each annotator uses their own opinion, the data becomes inconsistent. At the same time, I share my concern through the proper channel, with a concrete example of why the rule might cause problems. That way, the decision stays with the people who own the guidelines, and the project can improve.",
+      "tipPt": "Nunca diga que ignoraria a regra. Mostre profissionalismo: segue e dá feedback.",
+      "followUp": "Can you give an example of feedback you could send?"
+    },
+    {
+      "id": "m4-q07", "module": 4, "lesson": "m4-l02", "level": 3, "kind": "practical",
+      "q": "You start a new project with a long, forty-page guideline document. How do you prepare?",
+      "qPt": "Você começa um projeto novo com um documento de diretrizes de quarenta páginas. Como você se prepara?",
+      "keys": [["read", "study"], ["note", "summary", "checklist", "highlight"], ["example", "practice", "sample"], ["question", "ask", "unclear"], ["review", "again", "update", "reread"]],
+      "keysPt": ["leio tudo com atenção", "faço anotações / um resumo ou checklist", "estudo os exemplos e pratico", "anoto dúvidas e pergunto", "releio e acompanho atualizações"],
+      "a1": "I read all the guidelines carefully. I take notes and study the examples.",
+      "a2": "I read the whole document carefully and make a short summary. I study the examples, and I write down questions to ask the team. During the work, I go back to the guidelines often.",
+      "a3": "I read the full document once to understand the big picture, then a second time more slowly, taking notes. I build a short checklist of the key rules and the most common mistakes. I pay special attention to the examples and edge cases, because they show how the rules are applied. I write down anything unclear and ask early. Then I keep the document open while I work, and I check for updates regularly.",
+      "tipPt": "Mostre método: leitura completa, checklist, exemplos, perguntas e revisão contínua.",
+      "followUp": "What do you do if two parts of the guidelines seem to contradict each other?"
+    },
+    {
+      "id": "m4-q08", "module": 4, "lesson": "m4-l03", "level": 1, "kind": "concept",
+      "q": "What is inter-annotator agreement?",
+      "qPt": "O que é concordância entre anotadores?",
+      "keys": [["agree", "same", "match"], ["annotator", "people", "rater", "labeler"], ["label", "item", "example", "answer"], ["measure", "metric", "percent", "kappa"]],
+      "keysPt": ["o quanto concordam", "anotadores diferentes", "no mesmo item", "é uma medida (porcentagem, kappa)"],
+      "a1": "It measures how often different annotators give the same label to the same example.",
+      "a2": "Inter-annotator agreement measures how much different annotators agree when they label the same items. High agreement means the task and guidelines are clear.",
+      "a3": "Inter-annotator agreement measures how consistently different annotators label the same items. It can be a simple percentage, but metrics like Cohen's kappa or Krippendorff's alpha are better because they correct for agreement that happens by chance. High agreement suggests the guidelines are clear and the labels are reliable.",
+      "tipPt": "Mencione kappa e o 'acaso' (by chance) para mostrar nível profissional.",
+      "followUp": "What can cause low agreement?"
+    },
+    {
+      "id": "m4-q09", "module": 4, "lesson": "m4-l03", "level": 2, "kind": "concept",
+      "q": "What quality assurance methods are common in annotation projects?",
+      "qPt": "Quais métodos de garantia de qualidade são comuns em projetos de anotação?",
+      "keys": [["review", "reviewer", "audit", "check"], ["gold", "test question", "known answer", "honeypot"], ["agreement", "overlap", "multiple annotator"], ["calibrat", "training", "feedback"]],
+      "keysPt": ["revisão / auditoria", "perguntas gold com resposta conhecida", "concordância / sobreposição entre anotadores", "calibração e feedback"],
+      "a1": "Reviewers check our work. There are also test questions with known answers.",
+      "a2": "Common methods are reviewer checks on a sample of tasks, gold questions with a known correct answer, and measuring agreement between annotators. Teams also use calibration sessions and feedback.",
+      "a3": "Common QA methods include a reviewer auditing a random sample of completed tasks, gold or test questions with known answers mixed into the queue, and overlap, where several annotators label the same item to measure agreement. Projects also run calibration sessions, give individual feedback, and track quality scores over time, so problems are caught early.",
+      "tipPt": "Liste pelo menos três: review, gold questions, overlap/agreement.",
+      "followUp": "How would you react to a low quality score from a reviewer?"
+    },
+    {
+      "id": "m4-q10", "module": 4, "lesson": "m4-l03", "level": 3, "kind": "scenario",
+      "q": "Agreement between annotators on one category is very low. What could be the reasons, and how would you help fix it?",
+      "qPt": "A concordância entre anotadores em uma categoria é muito baixa. Quais podem ser os motivos e como você ajudaria a resolver?",
+      "keys": [["guideline", "definition", "unclear", "vague"], ["subjective", "ambiguous", "hard", "difficult"], ["example", "clarif", "update"], ["calibrat", "discuss", "meeting", "session"], ["disagree", "look at", "analy"]],
+      "keysPt": ["definição pouco clara nas guidelines", "tarefa subjetiva ou ambígua", "adicionar exemplos e esclarecer", "sessão de calibração", "analisar os itens em que há discordância"],
+      "a1": "Maybe the definition is not clear. We can add examples and talk about the difficult cases together.",
+      "a2": "The definition in the guidelines may be vague, or the category may be very subjective. To fix it, we can look at the examples with disagreement, add clearer rules and examples, and do a calibration session.",
+      "a3": "Low agreement usually means the category definition is vague, it overlaps with another category, or the task is genuinely subjective. Sometimes a few annotators simply misunderstood the rule. I'd start by looking at the specific items where people disagree, to find the pattern. Then the team can clarify the definition, add borderline examples, and run a calibration session. If the category is really subjective, it might be better to split it or allow an 'unsure' option.",
+      "tipPt": "Comece analisando os itens com discordância: isso mostra pensamento orientado a dados.",
+      "followUp": "What would you do if one annotator disagrees with everyone else?"
+    },
+    {
+      "id": "m4-q11", "module": 4, "lesson": "m4-l04", "level": 1, "kind": "concept",
+      "q": "What is preference ranking?",
+      "qPt": "O que é ranking de preferência?",
+      "keys": [["compare", "rank", "order"], ["two", "more", "several", "responses", "answers"], ["better", "best", "prefer", "choose"]],
+      "keysPt": ["comparar / ordenar", "duas ou mais respostas", "escolher a melhor"],
+      "a1": "Preference ranking means I compare two answers and choose the better one.",
+      "a2": "In preference ranking, I see two or more responses to the same prompt and order them from best to worst. This data helps train the model.",
+      "a3": "Preference ranking is when an annotator compares several model responses to the same prompt and orders them, often with a strength rating like slightly or much better. These comparisons become chosen and rejected pairs, which are used for RLHF or DPO to teach the model what people prefer.",
+      "tipPt": "Conecte com RLHF/DPO para mostrar que entende o propósito.",
+      "followUp": "Why do some tasks ask how much better one response is?"
+    },
+    {
+      "id": "m4-q12", "module": 4, "lesson": "m4-l04", "level": 2, "kind": "concept",
+      "q": "What is length bias in preference data, and how do you avoid it?",
+      "qPt": "O que é viés de tamanho nos dados de preferência e como você evita?",
+      "keys": [["long", "longer", "length"], ["prefer", "choose", "better", "complete"], ["verbose", "model learn", "train"], ["quality", "content", "rubric", "criteria", "need"]],
+      "keysPt": ["respostas mais longas", "escolhidas só por parecerem completas", "o modelo aprende a ser verboso", "julgar pelo conteúdo e critérios"],
+      "a1": "Length bias is when we choose the longer answer because it looks better. I check the quality, not the length.",
+      "a2": "Length bias is preferring longer responses just because they look more complete. Then the model learns to be verbose. I avoid it by judging accuracy and helpfulness, not the size.",
+      "a3": "Length bias is when raters prefer longer responses because they look more thorough, even if the extra content adds nothing. Since preference data trains the model, it learns to be verbose. To avoid it, I first check accuracy, instruction following and safety, then ask if the extra length actually helps the user. If a shorter response solves the problem just as well, I prefer it.",
+      "tipPt": "Explique a consequência: o modelo aprende o que os anotadores recompensam.",
+      "followUp": "Are there other biases that raters can have?"
+    },
+    {
+      "id": "m4-q13", "module": 4, "lesson": "m4-l04", "level": 2, "kind": "scenario",
+      "q": "You see two responses that are both bad. The task still asks you to choose one. What do you do?",
+      "qPt": "Você vê duas respostas ruins. A tarefa ainda pede para escolher uma. O que você faz?",
+      "keys": [["less bad", "better of", "less harmful", "least", "smaller problem"], ["choose", "pick", "select"], ["rating", "score", "low", "strength", "slightly"], ["explain", "justif", "comment", "note", "flag"]],
+      "keysPt": ["escolho a menos ruim", "faço a escolha mesmo assim", "uso nota baixa / 'slightly better'", "explico ou sinalizo no comentário"],
+      "a1": "I choose the less bad one. In my comment, I say that both have problems.",
+      "a2": "I choose the response with fewer or less serious problems. I use a low score or 'slightly better', and I explain in my justification that both responses have issues.",
+      "a3": "I still make a choice, picking the one with the less serious problems. For example, a response with a style issue beats one with a factual error or a safety issue. I'd show that in the strength rating, like 'slightly better', and give both low absolute scores if the task has them. In my justification, I clearly say both are flawed and why, and if the guidelines have a flag for 'both unacceptable', I'd use it.",
+      "tipPt": "Mostre que você compara a gravidade dos erros e comunica que as duas são ruins.",
+      "followUp": "How do you decide which problem is more serious?"
+    },
+    {
+      "id": "m4-q14", "module": 4, "lesson": "m4-l05", "level": 1, "kind": "concept",
+      "q": "What types of errors can you find in AI-generated text?",
+      "qPt": "Que tipos de erros você pode encontrar em textos gerados por IA?",
+      "keys": [["fact", "wrong information", "incorrect"], ["hallucinat", "invent", "made up", "fake"], ["logic", "reason", "math", "calculation"], ["grammar", "format", "instruction", "bug", "code"]],
+      "keysPt": ["erros factuais", "alucinações / coisas inventadas", "erros de lógica ou cálculo", "gramática, formato, instruções, bugs"],
+      "a1": "There can be factual errors, invented information, and grammar errors.",
+      "a2": "Common errors are factual errors, hallucinations like fake sources, logic or math errors, and not following the instructions. In code, there can be bugs.",
+      "a3": "The main types are factual errors, hallucinations such as invented sources or functions, logic and calculation errors, instruction-following failures like ignoring a format, safety issues, bugs in code, and smaller problems like grammar or formatting. I always classify the type and the severity, because they affect the score differently.",
+      "tipPt": "Liste vários tipos e diga que classifica tipo e gravidade.",
+      "followUp": "Which type of error is the hardest to find?"
+    },
+    {
+      "id": "m4-q15", "module": 4, "lesson": "m4-l05", "level": 2, "kind": "practical",
+      "q": "Describe your process to evaluate a piece of AI-generated content.",
+      "qPt": "Descreva seu processo para avaliar um conteúdo gerado por IA.",
+      "keys": [["prompt", "request", "requirement"], ["read", "whole", "full"], ["check", "verify", "fact", "test"], ["severity", "type", "major", "minor"], ["justif", "explain", "note", "comment"]],
+      "keysPt": ["leio o prompt e os requisitos", "leio a resposta inteira", "verifico fatos / testo", "classifico tipo e gravidade", "escrevo a justificativa"],
+      "a1": "I read the prompt. Then I read the response and check the facts. Finally, I write my comment.",
+      "a2": "First, I read the prompt and list what the user wants. Then I read the full response and check the facts and the code. I mark each error with its type and severity, and I write a clear justification.",
+      "a3": "First, I read the prompt carefully and list the explicit requirements and constraints. Then I read the whole response once without judging, to understand it. Next, I verify the key claims and test any code. I mark each issue with its type and severity, major or minor. Finally, I give the rating based on the rubric and write a short, specific justification. If the task asks for a rewrite, I fix the errors without changing the parts that were correct.",
+      "tipPt": "Use palavras de sequência: First, Then, Next, Finally.",
+      "followUp": "How do you evaluate a response about a topic you don't know well?"
+    },
+    {
+      "id": "m4-q16", "module": 4, "lesson": "m4-l05", "level": 4, "kind": "scenario",
+      "q": "An AI response is very fluent and professional, but you suspect one important claim is wrong, and you can't verify it quickly. What do you do?",
+      "qPt": "Uma resposta da IA é muito fluente e profissional, mas você suspeita que uma afirmação importante está errada e não consegue verificar rápido. O que você faz?",
+      "keys": [["search", "research", "verify", "source", "check"], ["fluent", "sound", "tone", "confident", "not trust"], ["flag", "note", "comment", "uncertain", "unsure"], ["guideline", "lead", "ask", "skip"], ["score", "rating", "lower", "careful"]],
+      "keysPt": ["pesquiso em fontes confiáveis", "não confio só no tom fluente", "anoto a incerteza no comentário", "sigo as guidelines ou pergunto ao líder / pulo", "dou a nota com cuidado"],
+      "a1": "I don't trust the tone. I search for good sources. If I still don't know, I write a note and ask my lead.",
+      "a2": "I don't trust the response just because it sounds good. I try to verify the claim with reliable sources. If I can't, I write in my comment that this claim is unverified, and I follow the guidelines, maybe skip the task or ask the team lead.",
+      "a3": "Fluency isn't evidence, so I wouldn't accept the claim just because it sounds professional. I'd spend a reasonable amount of time checking reliable sources, like official documentation or primary sources. If I still can't confirm it, I wouldn't pretend to know. I'd state clearly in my justification that this claim is unverified and why I doubt it, and I'd follow the project rules: some projects want you to skip tasks outside your expertise, others want a note for the reviewer. I wouldn't give a high accuracy score to something I couldn't verify.",
+      "tipPt": "Mostre honestidade intelectual: não finja saber e documente a dúvida.",
+      "followUp": "How much time would you spend verifying one claim?"
+    },
+    {
+      "id": "m4-q17", "module": 4, "lesson": "m4-l06", "level": 1, "kind": "concept",
+      "q": "What makes a good prompt for training data?",
+      "qPt": "O que torna um prompt bom para dados de treinamento?",
+      "keys": [["clear", "specific", "simple"], ["real", "realistic", "user", "natural"], ["goal", "test", "skill", "purpose"], ["constraint", "format", "limit", "detail"]],
+      "keysPt": ["claro e específico", "realista, como de um usuário real", "tem um objetivo / testa uma habilidade", "tem restrições ou detalhes"],
+      "a1": "A good prompt is clear and specific. It looks like a real user question.",
+      "a2": "A good prompt is clear, specific and realistic. It has a goal, like testing format or reasoning, and it often has constraints that are easy to check.",
+      "a3": "A good training prompt is clear, specific and realistic, something a real user might actually ask. It has a purpose, like testing instruction following or multi-step reasoning, and it often includes verifiable constraints, such as a word limit or a required format. It also gives enough context so the ideal answer is well defined.",
+      "tipPt": "Use 'realistic' e 'verifiable constraints'.",
+      "followUp": "Can you give an example of a weak prompt and how to improve it?"
+    },
+    {
+      "id": "m4-q18", "module": 4, "lesson": "m4-l06", "level": 2, "kind": "practical",
+      "q": "Improve this prompt: 'Write about React.' Tell me how you would change it.",
+      "qPt": "Melhore este prompt: 'Write about React.' Diga como você mudaria.",
+      "keys": [["specific", "topic", "hook", "usememo", "useeffect", "state"], ["word", "limit", "short", "under"], ["example", "code", "typescript"], ["audience", "beginner", "junior", "who"]],
+      "keysPt": ["tema específico (ex.: um hook)", "limite de palavras", "pedir exemplo de código", "definir o público"],
+      "a1": "The prompt is too vague. I would ask about one topic, like useEffect, with a short example.",
+      "a2": "It's too vague. I would make it specific: 'Explain when to use useEffect in React in under 150 words, with one short code example for a beginner.'",
+      "a3": "The original is too vague, so the responses could be anything and are hard to evaluate. I'd add a specific topic, an audience, a length limit and a format. For example: 'I'm a junior developer. In under 150 words, explain when I should use useMemo in React, and include one short TypeScript example.' Now there's a clear goal and constraints we can check.",
+      "tipPt": "Use sua experiência com React: dê um prompt concreto como exemplo.",
+      "followUp": "What skill does your new prompt test?"
+    },
+    {
+      "id": "m4-q19", "module": 4, "lesson": "m4-l06", "level": 3, "kind": "concept",
+      "q": "What is an adversarial prompt, and why do training projects use them?",
+      "qPt": "O que é um prompt adversarial e por que projetos de treinamento usam?",
+      "keys": [["difficult", "hard", "tricky", "challeng"], ["fail", "mistake", "error", "break", "wrong"], ["weakness", "find", "discover", "test"], ["improve", "better", "fix", "safe"]],
+      "keysPt": ["prompt difícil / complicado", "feito para o modelo errar", "para encontrar fraquezas", "e melhorar o modelo"],
+      "a1": "An adversarial prompt is a hard prompt. It tries to make the model fail, so we can find weaknesses.",
+      "a2": "An adversarial prompt is designed to make the model make a mistake, for example with a trick question or a false premise. Projects use them to find weaknesses and then improve the model.",
+      "a3": "An adversarial prompt is intentionally designed to challenge the model and expose its failures, for example a question with a false premise, conflicting constraints, or a tricky reasoning step. Projects use them because easy prompts don't show where the model is weak. When the model fails, annotators can write better responses or preferences for those cases, so the next version improves. It's important to stay within the project's rules when writing them.",
+      "tipPt": "Dê exemplos seguros: premissa falsa, restrições conflitantes, raciocínio complicado.",
+      "followUp": "Can you give an example of an adversarial prompt for a coding model?"
+    },
+    {
+      "id": "m4-q20", "module": 4, "lesson": "m4-l06", "level": 4, "kind": "practical",
+      "q": "The project asks you to write twenty prompts that test instruction following. How do you make them useful and diverse?",
+      "qPt": "O projeto pede vinte prompts que testem instruction following. Como você os torna úteis e diversos?",
+      "keys": [["different", "diverse", "variety", "vary"], ["constraint", "format", "limit", "json", "bullet"], ["topic", "domain", "subject"], ["difficult", "level", "easy", "hard", "multiple"], ["check", "verif", "measure", "clear"]],
+      "keysPt": ["variar os prompts", "tipos diferentes de restrição (formato, limite)", "temas diferentes", "níveis de dificuldade / várias restrições juntas", "restrições fáceis de verificar"],
+      "a1": "I use different topics and different rules, like word limits, lists and JSON. Some prompts are easy, and some are hard.",
+      "a2": "I vary the topics and the types of constraints, like word limits, JSON format, number of items and tone. I mix easy prompts with harder ones that combine several constraints, and I make sure each constraint is easy to check.",
+      "a3": "I'd plan before writing. First, I'd list types of constraints: length, format like JSON or tables, number of items, language, tone, and negative instructions like 'don't use the word X'. Then I'd spread them across different topics, like coding, cooking, travel and business, so the set isn't repetitive. I'd include a range of difficulty, from one simple constraint to several combined constraints. Every constraint would be objectively verifiable, so evaluators can agree on pass or fail. And I'd keep them realistic, like something a real user would write.",
+      "tipPt": "Mostre planejamento: matriz de tipos de restrição x temas x dificuldade.",
+      "followUp": "Why is it important that constraints are verifiable?"
+    },
+    {
+      "id": "m4-q21", "module": 4, "lesson": "m4-l07", "level": 1, "kind": "concept",
+      "q": "What is bias in an AI response?",
+      "qPt": "O que é viés em uma resposta de IA?",
+      "keys": [["unfair", "not fair", "different"], ["group", "people", "gender", "race", "country"], ["stereotype", "assume", "assumption"]],
+      "keysPt": ["tratamento injusto ou diferente", "de grupos de pessoas", "estereótipos / suposições"],
+      "a1": "Bias is when the AI is unfair to a group of people. For example, it uses stereotypes.",
+      "a2": "Bias is when a response treats groups of people unfairly or uses stereotypes, for example assuming that all engineers are men.",
+      "a3": "Bias in an AI response means it treats people or groups unfairly, for example by using stereotypes, making assumptions based on gender, nationality or age, or giving different quality of help depending on who is asking. It can also mean presenting only one side of a debated topic as if it were the only view.",
+      "tipPt": "Dê um exemplo concreto de estereótipo.",
+      "followUp": "How can annotators also be biased?"
+    },
+    {
+      "id": "m4-q22", "module": 4, "lesson": "m4-l07", "level": 3, "kind": "behavioral",
+      "q": "How do you make sure your own opinions don't affect your ratings?",
+      "qPt": "Como você garante que suas opiniões não afetam suas avaliações?",
+      "keys": [["rubric", "guideline", "criteria"], ["opinion", "personal", "agree", "belief"], ["same score", "switch", "other side", "if it was", "reverse"], ["neutral", "fair", "objective"]],
+      "keysPt": ["uso os critérios da rubrica", "separo minha opinião pessoal", "teste: daria a mesma nota se fosse o outro lado?", "busco ser neutro e justo"],
+      "a1": "I use the rubric, not my opinion. I try to be neutral and fair.",
+      "a2": "I focus on the rubric criteria, like accuracy and helpfulness, not whether I agree. I also ask myself if I would give the same score if the response had the opposite opinion.",
+      "a3": "I base every rating on the rubric criteria, like accuracy, balance and helpfulness, not on whether I agree with the content. One trick I use is a swap test: would I give the same score if the response argued the other side, or was about a different group? I also notice my own preferences, like a favorite writing style, and try not to reward them. If a topic is very personal to me, I'm extra careful and double-check my reasoning.",
+      "tipPt": "O 'swap test' é uma técnica concreta que impressiona.",
+      "followUp": "How should a model answer a question about a controversial topic?"
+    },
+    {
+      "id": "m4-q23", "module": 4, "lesson": "m4-l07", "level": 4, "kind": "scenario",
+      "q": "A reviewer tells you that your labels are inconsistent: you labeled similar cases in different ways. How do you respond, and what do you change?",
+      "qPt": "Um revisor diz que seus rótulos estão inconsistentes: você rotulou casos parecidos de formas diferentes. Como você responde e o que você muda?",
+      "keys": [["thank", "accept", "feedback", "open"], ["example", "look", "review", "understand"], ["guideline", "rule", "reread"], ["note", "log", "checklist", "record"], ["break", "tired", "focus", "fatigue"]],
+      "keysPt": ["agradeço e aceito o feedback", "reviso os exemplos para entender", "releio as guidelines", "crio notas / checklist de decisões", "faço pausas para evitar cansaço"],
+      "a1": "I thank the reviewer. I look at the examples and read the guidelines again. I also write notes about my decisions.",
+      "a2": "I thank the reviewer and look at the examples to understand the problem. Then I reread the guidelines for those cases, write notes about the correct decisions, and take breaks so I stay focused.",
+      "a3": "First, I'd thank the reviewer and stay open, because this feedback directly improves the data. I'd ask for or review the specific examples to find the pattern: maybe I'm unsure about one rule, or my decisions change when I'm tired. Then I'd reread that part of the guidelines and, if something is still unclear, ask for clarification. Going forward, I'd keep a personal decision log for tricky cases, so I treat similar items the same way, and I'd take regular breaks to avoid fatigue. Finally, I'd check my recent work for the same issue.",
+      "tipPt": "Mostre que recebe feedback bem e cria um sistema (decision log) para não repetir.",
+      "followUp": "What if you think the reviewer is wrong about one of the examples?"
+    },
+    {
+      "id": "m4-q24", "module": 4, "lesson": "m4-l08", "level": 1, "kind": "concept",
+      "q": "What is an edge case in annotation?",
+      "qPt": "O que é um caso limite (edge case) na anotação?",
+      "keys": [["rare", "unusual", "strange", "difficult", "hard"], ["guideline", "rule"], ["not cover", "not clear", "unclear", "doesn't cover", "don't cover"]],
+      "keysPt": ["caso raro, incomum ou difícil", "as guidelines", "não cobrem bem / não são claras"],
+      "a1": "An edge case is a rare or strange example. The guidelines don't explain it well.",
+      "a2": "An edge case is an unusual example that is hard to label, because the guidelines don't cover it clearly, like a sarcastic comment.",
+      "a3": "An edge case is an unusual or borderline example where the normal rules don't clearly apply, for example a sarcastic review, a text in two languages, or a response that is partly correct. These cases are important, because how we handle them affects consistency, and they often show where the guidelines need to improve.",
+      "tipPt": "Dê exemplos: sarcasmo, dois idiomas, resposta parcialmente correta.",
+      "followUp": "Can you give an example from a coding task?"
+    },
+    {
+      "id": "m4-q25", "module": 4, "lesson": "m4-l08", "level": 2, "kind": "scenario",
+      "q": "You need to label the sentiment of this review: 'Oh great, my order is late again.' The guidelines don't mention sarcasm. What label do you choose?",
+      "qPt": "Você precisa rotular o sentimento desta avaliação: 'Oh great, my order is late again.' As guidelines não falam de sarcasmo. Que rótulo você escolhe?",
+      "keys": [["negative"], ["sarcas", "irony", "ironic"], ["real meaning", "meaning", "intent", "actually"], ["note", "comment", "flag", "suggest", "feedback"]],
+      "keysPt": ["negativo", "é sarcasmo", "pelo sentido real", "escrevo uma nota / sugiro regra"],
+      "a1": "I choose negative. The comment is sarcastic, so the real meaning is negative.",
+      "a2": "I would label it negative, because it's sarcasm. The word great is positive, but the person is unhappy about the late order. I would also add a note and suggest a rule about sarcasm.",
+      "a3": "I'd label it negative. The word 'great' looks positive, but it's clearly sarcastic: the customer is frustrated that the order is late again. The purpose of a sentiment label is to capture what the writer actually feels, so the real meaning matters more than individual words. Since the guidelines don't mention sarcasm, I'd add a short note explaining my choice and suggest adding a sarcasm rule, so all annotators handle it the same way.",
+      "tipPt": "Mostre que você decide pelo significado real e ajuda a melhorar a guideline.",
+      "followUp": "What if a sarcastic comment was much harder to interpret?"
+    },
+    {
+      "id": "m4-q26", "module": 4, "lesson": "m4-l08", "level": 3, "kind": "scenario",
+      "q": "The guidelines don't cover this case, and you're not sure what to do. Walk me through your steps.",
+      "qPt": "As diretrizes não cobrem este caso e você não tem certeza do que fazer. Explique seus passos.",
+      "keys": [["reread", "read", "check", "guideline", "example"], ["faq", "channel", "similar", "past", "previous"], ["closest", "spirit", "intent", "best judgment", "judgement"], ["flag", "escalat", "ask", "lead", "skip"], ["note", "explain", "document", "comment"]],
+      "keysPt": ["releio as guidelines e exemplos", "procuro casos parecidos no FAQ ou canal", "escolho o mais próximo do espírito da regra", "sinalizo / escalo / pergunto ao líder", "documento meu raciocínio"],
+      "a1": "I read the guidelines again. I look for similar cases. If I still don't know, I flag the task and ask my lead.",
+      "a2": "First, I reread the guidelines and examples. Then I check the FAQ or the project channel for similar cases. If there's no answer, I choose the option closest to the spirit of the guidelines, write a note, and flag it or ask my team lead.",
+      "a3": "First, I reread the relevant section and the examples, because sometimes the answer is there in a different form. Second, I check the FAQ, the project channel or past decisions for similar cases. Third, if there's still nothing, I use my best judgment and choose the option closest to the spirit of the guidelines, meaning what the rules are trying to achieve. Fourth, I document my reasoning in a short note, and I flag or escalate the case to the team lead, so they can decide and maybe update the guidelines. What I don't do is guess silently or spend an hour stuck on one task.",
+      "tipPt": "Resposta estruturada (First, Second, Third, Fourth) com 'spirit of the guidelines' e 'escalate'.",
+      "followUp": "What if there is no team lead available right now?"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "m4-x01", "module": 4, "level": 2, "type": "pairwise",
+      "prompt": "Write two sentences introducing a nurse and an engineer for a short story.",
+      "responseA": "The nurse, a sweet and gentle young woman, always smiled and did what the doctors told her. The engineer, a strong and logical man, solved every problem on his own.",
+      "responseB": "Sam, the night-shift nurse, could calm any patient with a quiet joke and a steady hand. Priya, the bridge engineer, kept a notebook full of sketches and never stopped asking why.",
+      "better": "B",
+      "question": "Which response is better and why? Look for bias.",
+      "keys": [["prefer b", "b is better", "response b", "choose b"], ["stereotype", "bias", "gender"], ["woman", "man", "assume"], ["creative", "interesting", "specific", "action", "character"]],
+      "keysPt": ["prefiro a resposta B", "A usa estereótipos / viés", "supõe que a enfermeira é mulher e o engenheiro é homem", "B é mais criativa e específica"],
+      "modelAnswer": "I prefer Response B because it avoids stereotypes. First, Response A uses gender stereotypes: the nurse is a sweet woman who obeys, and the engineer is a strong, logical man. Second, B describes the characters through their actions and personality, which is more interesting for a story. However, both responses follow the instruction and have two sentences. Overall, B is better because it is creative and fair, while A reinforces harmful stereotypes.",
+      "explainPt": "A resposta A associa enfermagem a uma mulher doce e obediente e engenharia a um homem forte e lógico: estereótipo de gênero clássico. B cria personagens pelas ações, sem estereótipos, e ainda é mais criativa. As duas seguem o formato de duas frases."
+    },
+    {
+      "id": "m4-x02", "module": 4, "level": 2, "type": "single",
+      "prompt": "Annotation task. Guideline: label sentiment as Positive, Negative, or Mixed. Use Mixed when the text has clear positive and negative parts. Text: 'The delivery was three days late, but the headphones sound amazing.' An AI pre-labeling tool chose: Negative.",
+      "responseA": "Label: Negative. Reason: The customer complains that the delivery was late.",
+      "responseB": "",
+      "better": null,
+      "question": "Is the AI label correct? What label would you choose and why?",
+      "keys": [["not correct", "incorrect", "wrong", "no"], ["mixed"], ["positive", "amazing", "good"], ["negative", "late", "complain"], ["guideline", "rule", "both"]],
+      "keysPt": ["o rótulo não está correto", "o certo é Mixed", "há uma parte positiva (amazing)", "e uma parte negativa (atraso)", "a guideline manda usar Mixed quando há as duas"],
+      "modelAnswer": "The AI label is not correct. The text has a clear negative part, because the delivery was three days late. But it also has a clear positive part, because the headphones sound amazing. The guideline says to use Mixed when the text has both, so the correct label is Mixed. The AI only looked at the complaint and ignored the second half of the sentence.",
+      "explainPt": "A guideline define Mixed para textos com partes positivas e negativas claras. O texto tem as duas: atraso (negativo) e som incrível (positivo). O rótulo Negative ignora metade do texto, então o correto é Mixed."
+    },
+    {
+      "id": "m4-x03", "module": 4, "level": 3, "type": "pairwise",
+      "prompt": "What's the best way to open an account at the bank?",
+      "responseA": "It depends a little on where you live and which bank you choose, but usually: 1) Pick a bank and an account type, like checking or savings. 2) Prepare an ID and proof of address. 3) Apply online or visit a branch. 4) Make the first deposit if required. If you tell me your country, I can give more specific steps.",
+      "responseB": "To open an account at Bank of America, go to their website and click Open Account. You will need your Social Security Number and a US address. The minimum deposit is always 25 dollars, and the account is free for everyone.",
+      "better": "A",
+      "question": "The user's request is ambiguous. Which response handles it better and why?",
+      "keys": [["prefer a", "a is better", "response a", "choose a"], ["ambiguous", "assume", "assumption", "country", "which bank"], ["general", "steps", "useful"], ["ask", "clarif", "more specific"], ["always", "free", "not sure", "verify", "wrong"]],
+      "keysPt": ["prefiro a resposta A", "B faz suposições (banco e país)", "A dá passos gerais úteis", "A oferece esclarecer / pergunta o país", "B afirma coisas absolutas que podem estar erradas"],
+      "modelAnswer": "I prefer Response A because it handles the ambiguity well. First, the user didn't say which bank or country, and A gives useful general steps that work in most places. Second, A offers to give specific steps if the user shares their country. However, B is more specific, which would be great if the user really meant that bank. Overall, A is better, because B makes big assumptions and uses absolute claims like 'always 25 dollars' and 'free for everyone' that are probably not accurate.",
+      "explainPt": "O pedido é ambíguo: qual banco? qual país? A dá passos gerais úteis e pede o país para detalhar. B assume um banco específico nos EUA e afirma coisas absolutas ('always', 'free for everyone') que provavelmente não são verdade. Em casos ambíguos, a melhor resposta ajuda e esclarece sem inventar."
+    },
+    {
+      "id": "m4-x04", "module": 4, "level": 2, "type": "pairwise",
+      "prompt": "What does Array.prototype.map return in JavaScript?",
+      "responseA": "map returns a new array. It calls your function on each element and puts the results in the new array, in the same order. The original array is not changed. Example: [1, 2, 3].map(n => n * 2) returns [2, 4, 6].",
+      "responseB": "map changes the original array in place and returns undefined, just like forEach. Example: after you run nums.map(n => n * 2), the nums array will contain the doubled values.",
+      "better": "A",
+      "question": "Find the error. Which response is better and why?",
+      "keys": [["prefer a", "a is better", "response a", "choose a"], ["new array"], ["original", "in place", "not change", "change"], ["undefined", "foreach", "wrong", "error"]],
+      "keysPt": ["prefiro a resposta A", "map retorna um novo array", "não muda o array original (B diz que muda)", "B confunde com forEach / undefined"],
+      "modelAnswer": "I prefer Response A because it is correct. First, map returns a new array with the results, and it does not change the original array, exactly like A explains. Second, A gives a correct and simple example. However, B is also short and has an example. Overall, A is much better, because B has a major factual error: it says map changes the array in place and returns undefined, but returning undefined is how forEach works, not map.",
+      "explainPt": "map retorna um NOVO array e não altera o original. B está errada em dois pontos: diz que altera o array 'in place' e que retorna undefined (forEach é que retorna undefined). É um erro grave para um desenvolvedor."
+    },
+    {
+      "id": "m4-x05", "module": 4, "level": 3, "type": "pairwise",
+      "prompt": "Task for annotators: write a training prompt that tests whether a model can follow format constraints.",
+      "responseA": "Write something interesting about dogs.",
+      "responseB": "I'm making a pet adoption flyer. List exactly 3 reasons to adopt a senior dog. Use bullet points, keep each bullet under 12 words, and don't use the word 'old'.",
+      "better": "B",
+      "question": "Which prompt is better for this training goal, and why?",
+      "keys": [["prefer b", "b is better", "response b", "choose b"], ["constraint", "format", "bullet", "limit", "rule"], ["vague", "no constraint", "nothing to check", "too general"], ["check", "verif", "measure", "test"], ["real", "realistic", "context", "flyer"]],
+      "keysPt": ["prefiro o prompt B", "B tem restrições de formato claras", "A é vago, sem restrições", "as regras de B são fáceis de verificar", "B é realista e tem contexto"],
+      "modelAnswer": "I prefer Response B because it actually tests format constraints. First, B has several clear constraints: exactly three items, bullet points, under 12 words each, and one word the model must not use. Second, all of these are easy to verify, so evaluators can agree if the model passed or failed. However, A is simple and natural, but it has no constraints at all. Overall, B is much better for this goal, because it is realistic, has context, and creates a clear test.",
+      "explainPt": "O objetivo era testar restrições de formato. A é vago e não tem nenhuma restrição para verificar. B tem contexto realista (panfleto de adoção) e quatro restrições verificáveis: 3 itens, bullets, menos de 12 palavras e uma palavra proibida."
+    }
+  ]
+}
